@@ -4,6 +4,8 @@ const { check, validationResult } = require("express-validator");
 const User = require("../../models/User");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 // @route   POST api/users
 // @desc    Register new user
@@ -32,7 +34,9 @@ router.post(
 			let user = await User.findOne({ email: email });
 
 			if (user) {
-				res.status(400).json({ errors: [{ msg: "Korisnik već postoji" }] });
+				return res
+					.status(400)
+					.json({ errors: [{ msg: "Korisnik već postoji" }] });
 			}
 
 			// Get the Gravatar
@@ -57,9 +61,23 @@ router.post(
 
 			await user.save();
 
-			// Return the jsonwebtoken
+			const payLoad = {
+				user: {
+					id: user.id,
+				},
+			};
 
-			res.send("User created!");
+			jwt.sign(
+				payLoad,
+				config.get("jwtSecret"),
+				{
+					expiresIn: 360000,
+				},
+				(err, token) => {
+					if (err) throw err;
+					res.json({ token });
+				}
+			);
 		} catch (err) {
 			console.log(err.message);
 			res.status(500).send("Server error");
