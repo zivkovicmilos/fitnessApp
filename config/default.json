@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://admin:07ds9MVz7Uo10YQn@fitness-zaihu.mongodb.net/test?retryWrites=true&w=majority"
+}
