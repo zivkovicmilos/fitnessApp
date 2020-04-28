@@ -3,7 +3,7 @@ import starFull from "../../assets/svg/starFull.svg";
 
 const ShowcaseItem = () => {
 	return (
-		<div class="col-md-3 col-md-offset-1">
+		<div class="col-md-3 col-md-offset-1 col-sm-12">
 			<div class="showcaseBox">
 				<div class="showcaseImg"></div>
 				<div class="showcaseBoxLower">

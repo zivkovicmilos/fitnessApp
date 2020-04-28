@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap");
 
 :root {
 	--orange: #f85838;
 	--indigo: #1e2732;
 	--gray: #f4f4f5;
+	--green: #34e83b;
 }
 
 * {
@@ -36,11 +37,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 100vh;
+	height: 115vh;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	padding-left: 3rem;
 }
 
 .jumboHome {
@@ -49,6 +49,8 @@
 
 .jumboText {
 	width: 40%;
+	margin-top: auto;
+	margin-left: 4em;
 }
 
 .txt {
@@ -69,13 +71,31 @@
 	border-radius: 25px;
 	display: flex;
 	flex-direction: column;
-	-webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
 	margin: 0 auto;
 }
 
 .showcaseRow {
+	padding-bottom: 4em;
+	margin-top: -1px;
+}
+
+.membershipBox {
+	height: auto;
+	width: 300px;
+	background: white;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	margin: 0 auto;
+}
+
+.centerRow {
 	justify-content: center;
 	align-items: center;
 }
@@ -133,8 +153,126 @@
 .sectionTitle {
 	color: var(--orange);
 	font-size: 21px;
+	border-bottom: 2px solid var(--orange);
 }
 
 .sectionTitleBig {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
+	font-size: 24px;
+}
+
+.membershipRow {
+	background-color: var(--gray);
+	padding-bottom: 4em;
+}
+
+.navbar-nav a {
+	color: white !important;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 2px;
+}
+
+.navbar-nav a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--orange);
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar-nav a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(0.8);
+	transform: scaleX(0.8);
+}
+
+.membershipBox {
+	padding: 30px 20px;
+}
+
+.membershipBox:last-child {
+	padding-bottom: 20px;
+}
+
+.membershipItemRow {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 5px 5px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+	vertical-align: middle;
+}
+
+.membershipItemRow:last-child {
+	border: none;
+}
+
+.membershipCheck {
+	width: 30px;
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+.membershipTitle {
+	color: var(--orange);
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.membershipPrice {
+	font-weight: 700;
+}
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.membershipItemRow .icon {
+	margin-right: 1em;
+	width: 30px;
+}
+
+#membershipTitleTop {
+	margin-bottom: 2em;
+	margin-top: 0.5em;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--indigo);
+	color: white;
+	font-family: "Montserrat";
+	font-weight: 300;
+	padding-bottom: 20px;
+}
+
+.footer div {
+	margin-top: 20px;
+}
+
+.topPartWhite {
+	width: 100%;
+	align-self: flex-end;
+	margin-top: auto;
+	margin-bottom: -1px;
+}
+
+.bottomPartWhite {
+	width: 100%;
+	align-self: flex-start;
+}
+
+.bottomPartGray {
+	width: 100%;
+	align-self: flex-end;
 }

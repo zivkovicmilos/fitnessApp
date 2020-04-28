@@ -1,28 +1,65 @@
 import React from "react";
 import Navbar from "./Navbar";
 import ShowcaseItem from "./ShowcaseItem";
+import Jumbo from "./Jumbo";
+import Footer from "./Footer";
 import homeImg from "../../assets/img/homePage.jpg";
+import bottomPartWhite from "../../assets/svg/bottomPartWhite.svg";
+import MembershipItem from "./MembershipItem";
 
 const Home = () => {
 	return (
 		<div className="container-fluid">
 			<Navbar />
-			<div className="row jumboWrapper jumboHome">
-				<div className="jumboText">
-					<h1>Počnite da trenirate sa najboljima.</h1>
-				</div>
-			</div>
-			<div className="row text-center">
-				<h3 className="sectionTitle col-lg-12">NAJBOLJI TRENINZI</h3>
-				<h2 className="sectionTitleBig col-lg-12">
-					Pogledajte najpopularnije treninge do sada
+			<Jumbo jumboText="Počnite da trenirate sa najboljima." />
+			<div className="row text-center centerRow showcaseRow">
+				<h3 className="col-lg-12">
+					<span className="sectionTitle">NAJBOLJI TRENINZI</span>
+				</h3>
+				<h2 className="col-lg-12 sectionTitleBig">
+					<span>Pogledajte najpopularnije treninge do sada</span>
 				</h2>
-			</div>
-			<div className="row showcaseRow">
 				<ShowcaseItem />
 				<ShowcaseItem />
 				<ShowcaseItem />
 			</div>
+			<div className="row membershipRow centerRow text-center">
+				<img src={bottomPartWhite} className="bottomPartWhite" />
+				<h3 className="col-lg-12" id="membershipTitleTop">
+					<span className="sectionTitle">ČLANARINE</span>
+				</h3>
+				<MembershipItem
+					name="JEDAN"
+					price="2.500rsd"
+					membershipItems={[
+						"Pogodnost 1",
+						"Pogodnost 2",
+						"Pogodnost 3",
+						"Pogodnost 4",
+					]}
+				/>
+				<MembershipItem
+					name="DVA"
+					price="2.500rsd"
+					membershipItems={[
+						"Pogodnost 1",
+						"Pogodnost 2",
+						"Pogodnost 3",
+						"Pogodnost 4",
+					]}
+				/>
+				<MembershipItem
+					name="TRI"
+					price="2.500rsd"
+					membershipItems={[
+						"Pogodnost 1",
+						"Pogodnost 2",
+						"Pogodnost 3",
+						"Pogodnost 4",
+					]}
+				/>
+			</div>
+			<Footer />
 		</div>
 	);
 };
