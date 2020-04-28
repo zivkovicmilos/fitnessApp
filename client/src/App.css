@@ -330,6 +330,11 @@
 	width: 30%;
 }
 
+.typeImg {
+	width: 100%;
+	height: auto;
+}
+
 .typeTitle {
 	font-size: 18px;
 	font-weight: 700;
@@ -343,4 +348,5 @@
 }
 
 .typeDesc {
+	text-align: justify;
 }

@@ -1,16 +1,14 @@
 import React from "react";
+import testImg from "../../assets/img/showcase1.jpg";
 
 const SectionListItem = (props) => {
 	let { title, duration, level, description } = props;
 	return (
 		<div className="row centerRow">
-			<div className="col-md-2 offset-md-4">
-				{
-					//<img src={} className="typeImg" />
-				}
-				PICTURE
+			<div className="col-md-2 offset-md-1">
+				<img src={testImg} className="typeImg" />
 			</div>
-			<div className="col-md-6">
+			<div className="col-md-5">
 				<div className="row">
 					<span className="typeTitle">{title}</span>
 					<span className="typeInfo">
