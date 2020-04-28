@@ -11,7 +11,10 @@ const Home = () => {
 	return (
 		<div className="container-fluid">
 			<Navbar />
-			<Jumbo jumboText="Počnite da trenirate sa najboljima." />
+			<Jumbo
+				jumboText="Počnite da trenirate sa najboljima."
+				image="jumboHome"
+			/>
 			<div className="row text-center centerRow showcaseRow">
 				<h3 className="col-lg-12">
 					<span className="sectionTitle">NAJBOLJI TRENINZI</span>

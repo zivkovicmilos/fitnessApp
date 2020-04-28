@@ -3,7 +3,7 @@ import topPartWhite from "../../assets/svg/topPartWhite.svg";
 
 const Jumbo = (props) => {
 	return (
-		<div className="row jumboWrapper jumboHome">
+		<div className={`row jumboWrapper ${props.image}`}>
 			<div className="jumboText">
 				<h1>{props.jumboText}</h1>
 			</div>

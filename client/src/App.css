@@ -47,6 +47,10 @@
 	background-image: url("./assets/img/homePage.jpg");
 }
 
+.jumboUsluge {
+	background-image: url("./assets/img/uslugePage.jpg");
+}
+
 .jumboText {
 	width: 40%;
 	margin-top: auto;
@@ -275,4 +279,68 @@
 .bottomPartGray {
 	width: 100%;
 	align-self: flex-end;
+}
+
+.infoRow {
+	position: relative;
+	width: 80%;
+	height: 100%;
+	z-index: 2;
+}
+
+.infoPicLeft {
+	width: 40%;
+	height: 80vh;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	clip-path: polygon(0 0, 100% 0%, 65% 100%, 0 100%);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.infoBackRight {
+	width: 80%;
+	background-color: var(--gray);
+	height: 80vh;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0 100%);
+	margin-top: 20px;
+	display: flex;
+	padding-left: 20%;
+}
+
+.infoTreninzi {
+	background-image: url("./assets/img/infoPics/treninzi.jpg");
+}
+
+.infoShadow {
+	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.typeBanner {
+	width: 30%;
+}
+
+.typeTitle {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--orange);
+}
+
+.typeInfo {
+	vertical-align: center;
+	margin-left: 0.5em;
+	color: var(--orange);
+}
+
+.typeDesc {
 }
