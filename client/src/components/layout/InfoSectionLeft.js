@@ -7,7 +7,7 @@ const InfoSectionLeft = (props) => {
 			<div className="infoRow">
 				<div className="infoShadow">
 					<div className="infoBackRight infoShadow">
-						<InfoSectionContent />
+						<InfoSectionContent section={props.section} />
 					</div>
 				</div>
 				<div className="infoShadow">
