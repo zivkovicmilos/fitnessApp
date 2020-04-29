@@ -4,7 +4,7 @@ import testImg from "../../assets/img/showcase1.jpg";
 const SectionListItem = (props) => {
 	let { title, duration, level, description } = props;
 	return (
-		<div className="row centerRow">
+		<div className="row centerRow sectionListItem">
 			<div className="col-md-2 offset-md-1">
 				<img src={testImg} className="typeImg" />
 			</div>

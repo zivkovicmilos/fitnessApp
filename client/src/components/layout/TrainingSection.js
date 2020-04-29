@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import yogaBanner from "../../assets/svg/typeBanners/yoga.svg";
+import pilatesBanner from "../../assets/svg/typeBanners/pilates.svg";
+import coreBanner from "../../assets/svg/typeBanners/core.svg";
+import cardioBanner from "../../assets/svg/typeBanners/cardio.svg";
 import SectionList from "./SectionList";
 
 const TrainingSection = (props) => {
 	switch (props.type) {
 		case "yoga": {
 			return (
-				<div>
+				<Fragment>
 					<div className="row centerRow">
 						<img
 							src={yogaBanner}
@@ -14,18 +17,47 @@ const TrainingSection = (props) => {
 						/>
 					</div>
 					<SectionList type="yoga" />
-				</div>
+				</Fragment>
 			);
-			break;
 		}
 		case "pilates": {
-			break;
+			return (
+				<Fragment>
+					<div className="row centerRow">
+						<img
+							src={pilatesBanner}
+							className="typeBanner col-xs-12"
+						/>
+					</div>
+					<SectionList type="pilates" />
+				</Fragment>
+			);
 		}
 		case "core": {
-			break;
+			return (
+				<Fragment>
+					<div className="row centerRow">
+						<img
+							src={coreBanner}
+							className="typeBanner col-xs-12"
+						/>
+					</div>
+					<SectionList type="core" />
+				</Fragment>
+			);
 		}
 		case "cardio": {
-			break;
+			return (
+				<Fragment>
+					<div className="row centerRow">
+						<img
+							src={cardioBanner}
+							className="typeBanner col-xs-12"
+						/>
+					</div>
+					<SectionList type="cardio" />
+				</Fragment>
+			);
 		}
 	}
 };

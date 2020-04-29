@@ -6,13 +6,13 @@ const InfoSectionLeft = (props) => {
 		<div className="row centerRow">
 			<div className="infoRow">
 				<div className="infoShadow">
-					<div className="infoBackRight infoShadow">
+					<div className="infoBackLeft infoShadow">
 						<InfoSectionContent />
 					</div>
 				</div>
 				<div className="infoShadow">
 					<div
-						className={`infoPicLeft ${props.section} infoShadow`}
+						className={`infoPicRight ${props.section} infoShadow`}
 					></div>
 				</div>
 			</div>

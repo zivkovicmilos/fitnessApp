@@ -12,6 +12,7 @@ const Home = () => {
 		<div className="container-fluid">
 			<Navbar />
 			<Jumbo
+				type="home"
 				jumboText="Počnite da trenirate sa najboljima."
 				image="jumboHome"
 			/>
@@ -62,7 +63,7 @@ const Home = () => {
 					]}
 				/>
 			</div>
-			<Footer />
+			<Footer color="gray" />
 		</div>
 	);
 };
