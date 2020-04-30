@@ -596,3 +596,7 @@ textarea {
 	justify-content: flex-end;
 	margin-top: 1em;
 }
+
+.pageTitle {
+	font-weight: 700;
+}
