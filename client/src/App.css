@@ -55,6 +55,10 @@
 	background-image: url("./assets/img/zakazivanjePage.jpg");
 }
 
+.jumboONama {
+	background-image: url("./assets/img/onamaPage.jpg");
+}
+
 .jumboText {
 	width: 40%;
 	margin-top: auto;
@@ -599,4 +603,25 @@ textarea {
 
 .pageTitle {
 	font-weight: 700;
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 14rem !important;
+	border: none;
+	padding: 15px;
+	text-align: center;
+}
+
+.card > img {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+}
+
+.aboutContainer {
+	width: 80% !important;
+	align-self: center;
 }

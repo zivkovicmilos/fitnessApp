@@ -4,7 +4,9 @@ import topPartWhite from "../../assets/svg/topPartWhite.svg";
 
 const Jumbo = (props) => {
 	let jumboDesc =
-		props.type == "services" || props.type == "reservation"
+		props.type == "services" ||
+		props.type == "reservation" ||
+		props.type == "about"
 			? props.desc
 			: false;
 	let serviceSelector = props.type == "services" ? true : false;
