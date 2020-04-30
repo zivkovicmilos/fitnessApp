@@ -3,7 +3,10 @@ import ServicesSelector from "./ServicesSelector";
 import topPartWhite from "../../assets/svg/topPartWhite.svg";
 
 const Jumbo = (props) => {
-	let jumboDesc = props.type == "services" ? props.desc : false;
+	let jumboDesc =
+		props.type == "services" || props.type == "reservation"
+			? props.desc
+			: false;
 	let serviceSelector = props.type == "services" ? true : false;
 	return (
 		<div className={`row jumboWrapper ${props.image}`}>

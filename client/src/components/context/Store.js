@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
 	section: "Treninzi",
+	renderedRows: 0,
 };
 const store = createContext(initialState);
 const { Provider } = store;

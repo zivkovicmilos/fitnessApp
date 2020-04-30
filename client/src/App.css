@@ -51,6 +51,10 @@
 	background-image: url("./assets/img/uslugePage.jpg");
 }
 
+.jumboZakazivanje {
+	background-image: url("./assets/img/zakazivanjePage.jpg");
+}
+
 .jumboText {
 	width: 40%;
 	margin-top: auto;
@@ -510,5 +514,85 @@ textarea {
 }
 
 .servicesForm {
+	margin-top: 1em;
+}
+
+.centerColumn {
+	float: none !important;
+	margin: 0 auto !important;
+}
+
+.filters {
+	background-color: var(--gray);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 1em 2em;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 2px 5px rgba(50, 50, 0, 0.5);
+	-moz-box-shadow: 0px 2px 5px rgba(50, 50, 0, 0.5);
+	box-shadow: 0px 2px 5px rgba(50, 50, 0, 0.5);
+}
+
+.filters h3 {
+	font-weight: 700;
+	font-size: 1.5em;
+}
+
+.filters form {
+	margin-top: 0.8em;
+	text-align: left;
+}
+
+.modal-dialog {
+	width: 30%;
+}
+
+.modal-body {
+	border-radius: 15px;
+}
+
+.modal-content {
+	background-color: var(--indigo);
+	color: white;
+	padding: 1em 2em;
+	border-radius: 15px;
+}
+
+.modalHead {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 2em;
+	margin-bottom: 0.8em;
+}
+
+.modalBody {
+	flex-direction: column !important;
+}
+
+.modalBody span {
+	margin: 0.2em 0;
+}
+
+.modalBody span:last-child {
+	margin-bottom: 0;
+}
+
+.modalBodyTitle {
+	font-weight: 500;
+	font-size: 1.4em;
+}
+
+.modalButton {
+	color: white;
+	font-weight: 700;
+	background-color: var(--orange);
+	border: none;
+	padding: 0.5em 1em;
+	border-radius: 10px;
+}
+
+.modalBottom {
+	justify-content: flex-end;
 	margin-top: 1em;
 }
