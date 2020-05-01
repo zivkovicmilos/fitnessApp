@@ -700,13 +700,17 @@ textarea {
 	}
 }
 
-.icon {
+.contactIcon {
 	background-color: var(--orange);
 	width: 40px;
 	height: 40px;
 	clip-path: circle(20px at center);
 }
 
-.icon > img {
+.contactIcon > img {
 	width: 20px;
+}
+
+.paddinglessCol {
+	padding: 0px !important;
 }
