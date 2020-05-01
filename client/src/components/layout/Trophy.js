@@ -1,6 +1,6 @@
 import React from "react";
 
-const Employee = (props) => {
+const Trophy = (props) => {
 	return (
 		<div class="card">
 			<img src={props.image} class="card-img-top" alt="Image error!!!" />
@@ -14,4 +14,4 @@ const Employee = (props) => {
 	);
 };
 
-export default Employee;
+export default Trophy;

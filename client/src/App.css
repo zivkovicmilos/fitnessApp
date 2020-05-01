@@ -631,3 +631,37 @@ textarea {
 	width: 80% !important;
 	align-self: center;
 }
+
+.contactContainer {
+	width: 90% !important;
+	padding: 20px;
+}
+
+.contactContainer .row {
+	padding-bottom: 20px;
+}
+
+#imePrezime {
+	width: 15em;
+}
+
+#eMail {
+	width: 18em;
+}
+
+#poruka {
+	width: 20em;
+	height: 7em;
+}
+
+.map {
+	background-color: yellow;
+	width: 250px;
+	height: 250px;
+}
+
+.social {
+	background-color: green;
+	width: 250px;
+	height: 100px;
+}

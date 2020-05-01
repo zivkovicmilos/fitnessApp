@@ -1,0 +1,7 @@
+-O nama
+-Moj profil (+ podesavanja)
+-login
+-registration
+
+vidi galeriju sa bootstrap
+

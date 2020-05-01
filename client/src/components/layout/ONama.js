@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "./Navbar";
 import Jumbo from "./Jumbo";
 import Footer from "./Footer";
-import Employees from "./Employees";
+import Trophies from "./Trophies";
+import Contact from "./Contact";
 
 const ONama = () => {
 	return (
@@ -14,7 +15,8 @@ const ONama = () => {
 				image="jumboONama"
 				desc="Ovo je stranica o nama"
 			/>
-			<Employees />
+			<Trophies />
+			<Contact />
 			{/*
 			<div className="row text-center centerRow showcaseRow">
 				<h3 className="col-lg-12">
