@@ -651,17 +651,8 @@ textarea {
 	padding-bottom: 20px;
 }
 
-#imePrezime {
-	width: 15em;
-}
-
-#eMail {
-	width: 18em;
-}
-
-#poruka {
-	width: 20em;
-	height: 7em;
+.contactForm {
+	width: 70%;
 }
 
 .map {
@@ -669,11 +660,13 @@ textarea {
 	width: 250px;
 	height: 250px;
 }
-
 .social {
-	background-color: green;
-	width: 250px;
-	height: 100px;
+	min-width: 35px;
+	padding: 10px;
+}
+
+.social > img {
+	width: 100%;
 }
 
 .registerFieldWrapper .form-row .form-control {
@@ -685,7 +678,6 @@ textarea {
 	width: auto !important;
 	border-radius: 0 20px 20px 0 !important;
 }
-
 .centerRowY {
 	align-items: center;
 }
