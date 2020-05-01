@@ -13,11 +13,11 @@ const Contact = () => {
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-6">
 					<ContactInfo />
 					<ContactMail />
 				</div>
-				<div class="col-sm-6">
+				<div class="col-6">
 					<ContactMap />
 					<ContactSocial />
 				</div>

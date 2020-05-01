@@ -699,3 +699,14 @@ textarea {
 		padding-bottom: 2em;
 	}
 }
+
+.icon {
+	background-color: var(--orange);
+	width: 40px;
+	height: 40px;
+	clip-path: circle(20px at center);
+}
+
+.icon > img {
+	width: 20px;
+}
