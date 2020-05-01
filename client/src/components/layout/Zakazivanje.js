@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "./Zakazivanje/Table";
 import Navbar from "./Navbar";
 import Jumbo from "./Jumbo";
 import Footer from "./Footer";
 
 const Zakazivanje = () => {
+	const [yoga, setYoga] = useState(true);
+	const [pilates, setPilates] = useState(true);
+	const [core, setCore] = useState(true);
+	const [cardio, setCardio] = useState(true);
+
 	return (
 		<div className="container-fluid">
 			<Navbar />
@@ -29,7 +34,10 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="yoga"
-									checked
+									defaultChecked={yoga}
+									onChange={() => {
+										setYoga(!yoga);
+									}}
 								/>
 								<label className="form-check-label" for="yoga">
 									Yoga
@@ -40,7 +48,10 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="pilates"
-									checked
+									defaultChecked={pilates}
+									onChange={() => {
+										setPilates(!pilates);
+									}}
 								/>
 								<label
 									className="form-check-label"
@@ -54,7 +65,10 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="core"
-									checked
+									defaultChecked={core}
+									onChange={() => {
+										setCore(!core);
+									}}
 								/>
 								<label className="form-check-label" for="core">
 									Core
@@ -65,7 +79,10 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="cardio"
-									checked
+									defaultChecked={cardio}
+									onChange={() => {
+										setCardio(!cardio);
+									}}
 								/>
 								<label
 									className="form-check-label"

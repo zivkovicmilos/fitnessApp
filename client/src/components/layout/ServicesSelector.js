@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { store } from "../context/Store";
 
 const ServicesSelector = (props) => {
@@ -8,17 +9,26 @@ const ServicesSelector = (props) => {
 
 	//dispatch({ type: 'action' });
 	return (
-		<div
-			className="servicesSelector"
-			onClick={(e) =>
-				dispatch({ type: "changeSection", nextSection: e.target.id })
-			}
-		>
-			<span className="ssActive" id="Treninzi">
-				Treninzi
-			</span>
-			<span id="Nutricionista">Nutricionista</span>
-			<span id="Masaze">Masaže</span>
+		<div className=" row">
+			<div
+				className="servicesSelector offset-md-1 mt-3"
+				onClick={(e) =>
+					dispatch({
+						type: "changeSection",
+						nextSection: e.target.id,
+					})
+				}
+			>
+				<Link to="treninzi" id="Treninzi" className="ssActive">
+					Treninzi
+				</Link>
+				<Link to="nutricionista" id="Nutricionista">
+					Nutricionista
+				</Link>
+				<Link to="masaze" id="Masaze">
+					Masaže
+				</Link>
+			</div>
 		</div>
 	);
 };

@@ -59,17 +59,24 @@
 	background-image: url("./assets/img/onamaPage.jpg");
 }
 
-.jumboText {
+.jumboTextOLD {
 	width: 40%;
 	margin-top: auto;
-	margin-left: 4em;
 }
 
-.txt {
+.jumboContent {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	overflow: hidden;
+}
+
+.testWhite {
+	color: white;
 	margin-top: auto;
 }
 
-.jumboText h1 {
+.jumboText {
 	font-family: "Montserrat";
 	font-weight: 700;
 	font-size: 3rem;
@@ -273,8 +280,6 @@
 }
 
 .topPartWhite {
-	width: 100%;
-	align-self: flex-end;
 	margin-top: auto;
 	margin-bottom: -1px;
 }
@@ -429,24 +434,28 @@
 	background-color: white;
 }
 
-.servicesSelector span {
+.servicesSelector a {
 	padding: 10px;
 	border-radius: 20px;
 	cursor: pointer;
-	transition: 0.2s;
+	transition: 0.2s ease-in-out;
+	text-decoration: none;
+	color: black;
 }
 
-.servicesSelector span:hover,
+.servicesSelector a:hover,
 .ssActive {
 	background-color: var(--orange);
+	color: white !important;
+}
+
+.servicesSelector span a:hover {
 	color: white;
 }
 
 .jumboDesc {
 	color: white;
 	font-weight: 300;
-	margin: 1em 0;
-	width: 80%;
 }
 
 .sectionText {
@@ -664,4 +673,25 @@ textarea {
 	background-color: green;
 	width: 250px;
 	height: 100px;
+}
+
+.registerFieldWrapper {
+}
+
+.registerFieldWrapper .form-row .form-control {
+	width: 60% !important;
+	border-radius: 20px 0 0 20px !important;
+}
+
+.registerFieldWrapper .form-row .modalButton {
+	width: auto !important;
+	border-radius: 0 20px 20px 0 !important;
+}
+
+.centerRowY {
+	align-items: center;
+}
+
+.centerRowX {
+	justify-content: center;
 }
