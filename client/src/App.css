@@ -695,3 +695,9 @@ textarea {
 .centerRowX {
 	justify-content: center;
 }
+
+@media (max-width: 990px) {
+	.homeItems {
+		padding-bottom: 2em;
+	}
+}

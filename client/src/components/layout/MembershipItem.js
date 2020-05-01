@@ -3,7 +3,7 @@ import checkMark from "../../assets/svg/checkMark.svg";
 
 const MembershipItem = (props) => {
 	return (
-		<div className="col-sm-12 col-md-3 col-md-offset-1">
+		<div className="col-lg-4 col-md-6 homeItems">
 			<div class="membershipBox">
 				<h3 className="membershipTitle">{props.name}</h3>
 				<h3 className="membershipPrice">{props.price}</h3>

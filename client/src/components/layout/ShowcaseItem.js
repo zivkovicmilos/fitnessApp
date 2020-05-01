@@ -2,8 +2,9 @@ import React from "react";
 import starFull from "../../assets/svg/starFull.svg";
 
 const ShowcaseItem = () => {
+	//col-md-offset-1
 	return (
-		<div class="col-md-3 col-md-offset-1 col-sm-12">
+		<div class="col-lg-4 col-md-6 homeItems">
 			<div class="showcaseBox">
 				<div class="showcaseImg"></div>
 				<div class="showcaseBoxLower">
