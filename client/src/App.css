@@ -714,3 +714,8 @@ textarea {
 .paddinglessCol {
 	padding: 0px !important;
 }
+
+.myRow {
+	display: flex;
+	align-items: center;
+}
