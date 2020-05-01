@@ -52,134 +52,136 @@ const Table = () => {
 				</div>
 			</div>
 
-			<table className="table table-bordered">
-				<thead>
-					<tr>
-						<th scope="col">Vreme</th>
-						<th scope="col">Ponedeljak</th>
-						<th scope="col">Utorak</th>
-						<th scope="col">Sreda</th>
-						<th scope="col">Četvrtak</th>
-						<th scope="col">Petak</th>
-						<th scope="col">Subota</th>
-						<th scope="col">Nedelja</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">17:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">17:30</th>
-						<td colSpan="1" rowSpan="2" className="pilates">
-							<span>Grupni Pilates trening</span>
-						</td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">18:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">18:30</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">19:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">19:30</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">20:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">20:30</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">21:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">21:30</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-					<tr>
-						<th scope="row">22:00</th>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-						<td colSpan="1" rowSpan="1"></td>
-					</tr>
-				</tbody>
-			</table>
+			<div className="table-responsive">
+				<table className="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">Vreme</th>
+							<th scope="col">Ponedeljak</th>
+							<th scope="col">Utorak</th>
+							<th scope="col">Sreda</th>
+							<th scope="col">Četvrtak</th>
+							<th scope="col">Petak</th>
+							<th scope="col">Subota</th>
+							<th scope="col">Nedelja</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">17:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">17:30</th>
+							<td colSpan="1" rowSpan="2" className="pilates">
+								<span>Grupni Pilates trening</span>
+							</td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">18:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">18:30</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">19:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">19:30</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">20:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">20:30</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">21:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">21:30</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+						<tr>
+							<th scope="row">22:00</th>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+							<td colSpan="1" rowSpan="1"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</Fragment>
 	);
 };

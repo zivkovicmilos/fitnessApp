@@ -603,6 +603,7 @@ textarea {
 	border: none;
 	padding: 0.5em 1em;
 	border-radius: 10px;
+	outline: none !important;
 }
 
 .modalBottom {
@@ -673,9 +674,6 @@ textarea {
 	background-color: green;
 	width: 250px;
 	height: 100px;
-}
-
-.registerFieldWrapper {
 }
 
 .registerFieldWrapper .form-row .form-control {

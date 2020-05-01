@@ -21,11 +21,16 @@ const Zakazivanje = () => {
 				jumboText="Zakažite Vaš termin"
 				image="jumboZakazivanje"
 			/>
-			<div className="row">
-				<h1 className="pageTitle ml-5">NEDELJNI KALENDAR</h1>
+			<div className="row centerRow">
+				<h1
+					className="pageTitle col-md-12 offset-md-1 offset-1 col 
+				"
+				>
+					NEDELJNI KALENDAR
+				</h1>
 			</div>
-			<div className="row">
-				<div className="col-md-3">
+			<div className="row centerRowX">
+				<div className="col-xs-3">
 					<div className="filters">
 						<h3>FILTERI</h3>
 						<form>
@@ -94,7 +99,7 @@ const Zakazivanje = () => {
 						</form>
 					</div>
 				</div>
-				<div className="col">
+				<div className="col-md-auto col-xs-12">
 					<Table />
 				</div>
 			</div>
