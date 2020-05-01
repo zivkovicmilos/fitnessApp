@@ -17,7 +17,7 @@ const Zakazivanje = () => {
 				image="jumboZakazivanje"
 			/>
 			<div className="row">
-				<h1 className="pageTitle">NEDELJNI KALENDAR</h1>
+				<h1 className="pageTitle ml-5">NEDELJNI KALENDAR</h1>
 			</div>
 			<div className="row">
 				<div className="col-md-3">
@@ -29,6 +29,7 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="yoga"
+									checked
 								/>
 								<label className="form-check-label" for="yoga">
 									Yoga
@@ -39,6 +40,7 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="pilates"
+									checked
 								/>
 								<label
 									className="form-check-label"
@@ -52,6 +54,7 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="core"
+									checked
 								/>
 								<label className="form-check-label" for="core">
 									Core
@@ -62,6 +65,7 @@ const Zakazivanje = () => {
 									type="checkbox"
 									className="form-check-input"
 									id="cardio"
+									checked
 								/>
 								<label
 									className="form-check-label"

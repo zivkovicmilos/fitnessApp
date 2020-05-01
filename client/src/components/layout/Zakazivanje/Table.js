@@ -78,7 +78,9 @@ const Table = () => {
 					</tr>
 					<tr>
 						<th scope="row">17:30</th>
-						<td colSpan="1" rowSpan="1"></td>
+						<td colSpan="1" rowSpan="2" className="pilates">
+							<span>Grupni Pilates trening</span>
+						</td>
 						<td colSpan="1" rowSpan="1"></td>
 						<td colSpan="1" rowSpan="1"></td>
 						<td colSpan="1" rowSpan="1"></td>

@@ -603,6 +603,12 @@ textarea {
 
 .pageTitle {
 	font-weight: 700;
+	font-size: 2.3em;
+	margin-bottom: 1em;
+}
+
+.pilates {
+	background-color: #ffc107;
 }
 
 .card {
