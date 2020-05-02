@@ -27,7 +27,7 @@ const ContactInfo = () => {
 					<div class="contactIcon d-flex justify-content-center">
 						<img src={[phone]} />
 					</div>
-					<span className="pl-3">+381 123-456-789</span>
+					<span className="pl-3">+381 123 456 789</span>
 				</div>
 			</div>
 		</React.Fragment>

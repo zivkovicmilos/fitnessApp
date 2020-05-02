@@ -5,10 +5,8 @@ const Trophy = (props) => {
 		<div class="card">
 			<img src={props.image} class="card-img-top" alt="Image error!!!" />
 			<div class="card-body">
-				<h5 class="card-title">Nagrada Milosa Zivkovica</h5>
-				<p class="card-text">
-					Nagradu za najbolje treninge joge i pilatesa u Evropi.
-				</p>
+				<h5 class="card-title">{props.title}</h5>
+				<p class="card-text">{props.text}</p>
 			</div>
 		</div>
 	);

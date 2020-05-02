@@ -11,13 +11,13 @@ const ContactSocial = () => {
 				<img src={mail} />
 			</div>
 			<div class="offset-lg-2 col-1 social">
-				<img src={face} />
+				<img src={face} draggable="false" />
 			</div>
 			<div class="offset-lg-2 col-1 social">
-				<img src={insta} />
+				<img src={insta} draggable="false" />
 			</div>
 			<div class="offset-lg-2 col-1 social">
-				<img src={ytb} />
+				<img src={ytb} draggable="false" />
 			</div>
 		</div>
 	);

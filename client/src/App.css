@@ -638,7 +638,7 @@ textarea {
 }
 
 .aboutContainer {
-	width: 80% !important;
+	width: 90% !important;
 	align-self: center;
 }
 
@@ -767,4 +767,8 @@ textarea {
 
 .infoRowHigher {
 	height: 94vh;
+}
+
+.card-body {
+	width: 280px;
 }
