@@ -25,30 +25,6 @@ const UserSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now,
 	},
-	reservations: [
-		{
-			reservedWorkout: {
-				time: {
-					type: String,
-				},
-				date: {
-					type: String,
-				},
-				workout: {
-					type: mongoose.Schema.Types.ObjectId,
-					ref: "workout",
-				},
-			},
-		},
-	],
-	finishedWorkouts: [
-		{
-			workout: {
-				type: mongoose.Schema.Types.ObjectId,
-				ref: "workout",
-			},
-		},
-	],
 });
 
 module.exports = User = mongoose.model("user", UserSchema);
