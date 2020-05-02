@@ -4,9 +4,9 @@ import InfoSectionContent from "./InfoSectionContent";
 const InfoSectionLeft = (props) => {
 	return (
 		<div className="row centerRow">
-			<div className="infoRow">
+			<div className="infoRow infoRowHigher">
 				<div className="infoShadow">
-					<div className="infoBackRight infoShadow">
+					<div className="infoBackRight infoRowHigher infoShadow">
 						<InfoSectionContent section={props.section} />
 					</div>
 				</div>
