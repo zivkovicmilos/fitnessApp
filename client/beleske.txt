@@ -5,3 +5,4 @@
 
 vidi galeriju sa bootstrap
 
+Izmeni class sa className
