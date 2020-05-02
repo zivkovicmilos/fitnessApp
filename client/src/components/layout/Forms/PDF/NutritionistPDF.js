@@ -1,0 +1,162 @@
+import React from "react";
+
+import ReactPDF from "@react-pdf/renderer";
+
+import {
+	Page,
+	Text,
+	View,
+	Document,
+	StyleSheet,
+	Font,
+	Image,
+} from "@react-pdf/renderer";
+
+import nutricionistaBG from "../../../../assets/img/infoPics/nutricionista.jpg";
+
+Font.register({
+	family: "Montserrat",
+	weight: 500,
+	src:
+		"http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf",
+});
+
+Font.register({
+	family: "Montserrat",
+	weight: 300,
+	src:
+		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD-w.ttf)",
+});
+
+Font.register({
+	family: "Montserrat",
+	weight: 700,
+	src:
+		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf",
+});
+
+const indigo = "#1e2732";
+const orange = "#f85838";
+
+// Create styles
+const styles = StyleSheet.create({
+	page: {
+		flexDirection: "column",
+		backgroundColor: indigo,
+		color: "white",
+		width: "100%",
+		height: "100%",
+	},
+	sectionBanner: {
+		display: "flex",
+		position: "relative",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "100%",
+		fontFamily: "Montserrat",
+		fontWeight: "bold",
+	},
+	sectionBottom: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		width: "100%",
+		height: "60%",
+	},
+	infoTitle: {
+		fontFamily: "Montserrat",
+		fontWeight: "bold",
+		fontSize: 21,
+	},
+	infoBannerTitle: {
+		fontFamily: "Montserrat",
+		fontWeight: "bold",
+		fontSize: 30,
+		backgroundColor: "#f85838",
+		padding: "10pt 15pt",
+		margin: "10pt",
+		marginBottom: "20pt",
+		justifyContent: "center",
+		alignItems: "center",
+		borderRadius: 30,
+		marginTop: "52%",
+	},
+	infoValue: {
+		fontFamily: "Montserrat",
+		fontWeight: "light",
+		marginLeft: "20pt",
+		fontSize: 21,
+	},
+	infoContainer: {
+		display: "flex",
+		flexDirection: "row",
+		marginBottom: "15pt",
+	},
+	jumboImg: {
+		position: "absolute",
+		left: 0,
+		top: 0,
+		width: "100%",
+		height: "40%",
+		objectFit: "cover",
+	},
+	desc: {
+		fontFamily: "Montserrat",
+		fontWeight: "normal",
+		fontSize: 24,
+	},
+	thanks: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+		marginBottom: "30pt",
+	},
+});
+
+// Create Document Component
+const MyDocument = () => (
+	<Document>
+		<Page size="A4" style={styles.page}>
+			<Image src={nutricionistaBG} style={styles.jumboImg} />
+			<View style={styles.sectionBanner}>
+				<Text style={styles.infoBannerTitle}>Nutricionista</Text>
+			</View>
+			<View style={styles.sectionBottom}>
+				<View>
+					<View style={styles.thanks}>
+						<Text style={styles.desc}>Hvala na rezervaciji!</Text>
+						<Text style={styles.desc}>
+							Ispod se nalaze podaci koje ste uneli.
+						</Text>
+					</View>
+
+					<View style={styles.infoContainer}>
+						<Text style={styles.infoTitle}>Ime:</Text>
+						<Text style={styles.infoValue}>Milos</Text>
+					</View>
+					<View style={styles.infoContainer}>
+						<Text style={styles.infoTitle}>Prezime:</Text>
+						<Text style={styles.infoValue}>Zivkovic</Text>
+					</View>
+					<View style={styles.infoContainer}>
+						<Text style={styles.infoTitle}>Broj telefona:</Text>
+						<Text style={styles.infoValue}>0692572777</Text>
+					</View>
+					<View style={styles.infoContainer}>
+						<Text style={styles.infoTitle}>Datum:</Text>
+						<Text style={styles.infoValue}>02.05.2020.</Text>
+					</View>
+					<View style={styles.infoContainer}>
+						<Text style={styles.infoTitle}>Opis problema:</Text>
+						<Text style={styles.infoValue}>
+							Ovo je neki opis problema
+						</Text>
+					</View>
+				</View>
+			</View>
+		</Page>
+	</Document>
+);
+
+export default MyDocument;
