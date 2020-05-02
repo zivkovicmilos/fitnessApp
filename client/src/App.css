@@ -441,6 +441,7 @@
 	transition: 0.2s ease-in-out;
 	text-decoration: none;
 	color: black;
+	outline: none !important;
 }
 
 .servicesSelector a:hover,
@@ -771,4 +772,44 @@ textarea {
 
 .card-body {
 	width: 280px;
+}
+
+.checkmark {
+	width: 55%;
+}
+
+.path {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 0;
+	animation: dash 2s ease-in-out;
+	-webkit-animation: dash 2s ease-in-out;
+}
+
+.spin {
+	animation: spin 2s;
+	-webkit-animation: spin 2s;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+}
+
+.success {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	color: black;
+	font-size: 30px;
+	margin: 20px auto;
+	text-align: center;
+	animation: text ease-in-out 0.4s;
+	-webkit-animation: text ease-in-out 0.4s;
+}
+
+.successBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.pdfIcon {
+	width: 2.5em;
 }
