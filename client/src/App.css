@@ -652,14 +652,40 @@ textarea {
 }
 
 .contactForm {
-	width: 70%;
+	margin-top: 35px;
+	width: 95%;
+}
+
+.contactForm .form-group {
+	width: 80%;
 }
 
 .map {
-	background-color: yellow;
-	width: 250px;
-	height: 250px;
+	position: relative;
+	text-align: right;
+	height: 100%;
+	width: 100%;
 }
+
+.mapRow {
+	padding-top: 25px;
+	height: 95%;
+}
+
+.gmap_canvas {
+	overflow: hidden;
+	background: none !important;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#gmap_canvas {
+	height: 100%;
+	width: 100%;
+	border: 0px;
+}
+
 .social {
 	min-width: 35px;
 	padding: 10px;
@@ -696,11 +722,20 @@ textarea {
 	background-color: var(--orange);
 	width: 40px;
 	height: 40px;
+	min-width: 40px;
 	clip-path: circle(20px at center);
 }
 
 .contactIcon > img {
 	width: 20px;
+}
+
+.credentials {
+	width: 75%;
+}
+
+.minContactForm {
+	min-width: 250px;
 }
 
 .paddinglessCol {
@@ -710,4 +745,9 @@ textarea {
 .myRow {
 	display: flex;
 	align-items: center;
+	margin-bottom: 8px;
+}
+
+.minRow {
+	min-width: 250px;
 }

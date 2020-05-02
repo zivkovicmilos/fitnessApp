@@ -5,8 +5,8 @@ import phone from "../../assets/svg/about/phone.svg";
 
 const ContactInfo = () => {
 	return (
-		<div class="container">
-			<div class="row centerRowY">
+		<React.Fragment>
+			<div class="form-row centerRowY">
 				<div className="col-12 myRow">
 					<div class="contactIcon d-flex justify-content-center">
 						<img src={location} />
@@ -16,7 +16,7 @@ const ContactInfo = () => {
 					</span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="form-row">
 				<div class="col-6 myRow">
 					<div class="contactIcon d-flex justify-content-center">
 						<img src={clock} />
@@ -27,10 +27,10 @@ const ContactInfo = () => {
 					<div class="contactIcon d-flex justify-content-center">
 						<img src={[phone]} />
 					</div>
-					<span className="pl-3">+381 123456789</span>
+					<span className="pl-3">+381 123-456-789</span>
 				</div>
 			</div>
-		</div>
+		</React.Fragment>
 	);
 };
 
