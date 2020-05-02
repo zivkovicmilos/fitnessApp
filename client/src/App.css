@@ -774,7 +774,6 @@ textarea {
 	width: 280px;
 }
 
-<<<<<<< Updated upstream
 .checkmark {
 	width: 55%;
 }
@@ -813,7 +812,7 @@ textarea {
 
 .pdfIcon {
 	width: 2.5em;
-=======
+}
 .arrows {
 	width: 50px;
 	height: 50px;
@@ -830,5 +829,4 @@ textarea {
 	height: 200px;
 	border: 1px solid black;
 	border-radius: 20px;
->>>>>>> Stashed changes
 }
