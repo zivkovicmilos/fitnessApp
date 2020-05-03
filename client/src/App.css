@@ -825,8 +825,30 @@ textarea {
 }
 
 .galleryImg {
-	width: 250px;
-	height: 200px;
+	height: 100%;
 	border: 1px solid black;
 	border-radius: 20px;
+}
+
+.rowsDown {
+	display: flex;
+	align-items: center;
+	float: left;
+}
+
+.hPerc80 {
+	height: 80% !important;
+}
+
+.slide {
+	height: 100% !important;
+}
+
+.carousel-inner {
+	height: 100% !important;
+}
+
+.carousel-item {
+	height: 100% !important;
+	transition: (0.8s ease-in-out left) !important;
 }

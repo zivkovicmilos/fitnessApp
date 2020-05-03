@@ -1,15 +1,14 @@
 import React from "react";
-import msg1 from "../../assets/img/slikeONama/msg1.jpeg";
+import msg1 from "../../assets/img/slikeONama/msg1.jpg";
+import msg2 from "../../assets/img/slikeONama/msg2.jpg";
 import nutri1 from "../../assets/img/slikeONama/nutri1.jpg";
 import nutri2 from "../../assets/img/slikeONama/nutri2.png";
 import training1 from "../../assets/img/slikeONama/training1.jpeg";
 import training2 from "../../assets/img/slikeONama/training2.jpg";
 import training3 from "../../assets/img/slikeONama/training3.jpg";
 import training4 from "../../assets/img/slikeONama/training4.jpg";
-import training5 from "../../assets/img/slikeONama/training5.jpg";
+import training5 from "../../assets/img/slikeONama/training5.jpeg";
 import training6 from "../../assets/img/slikeONama/training6.jpg";
-import left from "../../assets/svg/about/arrowLeft.svg";
-import right from "../../assets/svg/about/arrowRight.svg";
 
 const SingleGallery = (props) => {
 	return (
@@ -53,6 +52,13 @@ const SingleGallery = (props) => {
 				<div class="carousel-item">
 					<img
 						src={training3}
+						className="d-block w-100 galleryImg"
+						alt="..."
+					/>
+				</div>
+				<div className="carousel-item">
+					<img
+						src={msg2}
 						className="d-block w-100 galleryImg"
 						alt="..."
 					/>

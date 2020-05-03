@@ -18,7 +18,6 @@ const ONama = () => {
 			/>
 			<Trophies />
 			<Contact />
-			<DoubleGallery />
 			<Footer color="white" />
 		</div>
 	);
