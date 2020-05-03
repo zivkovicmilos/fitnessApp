@@ -5,11 +5,11 @@ const SectionList = (props) => {
 	return (
 		<div className="sectionList">
 			<div className="row">
-				<div className="col-md-2 offset-md-3 typeSort">
+				<div className="col-lg-2 offset-lg-3 col-md-2 offset-md-2 col-sm-3 offset-sm-1 col-2 offset-1 typeSort">
 					<span className="typeSortActive">IME</span>
-					<span>|</span>
+					<span className="sortSeparator">|</span>
 					<span>TRAJANJE</span>
-					<span>|</span>
+					<span className="sortSeparator">|</span>
 					<span>NIVO</span>
 				</div>
 			</div>

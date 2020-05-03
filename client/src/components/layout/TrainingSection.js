@@ -13,7 +13,7 @@ const TrainingSection = (props) => {
 					<div className="row centerRow">
 						<img
 							src={yogaBanner}
-							className="typeBanner col-xs-12"
+							className="typeBanner col-8 col-md-5 col-lg-4"
 						/>
 					</div>
 					<SectionList type="yoga" />
@@ -26,7 +26,7 @@ const TrainingSection = (props) => {
 					<div className="row centerRow">
 						<img
 							src={pilatesBanner}
-							className="typeBanner col-xs-12"
+							className="typeBanner col-8 col-md-5 col-lg-4"
 						/>
 					</div>
 					<SectionList type="pilates" />
@@ -39,7 +39,7 @@ const TrainingSection = (props) => {
 					<div className="row centerRow">
 						<img
 							src={coreBanner}
-							className="typeBanner col-xs-12"
+							className="typeBanner col-8 col-md-5 col-lg-4"
 						/>
 					</div>
 					<SectionList type="core" />
@@ -52,7 +52,7 @@ const TrainingSection = (props) => {
 					<div className="row centerRow">
 						<img
 							src={cardioBanner}
-							className="typeBanner col-xs-12"
+							className="typeBanner col-8 col-md-5 col-lg-4"
 						/>
 					</div>
 					<SectionList type="cardio" />

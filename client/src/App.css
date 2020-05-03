@@ -426,6 +426,24 @@
 	margin-top: 0.5em;
 }
 
+@media (max-width: 990px) {
+	.sectionListItem {
+		margin-bottom: 2em;
+	}
+
+	.sectonList:last-child {
+		margin-bottom: 0;
+	}
+
+	.typeImg {
+		margin-bottom: 1em;
+	}
+}
+
+.sortSeparator {
+	margin: 0 0.5em;
+}
+
 .servicesSelector {
 	display: inline-flex;
 	color: black;
