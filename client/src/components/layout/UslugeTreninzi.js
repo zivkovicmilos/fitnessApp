@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import InfoSectionLeft from "./InfoSectionLeft";
 import TrainingSection from "./TrainingSection";
+import InfoSectionWorkouts from "./Services/InfoSectionWorkouts";
 
 const UslugeTreninzi = () => {
 	return (

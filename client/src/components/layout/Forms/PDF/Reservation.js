@@ -13,6 +13,7 @@ import {
 } from "@react-pdf/renderer";
 
 import nutricionistaBG from "../../../../assets/img/infoPics/nutricionista.jpg";
+import masazeBG from "../../../../assets/img/infoPics/masaze.jpg";
 
 Font.register({
 	family: "Montserrat",
@@ -115,48 +116,54 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = () => (
-	<Document>
-		<Page size="A4" style={styles.page}>
-			<Image src={nutricionistaBG} style={styles.jumboImg} />
-			<View style={styles.sectionBanner}>
-				<Text style={styles.infoBannerTitle}>Nutricionista</Text>
-			</View>
-			<View style={styles.sectionBottom}>
-				<View>
-					<View style={styles.thanks}>
-						<Text style={styles.desc}>Hvala na rezervaciji!</Text>
-						<Text style={styles.desc}>
-							Ispod se nalaze podaci koje ste uneli.
-						</Text>
-					</View>
+const Reservation = (props) => {
+	const { formData } = props;
+	return (
+		<Document>
+			<Page size="A4" style={styles.page}>
+				{props.section == "Nutricionista" ? (
+					<Image src={nutricionistaBG} style={styles.jumboImg} />
+				) : (
+					<Image src={masazeBG} style={styles.jumboImg} />
+				)}
 
-					<View style={styles.infoContainer}>
-						<Text style={styles.infoTitle}>Ime:</Text>
-						<Text style={styles.infoValue}>Milos</Text>
-					</View>
-					<View style={styles.infoContainer}>
-						<Text style={styles.infoTitle}>Prezime:</Text>
-						<Text style={styles.infoValue}>Zivkovic</Text>
-					</View>
-					<View style={styles.infoContainer}>
-						<Text style={styles.infoTitle}>Broj telefona:</Text>
-						<Text style={styles.infoValue}>0692572777</Text>
-					</View>
-					<View style={styles.infoContainer}>
-						<Text style={styles.infoTitle}>Datum:</Text>
-						<Text style={styles.infoValue}>02.05.2020.</Text>
-					</View>
-					<View style={styles.infoContainer}>
-						<Text style={styles.infoTitle}>Opis problema:</Text>
-						<Text style={styles.infoValue}>
-							Ovo je neki opis problema
-						</Text>
+				<View style={styles.sectionBanner}>
+					<Text style={styles.infoBannerTitle}>{props.section}</Text>
+				</View>
+				<View style={styles.sectionBottom}>
+					<View>
+						<View style={styles.thanks}>
+							<Text style={styles.desc}>Hvala na rezervaciji!</Text>
+							<Text style={styles.desc}>
+								Ispod se nalaze podaci koje ste uneli.
+							</Text>
+						</View>
+
+						<View style={styles.infoContainer}>
+							<Text style={styles.infoTitle}>Ime:</Text>
+							<Text style={styles.infoValue}>{formData.firstName}</Text>
+						</View>
+						<View style={styles.infoContainer}>
+							<Text style={styles.infoTitle}>Prezime:</Text>
+							<Text style={styles.infoValue}>{formData.lastName}</Text>
+						</View>
+						<View style={styles.infoContainer}>
+							<Text style={styles.infoTitle}>Broj telefona:</Text>
+							<Text style={styles.infoValue}>{formData.phone}</Text>
+						</View>
+						<View style={styles.infoContainer}>
+							<Text style={styles.infoTitle}>Datum:</Text>
+							<Text style={styles.infoValue}>{formData.date}</Text>
+						</View>
+						<View style={styles.infoContainer}>
+							<Text style={styles.infoTitle}>Opis problema:</Text>
+							<Text style={styles.infoValue}>{formData.description}</Text>
+						</View>
 					</View>
 				</View>
-			</View>
-		</Page>
-	</Document>
-);
+			</Page>
+		</Document>
+	);
+};
 
-export default MyDocument;
+export default Reservation;

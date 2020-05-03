@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import FormError from "./Forms/FormError";
 import Success from "./Forms/Success";
 import send from "../../assets/svg/send.svg";
+import { PromiseProvider } from "mongoose";
 
 const validationSchema = Yup.object().shape({
 	firstName: Yup.string()
@@ -25,10 +26,17 @@ const validationSchema = Yup.object().shape({
 		.required("Opis je obavezan"),
 });
 
-const ServicesForm = () => {
+const ServicesForm = (props) => {
 	const [submitted, setSubmitted] = useState(false);
+	const [formData, setFormData] = useState({
+		firstName: "",
+		lastName: "",
+		phone: "",
+		date: "",
+		description: "",
+	});
 
-	if (submitted) {
+	if (!submitted) {
 		return (
 			<Formik
 				initialValues={{
@@ -42,15 +50,19 @@ const ServicesForm = () => {
 				onSubmit={(values, { setSubmitting, resetForm }) => {
 					setSubmitting(true);
 					// axios post
-					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2));
-						resetForm();
 
-						setSubmitted(false); // state
+					setFormData({
+						...formData,
+						firstName: values.firstName,
+						lastName: values.lastName,
+						phone: values.phone,
+						date: values.date,
+						description: values.description,
+					});
 
-						setSubmitting(false);
-					}, 1000);
-					//alert("Form submitted");
+					setSubmitted(true);
+					resetForm();
+					setSubmitting(false);
 				}}
 			>
 				{({
@@ -70,15 +82,11 @@ const ServicesForm = () => {
 									<input
 										type="text"
 										className={`form-control ${
-											touched.firstName &&
-											errors.firstName
+											touched.firstName && errors.firstName
 												? "is-invalid"
 												: null
 										} ${
-											touched.firstName &&
-											!errors.firstName
-												? "is-valid"
-												: null
+											touched.firstName && !errors.firstName ? "is-valid" : null
 										}`}
 										id="firstName"
 										name="firstName"
@@ -92,19 +100,15 @@ const ServicesForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="form-group">
+							<div className="form-group mr-3">
 								<label htmlFor="lastName">Prezime</label>
 								<div className="invalid-group">
 									<input
 										type="text"
 										className={`form-control ${
-											touched.lastName && errors.lastName
-												? "is-invalid"
-												: null
+											touched.lastName && errors.lastName ? "is-invalid" : null
 										} ${
-											touched.lastName && !errors.lastName
-												? "is-valid"
-												: null
+											touched.lastName && !errors.lastName ? "is-valid" : null
 										}`}
 										id="lastName"
 										name="lastName"
@@ -126,24 +130,15 @@ const ServicesForm = () => {
 									<input
 										type="text"
 										className={`form-control ${
-											touched.phone && errors.phone
-												? "is-invalid"
-												: null
-										} ${
-											touched.phone && !errors.phone
-												? "is-valid"
-												: null
-										}`}
+											touched.phone && errors.phone ? "is-invalid" : null
+										} ${touched.phone && !errors.phone ? "is-valid" : null}`}
 										id="phone"
 										name="phone"
 										onChange={handleChange}
 										onBlur={handleBlur}
 										value={values.phone}
 									/>
-									<FormError
-										touched={touched.phone}
-										message={errors.phone}
-									/>
+									<FormError touched={touched.phone} message={errors.phone} />
 								</div>
 							</div>
 							<div className="form-group">
@@ -152,39 +147,28 @@ const ServicesForm = () => {
 									<input
 										type="date"
 										className={`form-control ${
-											touched.date && errors.date
-												? "is-invalid"
-												: null
-										} ${
-											touched.date && !errors.date
-												? "is-valid"
-												: null
-										}`}
+											touched.date && errors.date ? "is-invalid" : null
+										} ${touched.date && !errors.date ? "is-valid" : null}`}
 										id="date"
 										name="date"
 										onChange={handleChange}
 										onBlur={handleBlur}
 										value={values.date}
 									/>
-									<FormError
-										touched={touched.date}
-										message={errors.date}
-									/>
+									<FormError touched={touched.date} message={errors.date} />
 								</div>
 							</div>
 						</div>
 						<div className="form-group">
 							<label htmlFor="description">Opis problema</label>
-							<div className="invalid-group">
+							<div className="invalid-group textAreaInvalid">
 								<textarea
 									className={`form-control ${
-										touched.description &&
-										errors.description
+										touched.description && errors.description
 											? "is-invalid"
 											: null
 									} ${
-										touched.description &&
-										!errors.description
+										touched.description && !errors.description
 											? "is-valid"
 											: null
 									}`}
@@ -201,11 +185,7 @@ const ServicesForm = () => {
 							</div>
 						</div>
 						<div className="text-right">
-							<button
-								className="button"
-								type="submit"
-								disabled={isSubmitting}
-							>
+							<button className="button" type="submit" disabled={isSubmitting}>
 								Pošalji
 								<img src={send} className="icon" />
 							</button>
@@ -215,7 +195,7 @@ const ServicesForm = () => {
 			</Formik>
 		);
 	} else {
-		return <Success />;
+		return <Success formData={formData} section={props.section} />;
 	}
 };
 

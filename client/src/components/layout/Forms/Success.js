@@ -1,13 +1,18 @@
 import React from "react";
 import pdf from "../../../assets/svg/pdf.svg";
 
-import MyDocument from "./PDF/NutritionistPDF";
+import Reservation from "./PDF/Reservation";
 import { PDFDownloadLink, Document, Page } from "@react-pdf/renderer";
 
-const Success = () => {
+const Success = (props) => {
 	const green = "#34e83b";
+
+	const { firstName, lastName } = props.formData;
+
+	const section = props.section.substring(4);
+
 	return (
-		<div className="col-md-6 offset-md-2 successBox mt-4">
+		<div className="col-md-7 col-10 successBox mt-4">
 			<div className="checkmark ">
 				<svg
 					version="1.1"
@@ -68,8 +73,8 @@ const Success = () => {
 			<p className="successBelow">
 				PDF sa podacima možete preuzeti ovde:{" "}
 				<PDFDownloadLink
-					document={<MyDocument />}
-					fileName="somename.pdf"
+					document={<Reservation formData={props.formData} section={section} />}
+					fileName={`${lastName}, ${firstName} - ${section}`}
 				>
 					{({ blob, url, loading, error }) =>
 						loading ? (
