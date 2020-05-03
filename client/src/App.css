@@ -1035,7 +1035,7 @@ textarea {
 	transition: (0.8s ease-in-out left) !important;
 }
 
-.invalid-group {
+.servicesForm .invalid-group {
 	min-height: 70px;
 }
 
@@ -1043,6 +1043,6 @@ textarea {
 	min-height: 102px;
 }
 
-.form-group {
+.servicesForm .form-group {
 	margin-bottom: 0 !important;
 }
