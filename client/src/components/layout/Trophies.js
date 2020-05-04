@@ -10,7 +10,7 @@ import charity from "../../assets/img/charity.png";
 const Trophies = (props) => {
 	return (
 		<div class="container-fluid aboutContainer">
-			<h1>OSVOJILI SMO,</h1>
+			<h1 className="pageTitle">OSVOJILI SMO,</h1>
 			<br />
 			<div class="row centerRowX">
 				<div class="col-lg-4 col-sm-6 col-xs-12 d-flex justify-content-center">

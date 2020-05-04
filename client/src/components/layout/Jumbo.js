@@ -14,8 +14,9 @@ const Jumbo = (props) => {
 	let serviceSelector = props.type == "services" ? true : false;
 	let homeRegister = props.type == "home" ? true : false;
 	let aboutRegister = props.type == "about" ? true : false;
+	let jumboImageClass = props.type == "profile" ? "jumboProfileScale" : "null";
 	return (
-		<div className={`row jumboWrapper ${props.image}`}>
+		<div className={`row jumboWrapper ${props.image} ${jumboImageClass}`}>
 			<div className="container-fluid jumboContent">
 				{!aboutRegister && (
 					<React.Fragment>
@@ -60,9 +61,7 @@ const Jumbo = (props) => {
 				)}
 				{serviceSelector && <ServicesSelector />}
 
-				<div className="row mt-3">
-					{homeRegister && <RegisterField />}
-				</div>
+				<div className="row mt-3">{homeRegister && <RegisterField />}</div>
 			</div>
 			<img src={topPartWhite} className="topPartWhite" />
 		</div>

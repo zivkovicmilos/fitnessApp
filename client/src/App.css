@@ -45,6 +45,10 @@
 	background-position: center center;
 }
 
+.jumboProfileScale {
+	height: 50vh !important;
+}
+
 .jumboHome {
 	background-image: url("./assets/img/homePage.jpg");
 }
