@@ -10,11 +10,7 @@ const Termini = () => {
 					<h1>Moji termini, </h1>
 				</div>
 			</div>
-            <div className="row">
-                {brZak &&
-                    
-                }
-            </div>
+			<div className="row"></div>
 			<div className="row">
 				{!brZak && (
 					<div className="col-12 sad">
