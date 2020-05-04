@@ -5,6 +5,7 @@
 	--indigo: #1e2732;
 	--gray: #f4f4f5;
 	--green: #34e83b;
+	--lightIndigo: #4a545f;
 }
 
 * {
@@ -57,6 +58,14 @@
 
 .jumboONama {
 	background-image: url("./assets/img/onamaPage.jpg");
+}
+
+.jumboPodesavanja {
+	background-image: url("./assets/img/settingsPage.jpg");
+}
+
+.jumboProfile {
+	background-image: url("./assets/img/settingsPage.jpg");
 }
 
 .jumboTextOLD {
@@ -770,6 +779,10 @@ textarea {
 	flex-direction: column !important;
 }
 
+.loginForm .modalBody {
+	flex-direction: row !important;
+}
+
 .modalBody span {
 	margin: 0.2em 0;
 }
@@ -1109,4 +1122,52 @@ textarea {
 
 .servicesForm .form-group {
 	margin-bottom: 0 !important;
+}
+
+.loginRow {
+	width: 100% !important;
+}
+
+.loginRow .form-control {
+	width: 100% !important;
+	border-radius: 5px 5px 5px 5px !important;
+	background-color: var(--lightIndigo);
+}
+
+.loginRow label {
+	margin-left: 0px !important;
+}
+
+.loginRow input[type="text"]:focus {
+	border-width: 2px;
+	border-color: var(--orange) !important;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
+.profileCard {
+	background-image: url("./assets/svg/topPartWhite.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 30%;
+}
+
+.card {
+	background-color: transparent;
+}
+
+.termini {
+	width: 85%;
+}
+
+.sad {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.sad > img {
+	width: 100%;
+	max-width: 250px;
 }

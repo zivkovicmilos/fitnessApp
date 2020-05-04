@@ -3,6 +3,7 @@ import ServicesSelector from "./ServicesSelector";
 import RegisterField from "./Home/RegisterField";
 import topPartWhite from "../../assets/svg/topPartWhite.svg";
 import DoubleGallery from "./DoubleGallery";
+import ProfileImg from "./ProfileImg";
 
 const Jumbo = (props) => {
 	let jumboDesc =
@@ -14,6 +15,7 @@ const Jumbo = (props) => {
 	let serviceSelector = props.type == "services" ? true : false;
 	let homeRegister = props.type == "home" ? true : false;
 	let aboutRegister = props.type == "about" ? true : false;
+	let profileRegister = props.type == "profile" ? true : false;
 	return (
 		<div className={`row jumboWrapper ${props.image}`}>
 			<div className="container-fluid jumboContent">
@@ -64,8 +66,10 @@ const Jumbo = (props) => {
 					{homeRegister && <RegisterField />}
 				</div>
 			</div>
-
-			<img src={topPartWhite} className="topPartWhite" />
+			{profileRegister && <ProfileImg />}
+			{!profileRegister && (
+				<img src={topPartWhite} className="topPartWhite" />
+			)}
 		</div>
 	);
 };

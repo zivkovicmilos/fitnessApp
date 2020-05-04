@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginForm from "../auth/LoginForm";
 
 const Navbar = () => {
 	return (
@@ -40,7 +41,9 @@ const Navbar = () => {
 						</Link>
 					</li>
 				</ul>
-				<div className="my-2 my-lg-0">yoo</div>
+				<div className="my-2 my-lg-0">
+					<LoginForm />
+				</div>
 			</div>
 		</nav>
 	);
