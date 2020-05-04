@@ -9,9 +9,12 @@ const WorkoutSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	description: {
+	descriptionSR: {
 		type: String,
 		required: true,
+	},
+	descriptionEN: {
+		type: String,
 	},
 	duration: {
 		type: Number, // in multiples of 30min
@@ -23,7 +26,6 @@ const WorkoutSchema = new mongoose.Schema({
 	},
 	gallery: {
 		type: [String],
-		required: true,
 	},
 	reviews: {
 		grade: {

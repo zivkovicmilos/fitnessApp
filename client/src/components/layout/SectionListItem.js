@@ -1,14 +1,17 @@
 import React from "react";
-import testImg from "../../assets/img/showcase1.jpg";
+
+//require(image)
 
 const SectionListItem = (props) => {
-	let { title, duration, level, description } = props;
+	let { image, title, duration, level, description } = props;
+	console.log("the picture is " + image);
 	return (
 		<div className="row centerRow sectionListItem">
-			<div className="col-lg-2 col-md-3 offset-lg-1 offset-md-1 col-sm-10 col-10">
-				<img src={testImg} className="typeImg" />
-			</div>
-			<div className="col-lg-5 col-md-5 col-sm-10 col-10">
+			<div
+				className={`col-lg-2 col-md-3 offset-lg-1 offset-md-1 col-sm-10 col-10 typeImgNew ${image}`}
+			></div>
+
+			<div className="col-lg-5 col-md-5 col-sm-10 col-10 typeWrapper">
 				<div className="row centerRowY">
 					<span className="typeTitle">{title}</span>
 					<span className="typeInfo">{" · " + duration + " · " + level}</span>

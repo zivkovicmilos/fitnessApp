@@ -491,7 +491,56 @@
 
 .typeImg {
 	width: 100%;
-	height: auto;
+	height: auto !important;
+}
+
+.typeImgNew {
+	height: 10em;
+	width: 100%;
+	border-radius: 15px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.yoga1 {
+	background-image: url("./assets/img/workouts/yoga/yoga1.jpg");
+}
+.yoga2 {
+	background-image: url("./assets/img/workouts/yoga/yoga2.jpg");
+}
+.yoga3 {
+	background-image: url("./assets/img/workouts/yoga/yoga3.jpg");
+}
+
+.pilates1 {
+	background-image: url("./assets/img/workouts/pilates/pilates1.jpg");
+}
+.pilates2 {
+	background-image: url("./assets/img/workouts/pilates/pilates2.jpg");
+}
+.pilates3 {
+	background-image: url("./assets/img/workouts/pilates/pilates3.jpg");
+}
+
+.core1 {
+	background-image: url("./assets/img/workouts/core/core1.jpg");
+}
+.core2 {
+	background-image: url("./assets/img/workouts/core/core2.jpg");
+}
+.core3 {
+	background-image: url("./assets/img/workouts/core/core3.jpg");
+}
+
+.cardio1 {
+	background-image: url("./assets/img/workouts/cardio/cardio1.jpg");
+}
+.cardio2 {
+	background-image: url("./assets/img/workouts/cardio/cardio2.jpg");
+}
+.cardio3 {
+	background-image: url("./assets/img/workouts/cardio/cardio3.jpg");
 }
 
 .typeTitle {
@@ -515,6 +564,10 @@
 	justify-content: space-between;
 	color: var(--orange);
 	font-size: 14px;
+}
+
+.typeSort span {
+	cursor: pointer;
 }
 
 .typeSortActive {
@@ -541,10 +594,21 @@
 	.typeImg {
 		margin-bottom: 1em;
 	}
+
+	.typeImgNew {
+		margin-bottom: 1em;
+	}
+}
+
+@media (min-width: 768px) {
+	.typeWrapper {
+		margin-left: 1em;
+	}
 }
 
 .sortSeparator {
 	margin: 0 0.5em;
+	cursor: text !important;
 }
 
 .servicesSelector {

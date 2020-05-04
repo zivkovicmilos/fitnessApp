@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import yogaBanner from "../../assets/svg/typeBanners/yoga.svg";
 import pilatesBanner from "../../assets/svg/typeBanners/pilates.svg";
 import coreBanner from "../../assets/svg/typeBanners/core.svg";
