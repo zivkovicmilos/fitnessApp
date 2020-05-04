@@ -3,7 +3,7 @@ import profile from "../../assets/img/profile.jpeg";
 
 const ProfileImg = () => {
 	return (
-		<div className="container-fluid profileCard">
+		<div className="container-fluid profileCard mb-4">
 			<div className="row centerRowX">
 				<div class="card justify-content-center">
 					<img
@@ -12,7 +12,7 @@ const ProfileImg = () => {
 						alt="Image error!!!"
 					/>
 					<div class="card-body">
-						<h5 class="card-title">Miloš Živković</h5>
+						<h2 class="card-title">Miloš Živković</h2>
 					</div>
 				</div>
 			</div>
