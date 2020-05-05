@@ -1251,8 +1251,8 @@ textarea {
 }
 
 .clockIcon {
-	background-color: var(--indigo);
 	height: 20px;
+	margin-right: 5px;
 }
 
 .container80 {

@@ -1,6 +1,6 @@
 import React from "react";
 import profile from "../../assets/img/profile.jpeg";
-import clock from "../../assets/svg/about/clock.svg";
+import blackClock from "../../assets/svg/clockBlack.svg";
 
 const SettingsFields = () => {
 	return (
@@ -20,7 +20,7 @@ const SettingsFields = () => {
 					<div className="row d-flex centerRowX settingsMargin">
 						<div className="col-12 d-flex justify-content-center">
 							<img
-								src={clock}
+								src={blackClock}
 								className="clockIcon"
 								alt="Image error!"
 							/>
