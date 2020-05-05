@@ -759,7 +759,8 @@ textarea {
 }
 
 .modal-dialog {
-	width: 30%;
+	width: 40%;
+	min-width: 300px !important;
 }
 
 .modal-body {
@@ -941,10 +942,6 @@ textarea {
 
 .credentials {
 	width: 75%;
-}
-
-.minContactForm {
-	min-width: 250px;
 }
 
 .paddinglessCol {
@@ -1135,20 +1132,59 @@ textarea {
 
 .loginRow {
 	width: 100% !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.regRow {
+	width: 100% !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
 
 .loginRow .form-control {
 	width: 100% !important;
 	border-radius: 5px 5px 5px 5px !important;
 	background-color: var(--lightIndigo);
+	color: white;
+}
+
+.regRow .form-control {
+	width: 100% !important;
+	border-radius: 5px 5px 5px 5px !important;
+	background-color: var(--lightIndigo);
+	color: white;
 }
 
 .loginRow label {
 	margin-left: 0px !important;
 }
 
+.regRow label {
+	margin-left: 0px !important;
+}
+
+.loginRow input[type="text"] {
+	border: none;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
 .loginRow input[type="text"]:focus {
-	border-width: 2px;
+	border: 2px solid;
+	border-color: var(--orange) !important;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
+.regRow input[type="text"] {
+	border: none;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
+.regRow input[type="text"]:focus {
+	border: 2px solid;
 	border-color: var(--orange) !important;
 	box-shadow: none !important;
 	outline: 0 none !important;
@@ -1245,4 +1281,33 @@ textarea {
 	border: 2px solid var(--orange);
 	background-color: white;
 	color: black;
+}
+
+.regRow input[type="text"] {
+	border: none;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
+.regRow {
+	width: 100% !important;
+}
+
+.regRow label {
+	margin-left: 0px !important;
+}
+
+.regRow input[type="text"]:focus {
+	border-width: 2px;
+	border-color: var(--orange) !important;
+	box-shadow: none !important;
+	outline: 0 none !important;
+}
+
+.imeRCol {
+	padding: 0px !important;
+}
+
+.prezimeRCol {
+	padding: 0px !important;
 }
