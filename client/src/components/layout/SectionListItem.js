@@ -14,7 +14,9 @@ const SectionListItem = (props) => {
 			<div className="col-lg-5 col-md-5 col-sm-10 col-10 typeWrapper">
 				<div className="row centerRowY">
 					<span className="typeTitle">{title}</span>
-					<span className="typeInfo">{" · " + duration + " · " + level}</span>
+					<span className="typeInfo">
+						{" · " + duration + " · " + level}
+					</span>
 				</div>
 				<div className="row typeDesc">{description}</div>
 			</div>

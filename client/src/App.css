@@ -788,6 +788,10 @@ textarea {
 	flex-direction: row !important;
 }
 
+.loginForm .form-control {
+	margin-bottom: 10px !important;
+}
+
 .modalBody span {
 	margin: 0.2em 0;
 }
@@ -1198,12 +1202,47 @@ textarea {
 	height: 50px;
 }
 
-.max50 {
-	max-height: 50px;
-}
-
 .treninziDesc {
 	text-align: left;
 	font-size: 16px;
 	padding-left: 0.5em;
+}
+
+.profilePic {
+	border-radius: 50%;
+	width: 100%;
+	height: auto;
+}
+
+.clockIcon {
+	background-color: var(--indigo);
+	height: 20px;
+}
+
+.container80 {
+	width: 80%;
+}
+
+.settingsMargin {
+	margin: 0 !important;
+	margin-bottom: 25px !important;
+	margin-top: 15px !important;
+}
+
+.buttonsRow {
+	margin-bottom: 25px;
+	margin-top: 45px !important;
+}
+
+.settingsForm .form-control {
+	width: 80%;
+	border: 2px solid var(--indigo);
+	padding-bottom: 10px !important;
+	margin-bottom: 10px;
+}
+
+#deleteButton {
+	border: 2px solid var(--orange);
+	background-color: white;
+	color: black;
 }
