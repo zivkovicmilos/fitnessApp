@@ -21,6 +21,8 @@ const App = () => (
 				<Route exact path="/usluge/masaze" component={Usluge} />
 				<Route exact path="/onama" component={ONama} />
 				<Route exact path="/zakazivanje" component={Zakazivanje} />
+				<Route exact path="/profil" component={Profile} />
+				<Route exact path="/profil/podesavanja" component={Settings} />
 			</Switch>
 		</Fragment>
 	</Router>

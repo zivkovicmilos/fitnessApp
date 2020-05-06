@@ -1320,3 +1320,99 @@ textarea {
 .prezimeRCol {
 	padding: 0px !important;
 }
+
+.languages {
+	color: white;
+	font-family: "Montserrat";
+}
+
+.languages span {
+	cursor: pointer;
+}
+
+.langSeparator {
+	margin: 0 0.5em;
+	cursor: text !important;
+}
+
+.languageActive {
+	font-weight: 700;
+}
+
+.userSection span,
+.userSection .userIcon {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.userIcon {
+	width: 50px;
+	clip-path: circle(50% at 50% 50%);
+}
+
+.userName {
+	color: white;
+}
+
+.userMenu {
+	position: absolute;
+}
+
+nav {
+	z-index: 25 !important;
+}
+
+.userMenu {
+	position: absolute;
+	top: 75px;
+	right: 55px;
+	background: #fff;
+	padding: 1em;
+	border-radius: 15px;
+	display: none;
+
+	transition: 0.5s all ease-in-out;
+}
+
+.userMenu ul {
+	list-style: none;
+	margin-bottom: 0 !important;
+}
+
+.userMenu ul li {
+	margin-bottom: 0.8em;
+}
+
+.userMenu ul li img {
+	margin-right: 0.5em;
+}
+
+.menuIcon {
+	width: 25px;
+}
+
+.userMenu:before {
+	content: "";
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.userMenu a {
+	text-decoration: none;
+	color: black;
+}
+
+.userMenu a:hover {
+	color: var(--orange);
+}
+
+.menuActive {
+	display: block;
+}

@@ -4,7 +4,8 @@ const initialState = {
 	section: "Treninzi",
 	token: localStorage.getItem("token"),
 	isAuthenticated: null,
-	user: null
+	user: null,
+	lang: "sr"
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -38,7 +39,13 @@ const StateProvider = ({ children }) => {
 					token: null,
 					isAuthenticated: false
 				};
-
+			case "CHANGE_LANGUAGE":
+				document.getElementById(state.lang).classList.remove("languageActive");
+				document.getElementById(action.payload).classList.add("languageActive");
+				return {
+					...state,
+					lang: action.payload
+				};
 			default:
 				return state;
 		}
