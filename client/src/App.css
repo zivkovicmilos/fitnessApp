@@ -1160,7 +1160,6 @@ textarea {
 	margin-left: 0px !important;
 }
 
-<<<<<<< Updated upstream
 .regRow label {
 	margin-left: 0px !important;
 }
@@ -1169,7 +1168,7 @@ textarea {
 	border: none;
 	box-shadow: none !important;
 	outline: 0 none !important;
-=======
+}
 .loginRow .form-control {
 	transition: none !important;
 	border: none !important;
@@ -1178,7 +1177,6 @@ textarea {
 
 .loginRow .form-control:focus {
 	border: 2px solid var(--orange) !important;
->>>>>>> Stashed changes
 }
 
 .loginRow input[type="text"]:focus {
