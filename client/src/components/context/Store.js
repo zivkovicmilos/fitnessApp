@@ -2,7 +2,9 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
 	section: "Treninzi",
-	renderedRows: 0,
+	token: localStorage.getItem("token"),
+	isAuthenticated: null,
+	user: null
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -23,8 +25,22 @@ const StateProvider = ({ children }) => {
 		switch (action.type) {
 			case "changeSection":
 				return changeSection(state.section, action.nextSection, state);
+			case "REGISTER_SUCCESS":
+				localStorage.setItem("token", action.payload.token);
+				return {
+					...state,
+					isAuthenticated: true
+				};
+			case "REGISTER_FAIL":
+				localStorage.removeItem("token");
+				return {
+					...state,
+					token: null,
+					isAuthenticated: false
+				};
+
 			default:
-				throw new Error();
+				return state;
 		}
 	}, initialState);
 

@@ -1144,7 +1144,7 @@ textarea {
 
 .loginRow .form-control {
 	width: 100% !important;
-	border-radius: 5px 5px 5px 5px !important;
+	border-radius: 5px !important;
 	background-color: var(--lightIndigo);
 	color: white;
 }
@@ -1160,6 +1160,7 @@ textarea {
 	margin-left: 0px !important;
 }
 
+<<<<<<< Updated upstream
 .regRow label {
 	margin-left: 0px !important;
 }
@@ -1168,6 +1169,16 @@ textarea {
 	border: none;
 	box-shadow: none !important;
 	outline: 0 none !important;
+=======
+.loginRow .form-control {
+	transition: none !important;
+	border: none !important;
+	color: white;
+}
+
+.loginRow .form-control:focus {
+	border: 2px solid var(--orange) !important;
+>>>>>>> Stashed changes
 }
 
 .loginRow input[type="text"]:focus {
