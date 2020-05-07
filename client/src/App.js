@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/layout/Home";
 import Usluge from "./components/layout/Usluge";
 import ONama from "./components/layout/ONama";
 import Zakazivanje from "./components/layout/Zakazivanje";
 import Profile from "./components/layout/Profile";
-import "./App.css";
 import Settings from "./components/layout/Settings";
+import Workout from "./components/layout/Workout";
 
 const App = () => (
 	<Router>
@@ -23,6 +24,7 @@ const App = () => (
 				<Route exact path="/zakazivanje" component={Zakazivanje} />
 				<Route exact path="/profil" component={Profile} />
 				<Route exact path="/profil/podesavanja" component={Settings} />
+				<Route path="/usluge/treninzi/:id" component={Workout} />
 			</Switch>
 		</Fragment>
 	</Router>

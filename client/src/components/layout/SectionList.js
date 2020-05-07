@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SectionListItem from "./SectionListItem";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const SectionList = (props) => {
@@ -12,7 +13,7 @@ const SectionList = (props) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios.get(`/api/workouts/${props.type}`);
+			const result = await axios.get(`/api/workouts/type/${props.type}`);
 			setWorkouts(result.data);
 		};
 
@@ -77,24 +78,17 @@ const SectionList = (props) => {
 				</div>
 			</div>
 			{workouts.map((workout) => (
-				<SectionListItem
-					key={workout._id}
-					image={workout.picture}
-					title={workout.name}
-					duration={`${workout.duration * 30} min.`}
-					level={`Nivo ${workout.level}`}
-					description={workout.descriptionSR}
-				/>
+				<Link to={`treninzi/${workout._id}`}>
+					<SectionListItem
+						key={workout._id}
+						image={workout.picture}
+						title={workout.name}
+						duration={`${workout.duration * 30} min.`}
+						level={`Nivo ${workout.level}`}
+						description={workout.descriptionSR}
+					/>
+				</Link>
 			))}
-
-			{/*
-			<SectionListItem
-				title="Naslov 1"
-				duration="45 min"
-				level="Nivo 1"
-				description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero nec dui sollicitudin lobortis vel eget mi. Praesent posuere pellentesque augue at pulvinar. Cras egestas dignissim sodales. Aenean elementum enim gravida, tempor turpis sit amet, bibendum lacus..."
-			/>
-			*/}
 		</div>
 	);
 };

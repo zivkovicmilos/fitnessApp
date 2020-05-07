@@ -571,6 +571,7 @@
 
 .typeDesc {
 	text-align: justify;
+	color: black !important;
 }
 
 .typeSort {
@@ -590,6 +591,10 @@
 
 .sectionList {
 	margin-top: 2em;
+}
+
+.sectionList a {
+	text-decoration: none;
 }
 
 .sectionListItem {
@@ -1415,4 +1420,51 @@ nav {
 
 .menuActive {
 	display: block;
+}
+
+.workoutDesc {
+	text-align: justify;
+}
+
+.workoutInfoTitle {
+	font-weight: 500;
+	font-size: 1.4em;
+}
+
+.workoutStar {
+	width: 2em;
+	margin: 0 5px;
+}
+
+.workoutIcon {
+	width: 2em;
+}
+
+.starRating {
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+.reviewButton {
+	border-radius: 10px !important;
+	padding: 0.8em 1.5em;
+	font-size: 1.2em;
+}
+
+.comment {
+	color: black;
+	font-weight: 300;
+	font-style: italic;
+	text-align: justify;
+}
+
+.userColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.commentUserName {
+	font-weight: 500;
 }

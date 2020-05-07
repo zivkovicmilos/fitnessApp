@@ -14,7 +14,12 @@ const Jumbo = (props) => {
 	let serviceSelector = props.type == "services" ? true : false;
 	let homeRegister = props.type == "home" ? true : false;
 	let aboutRegister = props.type == "about" ? true : false;
-	let jumboImageClass = props.type == "profile" ? "jumboProfileScale" : "null";
+	let jumboImageClass =
+		props.type == "profile" ||
+		props.type == "settings" ||
+		props.type == "workout"
+			? "jumboProfileScale"
+			: "null";
 	return (
 		<div className={`row jumboWrapper ${props.image} ${jumboImageClass}`}>
 			<div className="container-fluid jumboContent">

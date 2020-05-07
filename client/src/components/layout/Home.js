@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import ShowcaseItem from "./ShowcaseItem";
 import Jumbo from "./Jumbo";
@@ -6,8 +6,20 @@ import Footer from "./Footer";
 import homeImg from "../../assets/img/homePage.jpg";
 import bottomPartWhite from "../../assets/svg/bottomPartWhite.svg";
 import MembershipItem from "./MembershipItem";
+import axios from "axios";
 
 const Home = () => {
+	const [perks, setPerks] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const result = await axios.get(`/api/perks`);
+			setPerks(result.data);
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<div className="container-fluid">
 			<Navbar />
@@ -38,37 +50,35 @@ const Home = () => {
 				</h3>
 
 				<div className="row centerRow">
-					<MembershipItem
-						name="JEDAN"
-						price="2.500rsd"
-						membershipItems={[
-							"Pogodnost 1",
-							"Pogodnost 2",
-							"Pogodnost 3",
-							"Pogodnost 4",
-						]}
-					/>
-					<MembershipItem
-						name="DVA"
-						price="2.500rsd"
-						membershipItems={[
-							"Pogodnost 1",
-							"Pogodnost 2",
-							"Pogodnost 3",
-							"Pogodnost 4",
-						]}
-					/>
-					<MembershipItem
-						name="TRI"
-						price="2.500rsd"
-						membershipItems={[
-							"Pogodnost 1",
-							"Pogodnost 2",
-							"Pogodnost 3",
-							"Pogodnost 4",
-						]}
-					/>
+					{perks.map((perk) => (
+						<MembershipItem
+							name={perk.name}
+							price={perk.price}
+							membershipItems={perk.items}
+						/>
+					))}
 				</div>
+				{/*
+				
+				<div className="row centerRow">
+					<MembershipItem
+						name={perks[0].name}
+						price={perks[0].price}
+						membershipItems={perks[0].items}
+					/>
+					<MembershipItem
+						name={perks[1].name}
+						price={perks[1].price}
+						membershipItems={perks[1].items}
+					/>
+					<MembershipItem
+						name={perks[2].name}
+						price={perks[2].price}
+						membershipItems={perks[2].items}
+					/>
+					
+				</div>
+				*/}
 			</div>
 			<Footer color="gray" />
 		</div>
