@@ -30,7 +30,7 @@ const LoginForm = () => {
 				Prijavi se
 			</button>
 
-			<div className="modal fade" tabindex="-1" id="loginModal" role="dialog">
+			<div className="modal fade" tabIndex="-1" id="loginModal" role="dialog">
 				<Formik
 					initialValues={{
 						email: "",
@@ -68,7 +68,7 @@ const LoginForm = () => {
 								});
 
 								try {
-									const res = await axios.post("/api/auth", body, config);
+									let res = await axios.post("/api/auth", body, config);
 
 									// res.data as payload
 									dispatch({
@@ -76,6 +76,20 @@ const LoginForm = () => {
 										payload: {
 											token: res.data.token
 										}
+									});
+
+									if (localStorage.getItem("token") != null) {
+										axios.defaults.headers.common[
+											"x-auth-token"
+										] = `${localStorage.getItem("token").replace(/"/g, "")}`;
+									} else {
+										axios.defaults.headers.common["x-auth-token"] = null;
+									}
+									res = await axios.get("/api/auth");
+
+									dispatch({
+										type: "LOAD_USER",
+										payload: res.data
 									});
 								} catch (err) {
 									console.log(err);

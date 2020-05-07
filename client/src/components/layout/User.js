@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import LoginForm from "../auth/LoginForm";
+import RegisterForm from "../auth/RegisterForm";
 import { store } from "../context/Store";
 import { Link } from "react-router-dom";
 import userIcon from "../../assets/svg/user/user.svg";
@@ -8,8 +9,15 @@ import logoutIcon from "../../assets/svg/user/logout.svg";
 
 const User = () => {
 	const globalState = useContext(store);
+	const { dispatch } = globalState;
 
-	if (!globalState.state.isAuthenticated || globalState.state.isLoading) {
+	const { user } = globalState.state;
+
+	if (
+		!globalState.state.isAuthenticated ||
+		globalState.state.isLoading ||
+		!user
+	) {
 		// User is not logged in, display the login button
 		return <LoginForm />;
 	} else {
@@ -24,11 +32,8 @@ const User = () => {
 								.classList.toggle("menuActive");
 						}}
 					>
-						<img
-							src="https://via.placeholder.com/150"
-							className="userIcon ml-4"
-						/>
-						<span className="userName ml-2">Miloš</span>
+						<img src={`${user ? user.avatar : ""}`} className="userIcon ml-4" />
+						<span className="userName ml-2">{user ? user.firstName : ""}</span>
 					</div>
 					<div className="userMenu" id="userMenu">
 						<ul>
@@ -58,7 +63,15 @@ const User = () => {
 									Podešavanja
 								</Link>
 							</li>
-							<li className="mb-0">
+							<li
+								className="mb-0"
+								onClick={() => {
+									dispatch({
+										type: "LOGOUT",
+										payload: {}
+									});
+								}}
+							>
 								<img src={logoutIcon} className="menuIcon" />
 								Odjava
 							</li>

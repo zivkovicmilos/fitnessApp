@@ -4,25 +4,25 @@ import starFull from "../../assets/svg/starFull.svg";
 const ShowcaseItem = () => {
 	//col-md-offset-1
 	return (
-		<div class="col-lg-4 col-md-6 homeItems">
-			<div class="showcaseBox">
-				<div class="showcaseImg"></div>
-				<div class="showcaseBoxLower">
-					<h1 class="showcaseTitle">Trening 1</h1>
-					<div class="rating">
-						<div class="stars">
-							<img src={starFull} class="star" />
-							<img src={starFull} class="star" />
-							<img src={starFull} class="star" />
-							<img src={starFull} class="star" />
-							<img src={starFull} class="star" />
+		<div className="col-lg-4 col-md-6 homeItems">
+			<div className="showcaseBox">
+				<div className="showcaseImg"></div>
+				<div className="showcaseBoxLower">
+					<h1 className="showcaseTitle">Trening 1</h1>
+					<div className="rating">
+						<div className="stars">
+							<img src={starFull} className="star" />
+							<img src={starFull} className="star" />
+							<img src={starFull} className="star" />
+							<img src={starFull} className="star" />
+							<img src={starFull} className="star" />
 						</div>
-						<h2 class="showcaseNum">(356)</h2>
+						<h2 className="showcaseNum">(356)</h2>
 					</div>
-					<p class="showcaseDesc">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Curabitur porta vehicula tempor. Vivamus faucibus
-						aliquam faucibus aliquam faucibus aliquam faucibus...
+					<p className="showcaseDesc">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+						porta vehicula tempor. Vivamus faucibus aliquam faucibus aliquam
+						faucibus aliquam faucibus...
 					</p>
 				</div>
 			</div>

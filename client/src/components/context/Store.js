@@ -20,45 +20,6 @@ const changeSection = (prevSection, nextSection, state) => {
 	console.log("PREV " + state.section + " NEXT " + nextSection);
 	return { ...state, section: nextSection };
 };
-
-const loginUser = (email, password, state) => {
-	const config = {
-		headers: {
-			"Content-Type": "application/json"
-		}
-	};
-
-	const body = JSON.stringify({ email, password });
-
-	try {
-		const res = axios.post("/api/auth", body, config);
-
-		// res.data as payload
-		localStorage.setItem("token", res.data.token);
-
-		alert(
-			"Global state was " +
-				state.isAuthenticated +
-				", now it's " +
-				state.isAuthenticated
-		);
-
-		return {
-			...state,
-			isAuthenticated: true,
-			token: res.data.token
-		};
-	} catch (err) {
-		console.log(err);
-		localStorage.removeItem("token");
-		return {
-			...state,
-			isAuthenticated: false,
-			token: null
-		};
-	}
-};
-
 /* PROVIDER LOGIC */
 
 const StateProvider = ({ children }) => {
@@ -86,15 +47,17 @@ const StateProvider = ({ children }) => {
 				};
 			case "LOGIN":
 				//loginUser(action.payload.email, action.payload.password, state);
-				localStorage.setItem("token", JSON.stringify(action.payload.token));
+				localStorage.setItem("token", action.payload.token);
+				axios.defaults.headers.common["x-auth-token"] = action.payload.token;
+
 				return {
 					...state,
 					isAuthenticated: true,
 					user: null,
 					token: action.payload.token
 				};
-				break;
 			case "LOGOUT":
+			case "AUTH_FAIL":
 				localStorage.clear();
 				return {
 					...state,
@@ -109,7 +72,13 @@ const StateProvider = ({ children }) => {
 					...state,
 					lang: action.payload
 				};
-
+			case "LOAD_USER":
+				console.log("LOADING USER " + JSON.stringify(action.payload));
+				return {
+					...state,
+					isAuthenticated: true,
+					user: action.payload
+				};
 			default:
 				return state;
 		}

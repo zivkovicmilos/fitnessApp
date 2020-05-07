@@ -1336,6 +1336,14 @@ textarea {
 	position: absolute;
 }
 
+.userMenu li {
+	cursor: pointer;
+}
+
+.userMenu li:hover {
+	color: var(--orange);
+}
+
 nav {
 	z-index: 25 !important;
 }
