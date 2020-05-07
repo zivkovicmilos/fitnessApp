@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import ShowcaseItem from "./ShowcaseItem";
 import Jumbo from "./Jumbo";
 import Footer from "./Footer";
-import homeImg from "../../assets/img/homePage.jpg";
 import bottomPartWhite from "../../assets/svg/bottomPartWhite.svg";
 import MembershipItem from "./MembershipItem";
 import axios from "axios";

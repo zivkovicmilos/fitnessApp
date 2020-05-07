@@ -44,13 +44,6 @@ const Navbar = () => {
 			</div>
 			<div className="row centerRowY mr-5">
 				<Language />
-				{
-					//<User />
-				}
-
-				{
-					//<LoginForm /> <RegisterForm />
-				}
 			</div>
 		</nav>
 	);
