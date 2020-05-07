@@ -23,7 +23,7 @@ const validationSchema = Yup.object().shape({
 	description: Yup.string()
 		.min(10, "Opis je prekratak")
 		.max(255, "Opis je predugačak")
-		.required("Opis je obavezan"),
+		.required("Opis je obavezan")
 });
 
 const ServicesForm = (props) => {
@@ -33,7 +33,7 @@ const ServicesForm = (props) => {
 		lastName: "",
 		phone: "",
 		date: "",
-		description: "",
+		description: ""
 	});
 
 	if (!submitted) {
@@ -44,7 +44,7 @@ const ServicesForm = (props) => {
 					lastName: "",
 					phone: "",
 					date: "",
-					description: "",
+					description: ""
 				}}
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -57,7 +57,7 @@ const ServicesForm = (props) => {
 						lastName: values.lastName,
 						phone: values.phone,
 						date: values.date,
-						description: values.description,
+						description: values.description
 					});
 
 					setSubmitted(true);
@@ -72,7 +72,7 @@ const ServicesForm = (props) => {
 					handleChange,
 					handleBlur,
 					handleSubmit,
-					isSubmitting,
+					isSubmitting
 				}) => (
 					<form className="servicesForm" onSubmit={handleSubmit}>
 						<div className="form-row">

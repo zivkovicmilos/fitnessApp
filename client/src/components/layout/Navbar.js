@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LoginForm from "../auth/LoginForm";
-import RegisterForm from "../auth/RegisterForm";
+//import LoginForm from "../auth/LoginForm";
+//import RegisterForm from "../auth/RegisterForm";
 import Language from "./Language";
 import User from "./User";
 
@@ -43,13 +43,14 @@ const Navbar = () => {
 				</ul>
 			</div>
 			<div className="row centerRowY mr-5">
-				{<Language />}
-				<User />
+				<Language />
+				{
+					//<User />
+				}
 
-				{/*
-					<LoginForm />
-					<RegisterForm />
-					*/}
+				{
+					//<LoginForm /> <RegisterForm />
+				}
 			</div>
 		</nav>
 	);

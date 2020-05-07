@@ -52,33 +52,13 @@ const Home = () => {
 				<div className="row centerRow">
 					{perks.map((perk) => (
 						<MembershipItem
+							key={perk._id}
 							name={perk.name}
 							price={perk.price}
 							membershipItems={perk.items}
 						/>
 					))}
 				</div>
-				{/*
-				
-				<div className="row centerRow">
-					<MembershipItem
-						name={perks[0].name}
-						price={perks[0].price}
-						membershipItems={perks[0].items}
-					/>
-					<MembershipItem
-						name={perks[1].name}
-						price={perks[1].price}
-						membershipItems={perks[1].items}
-					/>
-					<MembershipItem
-						name={perks[2].name}
-						price={perks[2].price}
-						membershipItems={perks[2].items}
-					/>
-					
-				</div>
-				*/}
 			</div>
 			<Footer color="gray" />
 		</div>

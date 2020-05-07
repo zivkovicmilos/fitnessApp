@@ -18,6 +18,7 @@
 
 .navbar {
 	padding-left: 50px;
+	z-index: 1050 !important;
 }
 
 .navbar-nav {
@@ -473,6 +474,10 @@
 
 	.servicesForm .invalid-group {
 		min-height: 65px !important;
+	}
+
+	.loginForm .invalid-group {
+		min-height: 70px !important;
 	}
 
 	.servicesForm .textAreaInvalid {
@@ -1127,6 +1132,10 @@ textarea {
 	min-height: 70px;
 }
 
+.loginForm .invalid-group {
+	min-height: 70px;
+}
+
 .textAreaInvalid {
 	min-height: 102px;
 }
@@ -1135,73 +1144,55 @@ textarea {
 	margin-bottom: 0 !important;
 }
 
-.loginRow {
+.formRow {
 	width: 100% !important;
 	margin-left: 0px !important;
 	margin-right: 0px !important;
+	display: block !important;
 }
 
-.regRow {
-	width: 100% !important;
-	margin-left: 0px !important;
-	margin-right: 0px !important;
+.formRow .form-group {
+	margin-bottom: 0 !important;
 }
 
-.loginRow .form-control {
+.formRow .form-control {
 	width: 100% !important;
 	border-radius: 5px !important;
-	background-color: var(--lightIndigo);
-	color: white;
+	background-color: var(--lightIndigo) !important;
+	color: white !important;
 }
 
-.regRow .form-control {
-	width: 100% !important;
-	border-radius: 5px 5px 5px 5px !important;
-	background-color: var(--lightIndigo);
-	color: white;
-}
-
-.loginRow label {
+.formRow label {
 	margin-left: 0px !important;
 }
 
-.regRow label {
-	margin-left: 0px !important;
-}
-
-.loginRow input[type="text"] {
-	border: none;
+.formRow input[type="text"],
+.formRow input[type="password"] {
+	border: none !important;
 	box-shadow: none !important;
 	outline: 0 none !important;
 }
-.loginRow .form-control {
+.formRow .form-control {
 	transition: none !important;
 	border: none !important;
 	color: white;
 }
 
-.loginRow .form-control:focus {
+.formRow .form-control:focus {
 	border: 2px solid var(--orange) !important;
 }
 
-.loginRow input[type="text"]:focus {
+.formRow input[type="text"]:focus,
+.formRow input[type="password"] {
 	border: 2px solid;
 	border-color: var(--orange) !important;
 	box-shadow: none !important;
 	outline: 0 none !important;
 }
 
-.regRow input[type="text"] {
-	border: none;
-	box-shadow: none !important;
-	outline: 0 none !important;
-}
-
-.regRow input[type="text"]:focus {
-	border: 2px solid;
-	border-color: var(--orange) !important;
-	box-shadow: none !important;
-	outline: 0 none !important;
+.labelMin {
+	font-weight: 300;
+	font-size: 0.8em;
 }
 
 .card {
@@ -1295,27 +1286,6 @@ textarea {
 	border: 2px solid var(--orange);
 	background-color: white;
 	color: black;
-}
-
-.regRow input[type="text"] {
-	border: none;
-	box-shadow: none !important;
-	outline: 0 none !important;
-}
-
-.regRow {
-	width: 100% !important;
-}
-
-.regRow label {
-	margin-left: 0px !important;
-}
-
-.regRow input[type="text"]:focus {
-	border-width: 2px;
-	border-color: var(--orange) !important;
-	box-shadow: none !important;
-	outline: 0 none !important;
 }
 
 .imeRCol {

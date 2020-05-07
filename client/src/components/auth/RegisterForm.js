@@ -19,54 +19,41 @@ const RegistterForm = () => {
 				role="dialog"
 			>
 				<form className="registrationForm d-flex justify-content-center">
-					<div
-						className="modal-dialog  justify-content-center"
-						role="document"
-					>
+					<div className="modal-dialog  justify-content-center" role="document">
 						<div className="modal-content">
 							<div className="container justify-content-center">
-								<div className="row modalHead centerRow regRow justify-content-center">
+								<div className="row modalHead centerRow formRow justify-content-center">
 									Registracija
 								</div>
-								<div className="row d-flex regRow justify-content-start">
+								<div className="row d-flex formRow justify-content-start">
 									<div className="col-sm-12 col-lg-5 imeRCol mb-2">
 										<label for="imeR">Ime</label>
-										<input
-											type="text"
-											className="form-control"
-											id="imeR"
-										/>
+										<input type="text" className="form-control" id="imeR" />
 									</div>
 									<div className="col-sm-12 offset-lg-1 col-lg-6 prezimeRCol mb-2">
 										<label for="prezimeR">Prezime</label>
-										<input
-											type="text"
-											className="form-control"
-											id="prezimeR"
-										/>
+										<input type="text" className="form-control" id="prezimeR" />
 									</div>
 								</div>
-								<div className="row modalBody regRow justify-content-start">
+								<div className="row modalBody formRow justify-content-start">
 									<label for="mailR">E-mail</label>
+									<input type="text" className="form-control mb-2" id="mailR" />
+									<label for="pswdR mt-5">
+										Lozinka <span className="labelMin">(min. 6 karaktera)</span>
+									</label>
 									<input
-										type="text"
-										className="form-control mb-2"
-										id="mailR"
-									/>
-									<label for="pswdR mt-5">Lozinka</label>
-									<input
-										type="text"
+										type="password"
 										className="form-control mb-2"
 										id="pswdR"
 									/>
-									<label for="pswdRP mt-5">Lozinka</label>
+									<label for="pswdRP mt-5">Potvrda lozinke</label>
 									<input
-										type="text"
+										type="password"
 										className="form-control mb-2"
 										id="pswdRP"
 									/>
 								</div>
-								<div className="row modalBottom regRow justify-content-right">
+								<div className="row modalBottom formRow justify-content-right">
 									<button
 										type="button"
 										className="modalButton"
