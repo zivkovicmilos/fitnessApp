@@ -1,7 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import FormError from "./../layout/Forms/FormError";
+import { store } from "../context/Store";
+import axios from "axios";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -13,11 +15,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
-	const [formData, setFormData] = useState({
-		email: "",
-		password: ""
-	});
-	/*
+	const globalState = useContext(store);
+	const { dispatch } = globalState;
+
 	return (
 		<Fragment>
 			<button
@@ -37,21 +37,6 @@ const LoginForm = () => {
 						password: ""
 					}}
 					validationSchema={validationSchema}
-					onSubmit={(values, { setSubmitting, resetForm }) => {
-						setSubmitting(true);
-						// axios post
-
-						//document.getElementById("loginModal").modal();
-						alert("I'm HEREEEE");
-						setFormData({
-							...formData,
-							email: values.email,
-							password: values.password
-						});
-
-						resetForm();
-						setSubmitting(false);
-					}}
 				>
 					{({
 						values,
@@ -64,10 +49,47 @@ const LoginForm = () => {
 					}) => (
 						<form
 							className="loginForm d-flex justify-content-center"
-							onSubmit={(e) => {
+							onSubmit={async (e) => {
 								e.preventDefault();
+								dispatch({
+									type: "SETLOADING",
+									payload: {}
+								});
 
-								handleSubmit(values);
+								const config = {
+									headers: {
+										"Content-Type": "application/json"
+									}
+								};
+
+								const body = JSON.stringify({
+									email: values.email,
+									password: values.password
+								});
+
+								try {
+									const res = await axios.post("/api/auth", body, config);
+
+									// res.data as payload
+									dispatch({
+										type: "LOGIN",
+										payload: {
+											token: res.data.token
+										}
+									});
+								} catch (err) {
+									console.log(err);
+									dispatch({
+										type: "LOGOUT",
+										payload: {}
+									});
+								}
+
+								document.getElementById("loginButton").click();
+								dispatch({
+									type: "SETLOADING",
+									payload: {}
+								});
 							}}
 						>
 							<div
@@ -81,7 +103,7 @@ const LoginForm = () => {
 									<div className="modalBody">
 										<div className="form-row formRow">
 											<div className="form-group">
-												<label for="email">E-mail</label>
+												<label htmlFor="email">E-mail</label>
 												<div className="invalid-group">
 													<input
 														type="text"
@@ -108,7 +130,7 @@ const LoginForm = () => {
 
 										<div className="form-row formRow">
 											<div className="form-group">
-												<label for="password">Lozinka</label>
+												<label htmlFor="password">Lozinka</label>
 												<div className="invalid-group">
 													<input
 														type="password"
@@ -152,8 +174,6 @@ const LoginForm = () => {
 			</div>
 		</Fragment>
 	);
-	*/
-	return <div></div>;
 };
 
 export default LoginForm;

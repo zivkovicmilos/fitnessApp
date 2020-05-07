@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import LoginForm from "../auth/LoginForm";
 import { store } from "../context/Store";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import logoutIcon from "../../assets/svg/user/logout.svg";
 const User = () => {
 	const globalState = useContext(store);
 
-	if (!globalState.state.user == null) {
+	if (!globalState.state.isAuthenticated || globalState.state.isLoading) {
 		// User is not logged in, display the login button
 		return <LoginForm />;
 	} else {

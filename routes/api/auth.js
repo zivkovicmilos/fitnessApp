@@ -28,7 +28,7 @@ router.post(
 	[
 		// Check user input
 		check("email", "Mejl adresa je obavezna").isEmail(),
-		check("password", "Šifra je obavezna znakova").exists(),
+		check("password", "Šifra je obavezna znakova").exists()
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
@@ -36,7 +36,9 @@ router.post(
 			return res.status(400).json({ errors: errors.array() });
 		}
 
-		const { firstName, lastName, email, password } = req.body;
+		const { email, password } = req.body;
+
+		console.log("Email: " + email + ", password: " + password);
 
 		try {
 			// Check if the user exists
@@ -48,8 +50,8 @@ router.post(
 
 			const payLoad = {
 				user: {
-					id: user.id,
-				},
+					id: user.id
+				}
 			};
 
 			const isMatch = await bcrypt.compare(password, user.password);
@@ -58,11 +60,13 @@ router.post(
 				return res.status(400).json({ errors: [{ msg: "Neispravni podaci" }] });
 			}
 
+			console.log("Authenticating...");
+
 			jwt.sign(
 				payLoad,
 				config.get("jwtSecret"),
 				{
-					expiresIn: 360000,
+					expiresIn: 360000
 				},
 				(err, token) => {
 					if (err) throw err;
