@@ -35,7 +35,6 @@ const RegistterForm = (props) => {
 
 	useEffect(() => {
 		userEmail = props.email;
-		console.log("Getting " + userEmail);
 	}, [props.email]);
 
 	return (

@@ -12,7 +12,6 @@ const RegisterField = () => {
 					className="form-control registerField"
 					placeholder="E-mail"
 					onChange={(e) => {
-						console.log("Logging " + e.target.value);
 						setEmailField(e.target.value);
 					}}
 					id="emailRegField"
