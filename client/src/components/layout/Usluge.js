@@ -36,9 +36,7 @@ const Services = () => {
 			<Navbar />
 			<Jumbo
 				type="services"
-				desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Mauris id ligula consequat, eleifend neque convallis,
-				bibendum tellus."
+				desc="Članovima se daje ekskluzivni pristup teretanama, vođenim   treninzima, konsultacijama sa nutricionistima kao i spa centru."
 				jumboText="Naše usluge"
 				image="jumboUsluge"
 			/>

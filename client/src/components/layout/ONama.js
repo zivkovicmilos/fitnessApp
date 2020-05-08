@@ -14,7 +14,7 @@ const ONama = () => {
 				type="about"
 				jumboText="Naš tim"
 				image="jumboONama"
-				desc="Ovo je stranica o nama"
+				desc="Ovde možete naučiti nešto više o nama, našem timu i dostignućima."
 			/>
 			<Trophies />
 			<Contact />
