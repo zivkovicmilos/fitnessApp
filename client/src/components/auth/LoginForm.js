@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import FormError from "./../layout/Forms/FormError";
@@ -20,15 +20,14 @@ const LoginForm = () => {
 
 	return (
 		<Fragment>
-			<button
-				type="button"
-				className="btn btn-primary"
+			<span
 				data-toggle="modal"
 				data-target="#loginModal"
 				id="loginButton"
+				className="ml-4 loginText"
 			>
 				Prijavi se
-			</button>
+			</span>
 
 			<div className="modal fade" tabIndex="-1" id="loginModal" role="dialog">
 				<Formik
@@ -68,7 +67,7 @@ const LoginForm = () => {
 								});
 
 								try {
-									let res = await axios.post("/api/auth", body, config);
+									let res = await axios.post("api/auth", body, config);
 
 									// res.data as payload
 									dispatch({
@@ -85,7 +84,7 @@ const LoginForm = () => {
 									} else {
 										axios.defaults.headers.common["x-auth-token"] = null;
 									}
-									res = await axios.get("/api/auth");
+									res = await axios.get("api/auth");
 
 									dispatch({
 										type: "LOAD_USER",
@@ -116,7 +115,7 @@ const LoginForm = () => {
 									</div>
 									<div className="modalBody">
 										<div className="form-row formRow">
-											<div className="form-group">
+											<div className="form-group col">
 												<label htmlFor="email">E-mail</label>
 												<div className="invalid-group">
 													<input
@@ -143,7 +142,7 @@ const LoginForm = () => {
 										</div>
 
 										<div className="form-row formRow">
-											<div className="form-group">
+											<div className="form-group col">
 												<label htmlFor="password">Lozinka</label>
 												<div className="invalid-group">
 													<input

@@ -228,6 +228,34 @@
 	transform: scaleX(0.8);
 }
 
+.loginText {
+	color: white !important;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 2px;
+}
+
+.loginText::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--orange);
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.loginText:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(0.8);
+	transform: scaleX(0.8);
+}
+
 .membershipBox {
 	padding: 30px 20px;
 }
@@ -478,6 +506,10 @@
 
 	.loginForm .invalid-group {
 		min-height: 70px !important;
+	}
+
+	.regisstrationForm .invalid-group {
+		min-height: 65px !important;
 	}
 
 	.servicesForm .textAreaInvalid {
@@ -826,6 +858,10 @@ textarea {
 	outline: none !important;
 }
 
+.modalButtonFix {
+	border-radius: 10px !important;
+}
+
 .modalBottom {
 	justify-content: flex-end;
 	margin-top: 1em;
@@ -916,13 +952,16 @@ textarea {
 }
 
 .registerFieldWrapper .form-row .form-control {
-	width: 60% !important;
+	width: 60%;
+}
+
+.registerField {
 	border-radius: 20px 0 0 20px !important;
 }
 
 .registerFieldWrapper .form-row .modalButton {
 	width: auto !important;
-	border-radius: 0 20px 20px 0 !important;
+	border-radius: 0 20px 20px 0;
 }
 .centerRowY {
 	align-items: center;
@@ -1136,6 +1175,10 @@ textarea {
 	min-height: 70px;
 }
 
+.registrationForm .invalid-group {
+	min-height: 65px !important;
+}
+
 .textAreaInvalid {
 	min-height: 102px;
 }
@@ -1148,7 +1191,6 @@ textarea {
 	width: 100% !important;
 	margin-left: 0px !important;
 	margin-right: 0px !important;
-	display: block !important;
 }
 
 .formRow .form-group {
@@ -1445,4 +1487,10 @@ nav {
 
 .commentUserName {
 	font-weight: 500;
+}
+
+.loginText {
+	cursor: pointer;
+	color: white;
+	font-weight: 700;
 }

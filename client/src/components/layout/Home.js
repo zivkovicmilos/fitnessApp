@@ -12,7 +12,7 @@ const Home = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios.get(`/api/perks`);
+			const result = await axios.get(`api/perks`);
 			setPerks(result.data);
 		};
 

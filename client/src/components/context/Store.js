@@ -73,7 +73,6 @@ const StateProvider = ({ children }) => {
 					lang: action.payload
 				};
 			case "LOAD_USER":
-				console.log("LOADING USER " + JSON.stringify(action.payload));
 				return {
 					...state,
 					isAuthenticated: true,
