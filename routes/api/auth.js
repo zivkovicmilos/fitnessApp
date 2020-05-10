@@ -38,8 +38,6 @@ router.post(
 
 		const { email, password } = req.body;
 
-		console.log("Email: " + email + ", password: " + password);
-
 		try {
 			// Check if the user exists
 			let user = await User.findOne({ email: email });

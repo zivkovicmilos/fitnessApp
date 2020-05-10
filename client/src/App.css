@@ -1320,7 +1320,6 @@ textarea {
 .settingsForm .form-control {
 	width: 80%;
 	border: 2px solid var(--indigo);
-	padding-bottom: 10px !important;
 	margin-bottom: 10px;
 }
 
@@ -1328,6 +1327,13 @@ textarea {
 	border: 2px solid var(--orange);
 	background-color: white;
 	color: black;
+	transition: 0.2s all ease-in-out;
+}
+
+#deleteButton:hover {
+	color: white;
+	background-color: var(--orange);
+	transition: 0.2s all ease-in-out;
 }
 
 .imeRCol {
