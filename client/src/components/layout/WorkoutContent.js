@@ -4,6 +4,7 @@ import WorkoutInfo from "./Workout/WorkoutInfo";
 import WorkoutGallery from "./Workout/WorkoutGallery";
 import ReviewButton from "./Workout/ReviewButton";
 import Comments from "./Workout/Comments";
+import DoubleGallery from "./DoubleGallery";
 
 const WorkoutContent = (props) => {
 	const { workoutData } = props;
@@ -42,11 +43,18 @@ const WorkoutContent = (props) => {
 							duration={workoutData.duration}
 						/>
 					</div>
-					<div className="row centerRow gallery mb-3">
+					<div className="centerRow workoutGallery w-50 gallery mb-3">
 						{
 							// <WorkoutGallery />
 						}
-						Gallery here
+						<WorkoutGallery />
+						<video autoplay loop controls="controls" width="200" height="150">
+							<source
+								src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
 					</div>
 					<div className="row centerRow workoutReviewButton">
 						<ReviewButton />
