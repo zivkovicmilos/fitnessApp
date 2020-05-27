@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import FormError from "./../layout/Forms/FormError";
 import { store } from "../context/Store";
 import axios from "axios";
+import close from "./../../assets/svg/close.svg";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -110,8 +111,14 @@ const LoginForm = () => {
 								role="document"
 							>
 								<div className="modal-content">
-									<div className="row modalHead centerRow formRow justify-content-center">
-										PRIJAVA
+									<div className="row modalHead formRow justify-content-between">
+										<span>PRIJAVA</span>
+										<img
+											src={close}
+											className="closeButton"
+											data-toggle="modal"
+											data-target="#loginModal"
+										/>
 									</div>
 									<div className="modalBody">
 										<div className="form-row formRow">

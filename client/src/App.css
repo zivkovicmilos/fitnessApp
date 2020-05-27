@@ -1032,6 +1032,10 @@ textarea {
 	width: 55%;
 }
 
+.card-img-top {
+	object-fit: cover !important;
+}
+
 .path {
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 0;
@@ -1140,7 +1144,7 @@ textarea {
 
 .galleryImg {
 	height: 100%;
-	border: 1px solid black;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 	border-radius: 20px;
 }
 
@@ -1175,8 +1179,23 @@ textarea {
 	min-height: 70px;
 }
 
+.reviewForm .invalid-group {
+	min-height: 102px;
+}
+
+.closeButton {
+	width: 0.6em;
+	cursor: pointer;
+}
+
 .registrationForm .invalid-group {
 	min-height: 65px !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+	color: #fff;
+	border-color: var(--orange);
+	background-color: var(--orange);
 }
 
 .textAreaInvalid {
@@ -1482,6 +1501,15 @@ nav {
 	font-weight: 300;
 	font-style: italic;
 	text-align: justify;
+}
+
+.commentSlider {
+	cursor: pointer;
+}
+
+.disabledBtn {
+	pointer-events: none;
+	opacity: 0.6;
 }
 
 .userColumn {

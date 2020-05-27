@@ -18,8 +18,8 @@ router.post(
 		check("lastName", "Prezime je obavezno").not().isEmpty(),
 		check("email", "Mejl adresa je obavezna").isEmail(),
 		check("password", "Šifra mora sadržati 6 ili više znakova").isLength({
-			min: 6,
-		}),
+			min: 6
+		})
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
@@ -43,7 +43,7 @@ router.post(
 			const avatar = gravatar.url(email, {
 				s: "200",
 				r: "pg",
-				d: "mm",
+				d: "mm"
 			});
 
 			user = new User({
@@ -51,7 +51,7 @@ router.post(
 				lastName,
 				email,
 				avatar,
-				password,
+				password
 			});
 
 			// Encrypt the password
@@ -63,15 +63,15 @@ router.post(
 
 			const payLoad = {
 				user: {
-					id: user.id,
-				},
+					id: user.id
+				}
 			};
 
 			jwt.sign(
 				payLoad,
 				config.get("jwtSecret"),
 				{
-					expiresIn: 360000,
+					expiresIn: 360000
 				},
 				(err, token) => {
 					if (err) throw err;
@@ -84,5 +84,30 @@ router.post(
 		}
 	}
 );
+
+// @route   GET api/users/{id}
+// @desc    Get a specific user's profile
+// @access  Public
+router.get("/:id", async (req, res) => {
+	try {
+		const user = await User.findById(req.params.id)
+			.select("-_id")
+			.select("-password")
+			.select("-email")
+			.select("-lastName")
+			.select("-date");
+
+		if (!user) {
+			return res
+				.status(400)
+				.json({ msg: "Ne postoji profil za ovog korisnika" });
+		}
+
+		res.json(user);
+	} catch (err) {
+		console.error(err.message);
+		res.status(500).send("Server Error");
+	}
+});
 
 module.exports = router;

@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import FormError from "./../layout/Forms/FormError";
 import { store } from "../context/Store";
 import axios from "axios";
+import close from "./../../assets/svg/close.svg";
 
 const validationSchema = Yup.object().shape({
 	firstName: Yup.string()
@@ -136,8 +137,14 @@ const RegistterForm = (props) => {
 								role="document"
 							>
 								<div className="modal-content">
-									<div className="row modalHead centerRow formRow justify-content-center">
-										REGISTRACIJA
+									<div className="row modalHead formRow justify-content-between">
+										<span>REGISTRACIJA</span>
+										<img
+											src={close}
+											className="closeButton"
+											data-toggle="modal"
+											data-target="#registrationModal"
+										/>
 									</div>
 									<div className="modalBody">
 										<div className="form-row formRow">

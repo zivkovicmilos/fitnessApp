@@ -3,50 +3,50 @@ const mongoose = require("mongoose");
 const WorkoutSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: true,
+		required: true
 	},
 	picture: {
 		type: String,
-		required: true,
+		required: true
 	},
 	descriptionSR: {
 		type: String,
-		required: true,
+		required: true
 	},
 	descriptionEN: {
-		type: String,
+		type: String
 	},
 	duration: {
 		type: Number, // in multiples of 30min
-		requried: true,
+		requried: true
 	},
 	level: {
 		type: Number, // 1-5
-		required: true,
+		required: true
 	},
 	gallery: {
-		type: [String],
+		type: [String]
 	},
 	reviews: {
 		grade: {
 			type: Number,
-			required: true,
-		},
-		averageGrade: {
-			type: Number,
+			required: true
 		},
 		comment: {
-			type: String,
+			type: String
 		},
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "user",
-		},
+			ref: "user"
+		}
+	},
+	averageGrade: {
+		type: Number
 	},
 	type: {
 		type: String,
-		required: true,
-	},
+		required: true
+	}
 });
 
 module.exports = Workout = mongoose.model("workout", WorkoutSchema);

@@ -1,17 +1,18 @@
 import React, { Fragment } from "react";
 import clock from "./../../../assets/svg/clockBlack.svg";
-import level from "./../../../assets/svg/level.svg";
+import levelIcon from "./../../../assets/svg/level.svg";
 
-const WorkoutInfo = () => {
+const WorkoutInfo = (props) => {
+	const { level, duration } = props;
 	return (
 		<Fragment>
 			<div className="mr-5">
 				<img src={clock} className="workoutIcon mr-2" />
-				<span className="workoutDuration">45 min.</span>
+				<span className="workoutDuration">{duration * 30} min.</span>
 			</div>
 			<div>
-				<img src={level} className="workoutIcon mr-2" />
-				<span className="workoutLevel">Nivo 1</span>
+				<img src={levelIcon} className="workoutIcon mr-2" />
+				<span className="workoutLevel">Nivo {level}</span>
 			</div>
 		</Fragment>
 	);

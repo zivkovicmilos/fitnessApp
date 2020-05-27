@@ -12,7 +12,7 @@ const WorkoutContent = (props) => {
 		<div className="centerRow">
 			<div className="row centerRow">
 				<h1
-					className="pageTitle col-md-12 offset-md-1 offset-1 col 
+					className="pageTitle offset-md-1 offset-1 col 
 				"
 				>
 					{workoutData.name}
@@ -28,16 +28,19 @@ const WorkoutContent = (props) => {
 						KOMENTARI
 					</h1>
 					<div className="col-md-12">
-						<Comments />
+						<Comments reviews={workoutData.reviews} />
 					</div>
 				</div>
 				<div className="col-lg-4">
 					<div className="row centerRow workoutInfoTitle mb-3">INFORMACIJE</div>
-					<div className="row centerRowX mb-3">
-						<Stars />
+					<div className="row centerRow mb-3">
+						<Stars score={workoutData.averageGrade} />
 					</div>
 					<div className="row centerRow workoutInfo mb-3">
-						<WorkoutInfo />
+						<WorkoutInfo
+							level={workoutData.level}
+							duration={workoutData.duration}
+						/>
 					</div>
 					<div className="row centerRow gallery mb-3">
 						{

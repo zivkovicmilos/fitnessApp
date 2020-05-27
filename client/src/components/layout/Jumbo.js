@@ -51,7 +51,7 @@ const Jumbo = (props) => {
 									</div>
 									<div className="row">
 										{jumboDesc && (
-											<div className="col-12 offset-md-3 jumboDesc">
+											<div className="col-11 offset-md-3 jumboDesc">
 												{props.desc}
 											</div>
 										)}
