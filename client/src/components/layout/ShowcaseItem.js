@@ -1,28 +1,38 @@
 import React from "react";
 import starFull from "../../assets/svg/starFull.svg";
+import starEmpty from "../../assets/svg/starEmpty.svg";
 
-const ShowcaseItem = () => {
-	//col-md-offset-1
+const ShowcaseItem = (props) => {
+	let { name, picture, descriptionSR, descriptionEN, averageGrade } = props;
+
+	let stars = [];
+	for (let i = 0; i < Math.round(averageGrade); i++) {
+		// Add the full stars
+		stars.push(<img src={starFull} className="workoutStar" />);
+	}
+
+	if (Math.round(averageGrade) < 5) {
+		// Add the empty stars
+		let newNum = 5 - Math.round(averageGrade);
+		for (let i = 0; i < newNum; i++) {
+			stars.push(
+				<img src={starEmpty} key={`star${i}`} className="workoutStar" />
+			);
+		}
+	}
+
 	return (
 		<div className="col-lg-4 col-md-6 homeItems">
 			<div className="showcaseBox">
-				<div className="showcaseImg"></div>
+				<div className={`showcaseImg ${picture}`}></div>
 				<div className="showcaseBoxLower">
-					<h1 className="showcaseTitle">Trening 1</h1>
-					<div className="rating">
-						<div className="stars">
-							<img src={starFull} className="star" />
-							<img src={starFull} className="star" />
-							<img src={starFull} className="star" />
-							<img src={starFull} className="star" />
-							<img src={starFull} className="star" />
-						</div>
-						<h2 className="showcaseNum">(356)</h2>
+					<h1 className="showcaseTitle">{name}</h1>
+					<div className="rating centerRowY">
+						<div className="stars">{stars}</div>
+						<h2 className="showcaseNum mb-0">{averageGrade}</h2>
 					</div>
 					<p className="showcaseDesc">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-						porta vehicula tempor. Vivamus faucibus aliquam faucibus aliquam
-						faucibus aliquam faucibus...
+						{`${descriptionSR.replace(/^(.{160}[^\s]*).*/, "$1")}...`}
 					</p>
 				</div>
 			</div>

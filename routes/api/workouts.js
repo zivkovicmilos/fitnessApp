@@ -105,4 +105,45 @@ router.post("/:workoutId", async (req, res) => {
 	}
 });
 
+// @route   GET api/workouts/top
+// @desc    Get the top 3 workouts
+// @access  Public
+router.get("/top", async (req, res) => {
+	try {
+		Workout.aggregate(
+			[
+				{
+					$sort: {
+						averageGrade: -1
+					}
+				},
+				{
+					$project: {
+						_id: 0,
+						name: 1,
+						picture: 1,
+						descriptionSR: 1,
+						descriptionEN: 1,
+						averageGrade: 1
+					}
+				},
+				{
+					$limit: 3
+				}
+			],
+			(err, result) => {
+				if (err) {
+					console.log(err);
+					return;
+				}
+
+				res.json(result);
+			}
+		);
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server error");
+	}
+});
+
 module.exports = router;

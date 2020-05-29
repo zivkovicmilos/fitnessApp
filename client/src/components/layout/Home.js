@@ -10,10 +10,15 @@ import axios from "axios";
 const Home = () => {
 	const [perks, setPerks] = useState([]);
 
+	const [topWorkouts, setTopWorkouts] = useState([]);
+
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios.get(`api/perks`);
+			let result = await axios.get(`api/perks`);
 			setPerks(result.data);
+
+			result = await axios.get("api/workouts/top");
+			setTopWorkouts(result.data);
 		};
 
 		fetchData();
@@ -37,9 +42,15 @@ const Home = () => {
 				</h2>
 
 				<div className="row centerRow">
-					<ShowcaseItem />
-					<ShowcaseItem />
-					<ShowcaseItem />
+					{topWorkouts.map((topWorkout) => (
+						<ShowcaseItem
+							name={topWorkout.name}
+							picture={topWorkout.picture}
+							descriptionSR={topWorkout.descriptionSR}
+							descriptionEN={topWorkout.descriptionEN}
+							averageGrade={topWorkout.averageGrade}
+						/>
+					))}
 				</div>
 			</div>
 			<div className="row membershipRow centerRow text-center">
