@@ -13,8 +13,12 @@ const Profile = () => {
 		<div className="container-fluid">
 			<Navbar />
 			<Jumbo type="profile" image="jumboProfile" />
-			<ProfileImg avatar={user ? user.avatar : ""} />
-			<Termini />
+			<ProfileImg
+				avatar={user ? user.avatar : ""}
+				firstName={user ? user.firstName : ""}
+				lastName={user ? user.lastName : ""}
+			/>
+			<Termini user={user} />
 			<Footer color="white" />
 		</div>
 	);

@@ -3,28 +3,43 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
 	firstName: {
 		type: String,
-		required: true,
+		required: true
 	},
 	lastName: {
 		type: String,
-		required: true,
+		required: true
 	},
 	email: {
 		type: String,
 		required: true,
-		unique: true,
+		unique: true
 	},
 	password: {
 		type: String,
-		required: true,
+		required: true
 	},
 	avatar: {
-		type: String,
+		type: String
 	},
 	date: {
 		type: Date,
-		default: Date.now,
+		default: Date.now
 	},
+	workouts: {
+		workoutID: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "workout"
+		},
+		date: {
+			type: String
+		},
+		day: {
+			type: Number
+		},
+		time: {
+			type: String
+		}
+	}
 });
 
 module.exports = User = mongoose.model("user", UserSchema);

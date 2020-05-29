@@ -95,6 +95,7 @@ router.get("/:id", async (req, res) => {
 			.select("-password")
 			.select("-email")
 			.select("-lastName")
+			.select("-workouts")
 			.select("-date");
 
 		if (!user) {
@@ -107,6 +108,42 @@ router.get("/:id", async (req, res) => {
 	} catch (err) {
 		console.error(err.message);
 		res.status(500).send("Server Error");
+	}
+});
+
+// @route   POST api/users/newWorkout
+// @desc    Reserves a workout
+// @access  Private
+router.post("/newWorkout", async (req, res) => {
+	const { userID, title, date, day, time } = req.body;
+
+	try {
+		let workoutRes = await Workout.findOne({ name: title });
+
+		if (!workoutRes) {
+			return res.status(400).json({ msg: "Ne postoji ovaj trening" });
+		}
+
+		let workout = {
+			workoutID: workoutRes._id,
+			title: title,
+			date: date,
+			day: Number(day),
+			time: time
+		};
+
+		let updatedModel = await User.findByIdAndUpdate(
+			userID,
+
+			{ $push: { workouts: workout } },
+
+			{ upsert: true }
+		);
+
+		res.status(200).send({ message: "All good :)" });
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server error");
 	}
 });
 

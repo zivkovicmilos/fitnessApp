@@ -26,7 +26,7 @@ router.get("/type/:type", async (req, res) => {
 	}
 });
 
-// @route   GET api/workouts/{id}
+// @route   GET api/workouts/id/{id}
 // @desc    Get a specific workout
 // @access  Public
 router.get("/id/:id", async (req, res) => {

@@ -554,6 +554,14 @@
 	background-position: center center;
 }
 
+.terminImgNew {
+	width: 100%;
+	border-radius: 15px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 .yoga1 {
 	background-image: url("./assets/img/workouts/yoga/yoga1.jpg");
 }
@@ -917,6 +925,10 @@ textarea {
 
 	text-align: center;
 	vertical-align: middle !important;
+}
+
+.workoutTableName {
+	font-weight: 600;
 }
 
 tbody td {
@@ -1364,10 +1376,13 @@ video {
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.treningListItem img {
+.treningListItem .myWorkout {
 	width: 100%;
 	min-width: 150px;
 	border-radius: 20px 20px 20px 20px !important;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .trash {
