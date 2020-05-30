@@ -14,10 +14,10 @@ const Home = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			let result = await axios.get(`api/perks`);
+			let result = await axios.get(`/api/perks`);
 			setPerks(result.data);
 
-			result = await axios.get("api/workouts/top");
+			result = await axios.get("/api/workouts/top");
 			setTopWorkouts(result.data);
 		};
 

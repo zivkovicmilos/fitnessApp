@@ -35,7 +35,7 @@ const TerminList = (props) => {
 
 		const func = async () => {
 			user.workouts.map(async (workout) => {
-				let res = await axios.get(`api/workouts/id/${workout.workoutID}`);
+				let res = await axios.get(`/api/workouts/id/${workout.workoutID}`);
 
 				let workoutInfo = {
 					axiosRes: res.data,

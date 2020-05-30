@@ -114,6 +114,7 @@ router.get("/:id", async (req, res) => {
 // @route   POST api/users/newWorkout
 // @desc    Reserves a workout
 // @access  Private
+// TODO add auth
 router.post("/newWorkout", async (req, res) => {
 	const { userID, title, date, day, time } = req.body;
 
@@ -141,6 +142,67 @@ router.post("/newWorkout", async (req, res) => {
 		);
 
 		res.status(200).send({ message: "All good :)" });
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server error");
+	}
+});
+
+// @route   POST api/users/update
+// @desc    Updates a user's credentials
+// @access  Private
+// TODO add auth
+router.post("/update", async (req, res) => {
+	const { firstName, lastName, email, password } = req.body;
+
+	try {
+		let user = await User.findOne({ email: email });
+
+		if (!user) {
+			return res.status(400).json({ msg: "Korisnik ne postoji" });
+		}
+
+		if (password != "") {
+			// User wants to update the password
+
+			// Encrypt the password
+			const salt = await bcrypt.genSalt(10);
+
+			let newPassword = await bcrypt.hash(password, salt);
+			let updatedModel = await User.findByIdAndUpdate(
+				user.id,
+
+				{ firstName: firstName, lastName: lastName, password: newPassword },
+
+				{ upsert: true }
+			);
+		} else {
+			let updatedModel = await User.findByIdAndUpdate(
+				user.id,
+
+				{ firstName: firstName, lastName: lastName },
+
+				{ upsert: true }
+			);
+		}
+
+		const payLoad = {
+			user: {
+				id: user.id
+			}
+		};
+
+		jwt.sign(
+			payLoad,
+			config.get("jwtSecret"),
+			{
+				expiresIn: 360000
+			},
+			(err, token) => {
+				if (err) throw err;
+				res.json({ token });
+			}
+		);
 	} catch (err) {
 		console.log(err.message);
 		res.status(500).send("Server error");

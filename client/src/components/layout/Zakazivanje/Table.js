@@ -115,7 +115,7 @@ const Table = () => {
 
 										try {
 											let res = await axios.post(
-												"api/users/newWorkout",
+												"/api/users/newWorkout",
 												body,
 												config
 											);

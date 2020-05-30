@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import FormError from "./Forms/FormError";
 import Success from "./Forms/Success";
 import send from "../../assets/svg/send.svg";
-import { PromiseProvider } from "mongoose";
 
 const validationSchema = Yup.object().shape({
 	firstName: Yup.string()

@@ -94,7 +94,7 @@ const RegistterForm = (props) => {
 								});
 
 								try {
-									let res = await axios.post("api/users", body, config);
+									let res = await axios.post("/api/users", body, config);
 
 									// res.data as payload
 									dispatch({
@@ -111,7 +111,7 @@ const RegistterForm = (props) => {
 									} else {
 										axios.defaults.headers.common["x-auth-token"] = null;
 									}
-									res = await axios.get("api/auth");
+									res = await axios.get("/api/auth");
 
 									dispatch({
 										type: "LOAD_USER",

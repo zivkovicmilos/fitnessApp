@@ -68,7 +68,7 @@ const LoginForm = () => {
 								});
 
 								try {
-									let res = await axios.post("api/auth", body, config);
+									let res = await axios.post("/api/auth", body, config);
 
 									// res.data as payload
 									dispatch({
@@ -85,7 +85,7 @@ const LoginForm = () => {
 									} else {
 										axios.defaults.headers.common["x-auth-token"] = null;
 									}
-									res = await axios.get("api/auth");
+									res = await axios.get("/api/auth");
 
 									dispatch({
 										type: "LOAD_USER",
