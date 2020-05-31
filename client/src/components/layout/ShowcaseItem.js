@@ -8,7 +8,9 @@ const ShowcaseItem = (props) => {
 	let stars = [];
 	for (let i = 0; i < Math.round(averageGrade); i++) {
 		// Add the full stars
-		stars.push(<img src={starFull} className="workoutStar" />);
+		stars.push(
+			<img src={starFull} key={`starFull${i}`} className="workoutStar" />
+		);
 	}
 
 	if (Math.round(averageGrade) < 5) {
@@ -16,7 +18,7 @@ const ShowcaseItem = (props) => {
 		let newNum = 5 - Math.round(averageGrade);
 		for (let i = 0; i < newNum; i++) {
 			stars.push(
-				<img src={starEmpty} key={`star${i}`} className="workoutStar" />
+				<img src={starEmpty} key={`starEmpty${i}`} className="workoutStar" />
 			);
 		}
 	}

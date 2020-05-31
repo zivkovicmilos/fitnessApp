@@ -28,7 +28,7 @@ const validationSchema = Yup.object().shape({
 		.required("Šifra je obavezna")
 });
 
-const RegistterForm = (props) => {
+const RegisterForm = (props) => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
 
@@ -42,7 +42,7 @@ const RegistterForm = (props) => {
 		<Fragment>
 			<div
 				className="modal fade"
-				tabindex="-1"
+				tabIndex="-1"
 				id="registrationModal"
 				role="dialog"
 			>
@@ -313,4 +313,4 @@ const RegistterForm = (props) => {
 	);
 };
 
-export default RegistterForm;
+export default RegisterForm;

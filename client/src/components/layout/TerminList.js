@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import TerminListItem from "./TerminListItem";
-import TrainingPic from "../../assets/img/workouts/core/core1.jpg";
+import Sad from "../../assets/svg/sad.svg";
 import { store } from "./../context/Store";
 import axios from "axios";
 
@@ -51,19 +51,35 @@ const TerminList = (props) => {
 	}, []);
 
 	return (
-		<div className="container-fluid">
-			{workouts.map((resWorkout) => (
-				<TerminListItem
-					key={resWorkout.axiosRes._id}
-					title={resWorkout.axiosRes.name}
-					subtitle={`${getDayName(resWorkout.workoutData.day)} ${
-						resWorkout.workoutData.date
-					} ${resWorkout.workoutData.time}`}
-					text={resWorkout.axiosRes.descriptionSR}
-					image={resWorkout.axiosRes.picture}
-				/>
-			))}
-		</div>
+		<Fragment>
+			<div className="container-fluid">
+				{workouts.map((resWorkout) => (
+					<TerminListItem
+						key={resWorkout.axiosRes._id}
+						title={resWorkout.axiosRes.name}
+						subtitle={`${getDayName(resWorkout.workoutData.day)} ${
+							resWorkout.workoutData.date
+						} ${resWorkout.workoutData.time}`}
+						text={resWorkout.axiosRes.descriptionSR}
+						image={resWorkout.axiosRes.picture}
+						workoutID={resWorkout.axiosRes._id}
+						workoutDate={resWorkout.workoutData.date}
+						workoutTime={resWorkout.workoutData.time}
+					/>
+				))}
+			</div>
+
+			{workouts.length < 1 && (
+				<Fragment>
+					<div className="col-12 sad mb-4">
+						<img src={Sad}></img>
+					</div>
+					<div className="col-12 sad">
+						<h2 className="text-center">Nemate zakazane termine</h2>
+					</div>
+				</Fragment>
+			)}
+		</Fragment>
 	);
 };
 

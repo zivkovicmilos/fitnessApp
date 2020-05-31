@@ -9,7 +9,7 @@ import {
 	Document,
 	StyleSheet,
 	Font,
-	Image,
+	Image
 } from "@react-pdf/renderer";
 
 import nutricionistaBG from "../../../../assets/img/infoPics/nutricionista.jpg";
@@ -19,21 +19,21 @@ Font.register({
 	family: "Montserrat",
 	weight: 500,
 	src:
-		"http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf",
+		"http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf"
 });
 
 Font.register({
 	family: "Montserrat",
 	weight: 300,
 	src:
-		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD-w.ttf)",
+		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD-w.ttf)"
 });
 
 Font.register({
 	family: "Montserrat",
 	weight: 700,
 	src:
-		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf",
+		"https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf"
 });
 
 const indigo = "#1e2732";
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 		backgroundColor: indigo,
 		color: "white",
 		width: "100%",
-		height: "100%",
+		height: "100%"
 	},
 	sectionBanner: {
 		display: "flex",
@@ -55,19 +55,19 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		width: "100%",
 		fontFamily: "Montserrat",
-		fontWeight: "bold",
+		fontWeight: "bold"
 	},
 	sectionBottom: {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
 		width: "100%",
-		height: "60%",
+		height: "60%"
 	},
 	infoTitle: {
 		fontFamily: "Montserrat",
 		fontWeight: "bold",
-		fontSize: 21,
+		fontSize: 21
 	},
 	infoBannerTitle: {
 		fontFamily: "Montserrat",
@@ -80,18 +80,18 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 		borderRadius: 30,
-		marginTop: "52%",
+		marginTop: "52%"
 	},
 	infoValue: {
 		fontFamily: "Montserrat",
 		fontWeight: "light",
 		marginLeft: "20pt",
-		fontSize: 21,
+		fontSize: 21
 	},
 	infoContainer: {
 		display: "flex",
 		flexDirection: "row",
-		marginBottom: "15pt",
+		marginBottom: "15pt"
 	},
 	jumboImg: {
 		position: "absolute",
@@ -99,25 +99,27 @@ const styles = StyleSheet.create({
 		top: 0,
 		width: "100%",
 		height: "40%",
-		objectFit: "cover",
+		objectFit: "cover"
 	},
 	desc: {
 		fontFamily: "Montserrat",
 		fontWeight: "normal",
-		fontSize: 24,
+		fontSize: 24
 	},
 	thanks: {
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
-		marginBottom: "30pt",
-	},
+		marginBottom: "30pt"
+	}
 });
 
 // Create Document Component
 const Reservation = (props) => {
 	const { formData } = props;
+
+	//let title = props.section == "Nutricionista" ? "Nutricionista" : "Masaže";
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>

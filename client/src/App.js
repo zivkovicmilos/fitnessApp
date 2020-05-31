@@ -12,11 +12,12 @@ import Workout from "./components/layout/Workout";
 import { store } from "./components/context/Store";
 import axios from "axios";
 import Loading from "./components/layout/Loading";
+import PrivateRoute from "./components/auth/PrivateRoute";
 
 const App = () => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
-	console.log("Getting loaded...");
+
 	useEffect(() => {
 		const fetchData = async () => {
 			if (localStorage.getItem("token") != null) {
@@ -50,15 +51,14 @@ const App = () => {
 			<Fragment>
 				<Route exact path="/" component={Home} />
 				<Switch>
-					<Route exact path="/usluge/podesavanja" component={Settings} />
 					<Route exact path="/usluge/profil" component={Profile} />
 					<Route exact path="/usluge/treninzi" component={Usluge} />
 					<Route exact path="/usluge/nutricionista" component={Usluge} />
 					<Route exact path="/usluge/masaze" component={Usluge} />
 					<Route exact path="/onama" component={ONama} />
 					<Route exact path="/zakazivanje" component={Zakazivanje} />
-					<Route exact path="/profil" component={Profile} />
-					<Route exact path="/profil/podesavanja" component={Settings} />
+					<PrivateRoute exact path="/profil" component={Profile} />
+					<PrivateRoute exact path="/profil/podesavanja" component={Settings} />
 					<Route exact path="/loading" component={Loading} />
 					<Route path="/usluge/treninzi/:id" component={Workout} />
 				</Switch>

@@ -6,6 +6,7 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const auth = require("../../middleware/auth");
 
 // @route   POST api/users
 // @desc    Register new user
@@ -46,12 +47,15 @@ router.post(
 				d: "mm"
 			});
 
+			let workouts = [];
+
 			user = new User({
 				firstName,
 				lastName,
 				email,
 				avatar,
-				password
+				password,
+				workouts
 			});
 
 			// Encrypt the password
@@ -114,8 +118,7 @@ router.get("/:id", async (req, res) => {
 // @route   POST api/users/newWorkout
 // @desc    Reserves a workout
 // @access  Private
-// TODO add auth
-router.post("/newWorkout", async (req, res) => {
+router.post("/newWorkout", auth, async (req, res) => {
 	const { userID, title, date, day, time } = req.body;
 
 	try {
@@ -151,8 +154,7 @@ router.post("/newWorkout", async (req, res) => {
 // @route   POST api/users/update
 // @desc    Updates a user's credentials
 // @access  Private
-// TODO add auth
-router.post("/update", async (req, res) => {
+router.post("/update", auth, async (req, res) => {
 	const { firstName, lastName, email, password } = req.body;
 
 	try {
@@ -203,6 +205,46 @@ router.post("/update", async (req, res) => {
 				res.json({ token });
 			}
 		);
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server error");
+	}
+});
+
+// @route   POST api/users/delete/{workout}
+// @desc    Deletes a user's reservation
+// @access  Private
+router.post("/delete/:email/:workoutID", auth, async (req, res) => {
+	const { workoutTime } = req.body;
+	const { workoutDate } = req.body;
+
+	const email = req.params.email;
+	const workoutID = req.params.workoutID;
+
+	try {
+		let user = await User.findOne({ email: email });
+
+		if (!user) {
+			return res.status(400).json({ msg: "Korisnik ne postoji" });
+		}
+
+		let updatedModel = await User.findByIdAndUpdate(
+			user.id,
+
+			{
+				$pull: {
+					workouts: {
+						workoutID: workoutID,
+						date: workoutDate,
+						time: workoutTime
+					}
+				}
+			},
+
+			{ upsert: true }
+		);
+
+		res.status(200).send({ message: "All good :)" });
 	} catch (err) {
 		console.log(err.message);
 		res.status(500).send("Server error");

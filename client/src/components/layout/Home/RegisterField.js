@@ -5,7 +5,7 @@ const RegisterField = () => {
 	const [emailField, setEmailField] = useState("");
 
 	return (
-		<form className="col-md-5 offset-md-1 registerFieldWrapper">
+		<div className="col-md-5 offset-md-1 registerFieldWrapper">
 			<div className="form-row centerRowY">
 				<input
 					type="text"
@@ -31,7 +31,7 @@ const RegisterField = () => {
 
 				<RegisterForm email={emailField} />
 			</div>
-		</form>
+		</div>
 	);
 };
 

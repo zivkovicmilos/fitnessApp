@@ -75,9 +75,7 @@ const setNewAverage = (workoutId) => {
 // @route   POST api/workouts/{id}
 // @desc    Add a review
 // @access  Private
-
-// TODO add auth
-router.post("/:workoutId", async (req, res) => {
+router.post("/:workoutId", auth, async (req, res) => {
 	const { rating, comment, userId } = req.body;
 	const workoutId = req.params.workoutId;
 

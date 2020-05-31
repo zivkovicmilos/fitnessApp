@@ -189,6 +189,10 @@
 	font-size: 14px;
 }
 
+.infoSectionTitle {
+	font-size: 0.8em;
+}
+
 .sectionTitle {
 	color: var(--orange);
 	font-size: 21px;
@@ -719,6 +723,11 @@
 
 .sectionText {
 	width: 80%;
+	text-align: justify;
+}
+
+.iconSmaller {
+	width: 1em !important;
 }
 
 label {
@@ -1700,4 +1709,8 @@ nav {
 	height: 100vh !important;
 
 	background-color: var(--indigo);
+}
+
+.servicesIcon {
+	width: 1.2em;
 }

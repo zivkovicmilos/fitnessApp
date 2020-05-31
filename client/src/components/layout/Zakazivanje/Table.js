@@ -1,8 +1,13 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import close from "./../../../assets/svg/close.svg";
 import axios from "axios";
+import { store } from "./../../context/Store";
 
 const Table = () => {
+	const globalState = useContext(store);
+	let { user } = globalState.state;
+	const { dispatch } = globalState;
+
 	const [reserveInfo, setReserveInfo] = useState({
 		title: "",
 		date: "",
@@ -88,9 +93,6 @@ const Table = () => {
 									reserveInfo.day
 								)}, ${reserveInfo.date}`}</span>
 								<span className="modalBodyTime">{reserveInfo.time}</span>
-								{
-									//<span className="modalBodyNum">{reserveInfo.num}</span>
-								}
 							</div>
 							<div className="row modalBottom">
 								<button
@@ -106,7 +108,7 @@ const Table = () => {
 										};
 
 										const body = JSON.stringify({
-											userID: "5ed11fe7dac0740ef8bea8eb", // TODO change to token
+											userID: user ? user._id : "",
 											title: reserveInfo.title,
 											date: reserveInfo.date,
 											day: reserveInfo.day,
@@ -119,6 +121,13 @@ const Table = () => {
 												body,
 												config
 											);
+
+											res = await axios.get("/api/auth");
+
+											dispatch({
+												type: "LOAD_USER",
+												payload: res.data
+											});
 										} catch (err) {
 											console.log(err);
 										}

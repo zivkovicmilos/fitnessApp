@@ -42,8 +42,9 @@ const Home = () => {
 				</h2>
 
 				<div className="row centerRow">
-					{topWorkouts.map((topWorkout) => (
+					{topWorkouts.map((topWorkout, index) => (
 						<ShowcaseItem
+							key={`showcase${index}`}
 							name={topWorkout.name}
 							picture={topWorkout.picture}
 							descriptionSR={topWorkout.descriptionSR}
