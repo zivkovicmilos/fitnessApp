@@ -7,7 +7,7 @@ import userIcon from "../../assets/svg/user/user.svg";
 import settingsIcon from "../../assets/svg/user/settings.svg";
 import logoutIcon from "../../assets/svg/user/logout.svg";
 
-const User = () => {
+const TestComp = () => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
 
@@ -68,9 +68,66 @@ const User = () => {
 						</li>
 					</ul>
 				</div>
+				{/*
+        
+				<div className="userSection">
+					<div
+						onClick={() => {
+							document
+								.getElementById("userMenu")
+								.classList.toggle("menuActive");
+						}}
+					>
+						<img src={`${user ? user.avatar : ""}`} className="userIcon ml-4" />
+						<span className="userName ml-2">{user ? user.firstName : ""}</span>
+					</div>
+					<div className="userMenu" id="userMenu">
+						<ul>
+							<li>
+								<Link
+									to="/profil"
+									onClick={() => {
+										document
+											.getElementById("userMenu")
+											.classList.toggle("menuActive");
+									}}
+								>
+									<img src={userIcon} className="menuIcon" />
+									Moj nalog
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/profil/podesavanja"
+									onClick={() => {
+										document
+											.getElementById("userMenu")
+											.classList.toggle("menuActive");
+									}}
+								>
+									<img src={settingsIcon} className="menuIcon" />
+									Podešavanja
+								</Link>
+							</li>
+							<li
+								className="mb-0"
+								onClick={() => {
+									dispatch({
+										type: "LOGOUT",
+										payload: {}
+									});
+								}}
+							>
+								<img src={logoutIcon} className="menuIcon" />
+								Odjava
+							</li>
+						</ul>
+					</div>
+                </div>
+                */}
 			</Fragment>
 		);
 	}
 };
 
-export default User;
+export default TestComp;

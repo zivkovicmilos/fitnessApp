@@ -217,7 +217,7 @@
 	padding-bottom: 2px;
 }
 
-.navbar-nav a::before {
+.navbar-nav a span::before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -232,7 +232,7 @@
 	transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar-nav a:hover:before {
+.navbar-nav a span:hover:before {
 	visibility: visible;
 	-webkit-transform: scaleX(0.8);
 	transform: scaleX(0.8);
@@ -488,6 +488,14 @@
 
 	.hiddenNutrition {
 		display: block;
+	}
+
+	#langUser {
+		margin-right: 0 !important;
+	}
+
+	.nav-link {
+		display: inline-flex;
 	}
 }
 
@@ -1506,10 +1514,6 @@ video {
 	color: white;
 }
 
-.userMenu {
-	position: absolute;
-}
-
 .userMenu li {
 	cursor: pointer;
 }
@@ -1719,4 +1723,92 @@ nav {
 .formError {
 	color: var(--red);
 	font-style: italic;
+}
+
+/* TEST */
+
+.dropdownColumn {
+	cursor: pointer;
+}
+
+.dropdownColumn a {
+	text-decoration: none;
+}
+
+.dropdownColumn ul {
+	list-style: none;
+}
+
+.dropdownColumn li {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	transition-duration: 0.2s;
+}
+
+.dropdownColumn ul li {
+	/*padding: 0.85em 0 1em 0;*/
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdownColumn li a {
+	color: black !important;
+}
+
+.dropdownColumn li:hover {
+	cursor: pointer;
+}
+
+.dropdownColumn ul li ul {
+	background-color: var(--ultraLightGrey);
+	visibility: hidden;
+	opacity: 0;
+	min-width: 10em;
+	position: absolute;
+	transition: 5s background-color ease-in-out;
+	margin-top: 0;
+	display: none;
+	border-radius: 15px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownColumn ul li:hover > ul,
+.dropdownColumn ul li ul:hover {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+
+.dropdownColumn ul li ul li {
+	clear: both;
+	width: 100%;
+	border-radius: 15px;
+	padding: 0.6em 01em !important;
+}
+
+.dropdownColumn ul li ul li:hover {
+	background-color: var(--gray);
+}
+
+.column {
+	display: inline-flex !important;
+	flex-direction: column !important;
+}
+
+.testColumn::after {
+	content: "";
+	padding-bottom: 1em;
+	margin-left: 1em;
+	width: 100%;
+}
+
+.dropdown:before {
+	content: "";
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
 }

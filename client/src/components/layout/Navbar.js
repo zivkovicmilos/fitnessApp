@@ -27,24 +27,24 @@ const Navbar = () => {
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
 						<Link className="nav-link" to="/usluge/treninzi">
-							USLUGE
+							<span>USLUGE</span>
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link className="nav-link" to="/oNama">
-							O NAMA
+							<span>O NAMA</span>
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link className="nav-link" to="/zakazivanje">
-							ZAKAZIVANJE
+							<span>ZAKAZIVANJE</span>
 						</Link>
 					</li>
 				</ul>
-			</div>
-			<div className="row centerRowY mr-5">
-				<Language />
-				<User />
+				<div className="row centerRowY mr-5" id="langUser">
+					<Language />
+					<User />
+				</div>
 			</div>
 		</nav>
 	);
