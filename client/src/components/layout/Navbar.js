@@ -7,7 +7,7 @@ import User from "./User";
 
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark nav-wrapper">
+		<nav className="navbar navbar-expand-md navbar-dark nav-wrapper">
 			<Link className="navbar-brand" to="/">
 				LOGO
 			</Link>
