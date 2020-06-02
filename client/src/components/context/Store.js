@@ -16,9 +16,6 @@ const { Provider } = store;
 /* REDUCERS */
 
 const changeSection = (prevSection, nextSection, state) => {
-	document.getElementById(prevSection).classList.remove("ssActive");
-	document.getElementById(nextSection).classList.add("ssActive");
-	console.log("PREV " + state.section + " NEXT " + nextSection);
 	return { ...state, section: nextSection };
 };
 /* PROVIDER LOGIC */

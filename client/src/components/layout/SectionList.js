@@ -78,7 +78,7 @@ const SectionList = (props) => {
 				</div>
 			</div>
 			{workouts.map((workout) => (
-				<Link to={`treninzi/${workout._id}`}>
+				<Link to={`treninzi/${workout._id}`} key={`linkKey${workout._id}`}>
 					<SectionListItem
 						key={workout._id}
 						image={workout.picture}
