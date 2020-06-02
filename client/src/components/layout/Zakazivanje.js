@@ -121,7 +121,6 @@ const Zakazivanje = () => {
 		console.log(yogaEls);
 		if (!yoga) {
 			let workouts = document.getElementsByClassName("yoga");
-			console.log(`I got ${workouts.length} workouts!`);
 
 			wipeElements(workouts, "yoga");
 		} else {
@@ -144,7 +143,6 @@ const Zakazivanje = () => {
 		console.log(pilatesEls);
 		if (!pilates) {
 			let workouts = document.getElementsByClassName("pilates");
-			console.log(`I got ${workouts.length} workouts!`);
 
 			wipeElements(workouts, "pilates");
 		} else {
@@ -167,7 +165,6 @@ const Zakazivanje = () => {
 		console.log(coreEls);
 		if (!core) {
 			let workouts = document.getElementsByClassName("core");
-			console.log(`I got ${workouts.length} workouts!`);
 
 			wipeElements(workouts, "core");
 		} else {
@@ -190,7 +187,6 @@ const Zakazivanje = () => {
 		console.log(cardioEls);
 		if (!cardio) {
 			let workouts = document.getElementsByClassName("cardio");
-			console.log(`I got ${workouts.length} workouts!`);
 
 			wipeElements(workouts, "cardio");
 		} else {

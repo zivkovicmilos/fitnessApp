@@ -6,7 +6,23 @@ import { store } from "./../../context/Store";
 const Table = () => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
+	let { reload } = globalState.state;
 	const { dispatch } = globalState;
+
+	const [participantData, setParticipantData] = useState({
+		yoga1: "Prijavljeno: 0",
+		yoga2: "Prijavljeno: 0",
+		yoga3: "Prijavljeno: 0",
+		pilates1: "Prijavljeno: 0",
+		pilates2: "Prijavljeno: 0",
+		pilates3: "Prijavljeno: 0",
+		core1: "Prijavljeno: 0",
+		core2: "Prijavljeno: 0",
+		core3: "Prijavljeno: 0",
+		cardio1: "Prijavljeno: 0",
+		cardio2: "Prijavljeno: 0",
+		cardio3: "Prijavljeno: 0"
+	});
 
 	const [reserveInfo, setReserveInfo] = useState({
 		title: "",
@@ -20,6 +36,30 @@ const Table = () => {
 		if (reserveInfo.title == "") return;
 		document.getElementById("reserveModalButton").click();
 	}, [reserveInfo]);
+
+	useEffect(() => {
+		const fetchWorkoutData = () => {
+			let types = ["yoga", "pilates", "core", "cardio"];
+			let myMap = {};
+
+			let res = null;
+			let processed = 0;
+			types.forEach(async (type, index, types) => {
+				for (let i = 0; i < 3; i++) {
+					res = await axios.get(`/api/workouts/participants/${type}${i + 1}`);
+					myMap[`${type}${i + 1}`] = `Prijavljeno: ${res.data[0].participants}`;
+				}
+				processed++;
+
+				// Wait for all of the async calls to finish before setting the state
+				if (processed == types.length) {
+					setParticipantData(myMap);
+				}
+			});
+		};
+
+		fetchWorkoutData();
+	}, [reload]);
 
 	const getDayName = (day) => {
 		switch (day) {
@@ -94,11 +134,11 @@ const Table = () => {
 								)}, ${reserveInfo.date}`}</span>
 								<span className="modalBodyTime">{reserveInfo.time}</span>
 							</div>
-							<div className="row modalBottom">
+							<div className="row centerRowY justify-content-between modalBottom">
+								<span className="formError" id="reserveError"></span>
 								<button
 									type="button"
 									className="modalButton"
-									//data-dismiss="modal"
 									onClick={async (e) => {
 										e.preventDefault();
 										const config = {
@@ -128,11 +168,21 @@ const Table = () => {
 												type: "LOAD_USER",
 												payload: res.data
 											});
+
+											dispatch({
+												type: "RELOAD",
+												payload: ""
+											});
+											document.getElementById("reserveModalButton").click();
+											document.getElementById("reserveError").innerHTML = "";
 										} catch (err) {
-											console.log(err);
+											document.getElementById("reserveError").innerHTML =
+												err.response.data.msg;
 										}
 
-										document.getElementById("reserveModalButton").click();
+										setTimeout(() => {
+											document.getElementById("reserveError").innerHTML = "";
+										}, 3000);
 									}}
 								>
 									Potvrdi
@@ -183,7 +233,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Napredni nivo</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.pilates3}
 							</td>
 							<td></td>
 						</tr>
@@ -209,7 +259,7 @@ const Table = () => {
 									Anatomske i ortopedske vežbe
 								</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.pilates2}
 							</td>
 							<td></td>
 							<td></td>
@@ -238,7 +288,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Upoznajte yogu</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.yoga1}
 							</td>
 							<td></td>
 							<td
@@ -259,7 +309,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Kardio za mršavljenje</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.cardio1}
 							</td>
 							<td></td>
 							<td></td>
@@ -298,7 +348,7 @@ const Table = () => {
 									Core - Šta? Zašto? Kako?
 								</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.core2}
 							</td>
 							<td></td>
 							<td></td>
@@ -322,7 +372,7 @@ const Table = () => {
 									Put do zabavnog kardio treninga
 								</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.cardio2}
 							</td>
 						</tr>
 						<tr id="19:30">
@@ -346,7 +396,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">HardCore</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.core3}
 							</td>
 							<td></td>
 							<td></td>
@@ -373,7 +423,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Yoga za homofoteljuse</span>{" "}
 								<br />
-								Prijavljeno: 5
+								{participantData.yoga2}
 							</td>
 							<td></td>
 							<td></td>
@@ -399,7 +449,7 @@ const Table = () => {
 									Učvrstite core, sačuvajte leđa
 								</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.core1}
 							</td>
 							<td></td>
 						</tr>
@@ -425,7 +475,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Vežbe na strunjači</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.pilates1}
 							</td>
 							<td></td>
 							<td
@@ -446,7 +496,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Yoga za powerliftere</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.yoga3}
 							</td>
 							<td></td>
 							<td></td>
@@ -472,7 +522,7 @@ const Table = () => {
 							>
 								<span className="workoutTableName">Kružni kardio trening</span>
 								<br />
-								Prijavljeno: 5
+								{participantData.cardio3}
 							</td>
 							<td></td>
 							<td></td>

@@ -29,9 +29,6 @@ const SettingsFields = () => {
 
 	const { user } = globalState.state;
 
-	console.log("User is: ");
-	console.log(user);
-
 	let year = "";
 	let month = "";
 	let day = "";
@@ -311,6 +308,48 @@ const SettingsFields = () => {
 												className="modalButton"
 												data-dismiss="modal"
 												id="deleteButton"
+												onClick={async (e) => {
+													e.preventDefault();
+
+													dispatch({
+														type: "SETLOADING",
+														payload: {}
+													});
+
+													const config = {
+														headers: {
+															"Content-Type": "application/json"
+														}
+													};
+
+													const body = JSON.stringify({
+														userID: user._id
+													});
+
+													try {
+														let res = await axios.post(
+															"/api/users/delete",
+															body,
+															config
+														);
+
+														dispatch({
+															type: "LOGOUT",
+															payload: {}
+														});
+													} catch (err) {
+														console.log(err);
+														dispatch({
+															type: "LOGOUT",
+															payload: {}
+														});
+													}
+
+													dispatch({
+														type: "SETLOADING",
+														payload: {}
+													});
+												}}
 											>
 												Ugasi nalog
 											</button>

@@ -15,7 +15,6 @@ const Workout = () => {
 	let { reload } = globalState.state;
 
 	useEffect(() => {
-		console.log("Workout log!");
 		setWorkout({});
 		const fetchData = async () => {
 			const result = await axios.get(`/api/workouts/id/${id}`);

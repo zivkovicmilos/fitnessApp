@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import pencil from "../../../assets/svg/pencil.svg";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
@@ -22,13 +22,46 @@ const ReviewButton = (props) => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
 	const { dispatch } = globalState;
+
+	let { reviews } = props;
 	let location = useLocation();
 	let id = location.pathname.split("/")[3];
+
+	const [canReview, setCanReview] = useState(false);
+
+	useEffect(() => {
+		if (user && reviews != null) {
+			// Check if user has reserved this workout
+			let reserved = false;
+			for (let i = 0; i < user.workouts.length; i++) {
+				if (user.workouts[i].workoutID == id) {
+					// User has reserved this workout
+					reserved = true;
+					break;
+				}
+			}
+			if (user.workouts.length < 1) {
+				reserved = true;
+			}
+
+			// Check if the user has already been to this workout
+			let found = false;
+
+			for (let i = 0; i < reviews.length; i++) {
+				console.log(`REVIEW[${i}] user is ${reviews[i].user}`);
+				if (reviews[i].user == user._id) {
+					found = true;
+					break;
+				}
+			}
+			if (!found && reserved) setCanReview(true);
+		}
+	}, [user, reviews]);
 
 	return (
 		<Fragment>
 			<button
-				className={`reviewButton button ${user ? "" : "disabledBtn"}`}
+				className={`reviewButton button ${canReview ? "" : "disabledBtn"}`}
 				data-toggle="modal"
 				data-target="#reviewModal"
 				id="reviewButton"

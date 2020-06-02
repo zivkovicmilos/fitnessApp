@@ -45,7 +45,7 @@ const WorkoutContent = (props) => {
 					</div>
 					<div className="centerRow workoutGallery w-50 gallery mb-3">
 						<WorkoutGallery />
-						<video autoPlay loop controls="controls" width="200" height="150">
+						<video loop controls="controls" width="200" height="150">
 							<source
 								src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
 								type="video/mp4"
@@ -54,7 +54,7 @@ const WorkoutContent = (props) => {
 						</video>
 					</div>
 					<div className="row centerRow workoutReviewButton">
-						<ReviewButton />
+						<ReviewButton reviews={workoutData.reviews} />
 					</div>
 				</div>
 			</div>

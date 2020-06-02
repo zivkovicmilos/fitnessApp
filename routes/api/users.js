@@ -7,6 +7,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const auth = require("../../middleware/auth");
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 
 // @route   POST api/users
 // @desc    Register new user
@@ -136,6 +138,26 @@ router.post("/newWorkout", auth, async (req, res) => {
 			time: time
 		};
 
+		// Check if the user has already reserved this workout
+		let user = await User.findById(userID);
+
+		for (let i = 0; i < user.workouts.length; i++) {
+			let workout = user.workouts[i];
+
+			if (
+				workout.workoutID.equals(workoutRes._id) &&
+				workout.time === time &&
+				date === workout.date
+			) {
+				// User has this already reserved!
+				try {
+					return res.status(400).json({ msg: "Already reserved!" });
+				} catch (err) {
+					console.log(err);
+				}
+			}
+		}
+
 		let updatedModel = await User.findByIdAndUpdate(
 			userID,
 
@@ -143,6 +165,54 @@ router.post("/newWorkout", auth, async (req, res) => {
 
 			{ upsert: true }
 		);
+
+		updatedModel = await Workout.findByIdAndUpdate(
+			workoutRes._id,
+
+			{
+				$inc: {
+					participants: 1
+				}
+			},
+			{ upsert: true }
+		);
+
+		res.status(200).send({ message: "All good :)" });
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server error");
+	}
+});
+
+// @route   POST api/users/delete
+// @desc    Deletes the user
+// @access  Private
+router.post("/delete", auth, async (req, res) => {
+	const { userID } = req.body;
+
+	try {
+		// Delete the user from the users collection
+		await User.findByIdAndDelete(userID, (err) => {
+			if (err) console.log(err);
+			console.log("User deleted successfully");
+		});
+
+		// Delete each review that the user has made
+
+		let updatedModel = await Workout.updateMany(
+			{},
+
+			{
+				$pull: {
+					reviews: {
+						user: userID
+					}
+				}
+			},
+
+			{ upsert: true }
+		);
+		console.log("Deleted the user's reservations");
 
 		res.status(200).send({ message: "All good :)" });
 	} catch (err) {
@@ -241,6 +311,17 @@ router.post("/delete/:email/:workoutID", auth, async (req, res) => {
 				}
 			},
 
+			{ upsert: true }
+		);
+
+		updatedModel = await Workout.findByIdAndUpdate(
+			workoutID,
+
+			{
+				$inc: {
+					participants: -1
+				}
+			},
 			{ upsert: true }
 		);
 

@@ -26,6 +26,36 @@ router.get("/type/:type", async (req, res) => {
 	}
 });
 
+// @route   GET api/workouts/participants/{name}
+// @desc    Get the participants of a certain workout
+// @access  Public
+router.get("/participants/:name", async (req, res) => {
+	try {
+		const workout = await Workout.find({ picture: req.params.name })
+			.select("-_id")
+			.select("-name")
+			.select("-picture")
+			.select("-descriptionSR")
+			.select("-descriptionEN")
+			.select("-duration")
+			.select("-level")
+			.select("-gallery")
+			.select("-reviews")
+			.select("-type")
+			.select("-averageGrade")
+			.select("-maxSlots");
+
+		if (!workout) {
+			return res.status(400).json({ msg: "Trening ne postoji" });
+		}
+
+		res.json(workout);
+	} catch (err) {
+		console.error(err.message);
+		res.status(500).send("Server Error");
+	}
+});
+
 // @route   GET api/workouts/id/{id}
 // @desc    Get a specific workout
 // @access  Public

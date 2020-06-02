@@ -46,6 +46,12 @@ const WorkoutSchema = new mongoose.Schema({
 	type: {
 		type: String,
 		required: true
+	},
+	maxSlots: {
+		type: Number
+	},
+	participants: {
+		type: Number
 	}
 });
 
