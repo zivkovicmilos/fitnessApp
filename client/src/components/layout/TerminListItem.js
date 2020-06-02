@@ -48,7 +48,6 @@ const TerminListItem = (props) => {
 								body,
 								config
 							);
-
 							res = await axios.get("/api/auth");
 
 							dispatch({

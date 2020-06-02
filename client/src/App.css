@@ -7,6 +7,7 @@
 	--green: #34e83b;
 	--lightIndigo: #4a545f;
 	--ultraLightGrey: #e9ebf0;
+	--red: #cd3e30;
 }
 
 * {
@@ -1713,4 +1714,9 @@ nav {
 
 .servicesIcon {
 	width: 1.2em;
+}
+
+.formError {
+	color: var(--red);
+	font-style: italic;
 }

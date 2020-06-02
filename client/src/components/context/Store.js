@@ -7,7 +7,8 @@ const initialState = {
 	isAuthenticated: localStorage.getItem("token") == null ? false : true,
 	user: null,
 	lang: "sr",
-	isLoading: false
+	isLoading: false,
+	reload: false
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -44,6 +45,11 @@ const StateProvider = ({ children }) => {
 				return {
 					...state,
 					isLoading: !state.isLoading
+				};
+			case "RELOAD":
+				return {
+					...state,
+					reload: !state.reload
 				};
 			case "LOGIN":
 				//loginUser(action.payload.email, action.payload.password, state);

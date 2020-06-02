@@ -30,9 +30,15 @@ const TerminList = (props) => {
 		}
 	};
 
+	const myLittleFunc = () => {
+		console.log(user.workouts);
+	};
+
 	useEffect(() => {
+		user = globalState.state.user;
 		if (!user) return;
 
+		setWorkouts([]);
 		const func = async () => {
 			user.workouts.map(async (workout) => {
 				let res = await axios.get(`/api/workouts/id/${workout.workoutID}`);
@@ -42,13 +48,12 @@ const TerminList = (props) => {
 					workoutData: workout
 				};
 
-				console.log(workoutInfo);
 				setWorkouts((workouts) => [...workouts, workoutInfo]);
 			});
 		};
 
 		func();
-	}, []);
+	}, [user.workouts]);
 
 	return (
 		<Fragment>

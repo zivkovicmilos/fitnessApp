@@ -117,15 +117,16 @@ const RegisterForm = (props) => {
 										type: "LOAD_USER",
 										payload: res.data
 									});
+									document.getElementById("registerButton").click();
 								} catch (err) {
-									console.log(err);
+									document.getElementById("registerError").innerHTML =
+										err.response.data.errors[0].msg;
 									dispatch({
 										type: "LOGOUT",
 										payload: {}
 									});
 								}
 
-								document.getElementById("registerButton").click();
 								dispatch({
 									type: "SETLOADING",
 									payload: {}
@@ -294,7 +295,8 @@ const RegisterForm = (props) => {
 											</div>
 										</div>
 									</div>
-									<div className="text-right">
+									<div className="formRow form-row d-flex centerRowY justify-content-between pr-2 pl-2">
+										<span className="formError" id="registerError"></span>
 										<button
 											type="submit"
 											className="modalButton modalButtonFix"

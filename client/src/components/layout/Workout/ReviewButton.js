@@ -18,7 +18,7 @@ const validationSchema = Yup.object().shape({
 		.max(255, "Komentar je predugačak")
 });
 
-const ReviewButton = () => {
+const ReviewButton = (props) => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
 	const { dispatch } = globalState;
@@ -83,7 +83,10 @@ const ReviewButton = () => {
 								}
 
 								document.getElementById("reviewButton").click();
-
+								dispatch({
+									type: "RELOAD",
+									payload: ""
+								});
 								console.log("Review submitted");
 							}}
 						>

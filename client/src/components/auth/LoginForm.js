@@ -91,15 +91,17 @@ const LoginForm = () => {
 										type: "LOAD_USER",
 										payload: res.data
 									});
+
+									document.getElementById("loginButton").click();
 								} catch (err) {
-									console.log(err);
+									document.getElementById("loginError").innerHTML =
+										err.response.data.errors[0].msg;
 									dispatch({
 										type: "LOGOUT",
 										payload: {}
 									});
 								}
 
-								document.getElementById("loginButton").click();
 								dispatch({
 									type: "SETLOADING",
 									payload: {}
@@ -177,10 +179,11 @@ const LoginForm = () => {
 											</div>
 										</div>
 									</div>
-									<div className="text-right">
+									<div className="formRow d-flex centerRowY justify-content-between pr-2 pl-2">
+										<span className="formError" id="loginError"></span>
 										<button
 											type="submit"
-											className="modalButton"
+											className="modalButton text-right"
 											disabled={isSubmitting}
 										>
 											Prijava

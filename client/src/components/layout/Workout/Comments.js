@@ -20,16 +20,11 @@ const Comments = (props) => {
 			i < comments.length && i < commentIndex;
 			i++
 		) {
-			console.log(`Adding comments[${i}]`);
 			currentlyShowing.push(comments[i]);
 		}
 	};
 
-	useEffect(() => {
-		console.log(`Firing! ${commentIndex}`);
-		console.log(`Currently showing size: ${currentlyShowing.length}`);
-		console.log(`Total number of comments: ${comments.length}`);
-	}, [commentIndex]);
+	useEffect(() => {}, [commentIndex]);
 
 	if (reviews === undefined || reviews.length == 0) {
 		// Reviews are not fetched yet or they don't exist
