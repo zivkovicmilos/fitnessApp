@@ -36,7 +36,7 @@ const Services = () => {
 			<Navbar />
 			<Jumbo
 				type="services"
-				desc="Članovima se daje ekskluzivni pristup teretanama, vođenim   treninzima, konsultacijama sa nutricionistima kao i spa centru."
+				desc="Članovima se daje ekskluzivni pristup teretanama, vođenim treninzima, konsultacijama sa nutricionistima kao i spa centru."
 				jumboText="Naše usluge"
 				image="jumboUsluge"
 			/>

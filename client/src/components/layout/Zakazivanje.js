@@ -18,7 +18,10 @@ const Zakazivanje = () => {
 	const [cardioEls, setCardioEls] = useState([]);
 
 	const insertAfter = (referenceNode, newNode) => {
-		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+		referenceNode.parentNode.insertBefore(
+			newNode,
+			referenceNode.nextSibling
+		);
 	};
 
 	const getNext = (time) => {
@@ -69,13 +72,16 @@ const Zakazivanje = () => {
 				let parent = workout.parentNode;
 				let refTime = parent.id;
 
-				let index = [].indexOf.call(workout.parentNode.children, workout);
+				let index = [].indexOf.call(
+					workout.parentNode.children,
+					workout
+				);
 
 				let arrElement = {
 					parent: workout.parentNode,
 					element: workout,
 					index: index,
-					added: []
+					added: [],
 				};
 
 				let newTd = document.createElement("td");
@@ -84,7 +90,9 @@ const Zakazivanje = () => {
 
 				if (workout.rowSpan > 1) {
 					for (let i = 1; i < workout.rowSpan; i++) {
-						let reference = document.getElementById(getNext(refTime));
+						let reference = document.getElementById(
+							getNext(refTime)
+						);
 						refTime = getNext(refTime);
 
 						let td = document.createElement("td");
@@ -100,7 +108,10 @@ const Zakazivanje = () => {
 						setYogaEls((yogaEls) => [...yogaEls, arrElement]);
 						break;
 					case "pilates":
-						setPilatesEls((pilatesEls) => [...pilatesEls, arrElement]);
+						setPilatesEls((pilatesEls) => [
+							...pilatesEls,
+							arrElement,
+						]);
 						break;
 					case "core":
 						setCoreEls((coreEls) => [...coreEls, arrElement]);
@@ -210,9 +221,7 @@ const Zakazivanje = () => {
 			<Navbar />
 			<Jumbo
 				type="reservation"
-				desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			Mauris id ligula consequat, eleifend neque convallis,
-			bibendum tellus."
+				desc="Zakažite termin i osigurajte svoje mesto na grupnim treninzima. Čekamo vas!"
 				jumboText="Zakažite Vaš termin"
 				image="jumboZakazivanje"
 			/>
@@ -239,7 +248,10 @@ const Zakazivanje = () => {
 										setYoga(!yoga);
 									}}
 								/>
-								<label className="custom-control-label" htmlFor="yogaCheck">
+								<label
+									className="custom-control-label"
+									htmlFor="yogaCheck"
+								>
 									Yoga
 								</label>
 							</div>
@@ -253,7 +265,10 @@ const Zakazivanje = () => {
 										setPilates(!pilates);
 									}}
 								/>
-								<label className="custom-control-label" htmlFor="pilatesCheck">
+								<label
+									className="custom-control-label"
+									htmlFor="pilatesCheck"
+								>
 									Pilates
 								</label>
 							</div>
@@ -267,7 +282,10 @@ const Zakazivanje = () => {
 										setCore(!core);
 									}}
 								/>
-								<label className="custom-control-label" htmlFor="coreCheck">
+								<label
+									className="custom-control-label"
+									htmlFor="coreCheck"
+								>
 									Core
 								</label>
 							</div>
@@ -281,7 +299,10 @@ const Zakazivanje = () => {
 										setCardio(!cardio);
 									}}
 								/>
-								<label className="custom-control-label" htmlFor="cardioCheck">
+								<label
+									className="custom-control-label"
+									htmlFor="cardioCheck"
+								>
 									Cardio
 								</label>
 							</div>
