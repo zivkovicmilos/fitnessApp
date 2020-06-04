@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import ReactPDF from "@react-pdf/renderer";
 
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
 const Reservation = (props) => {
 	const { formData } = props;
 
-	//let title = props.section == "Nutricionista" ? "Nutricionista" : "Masaže";
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>

@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import userIcon from "../../assets/svg/user/user.svg";
 import settingsIcon from "../../assets/svg/user/settings.svg";
 import logoutIcon from "../../assets/svg/user/logout.svg";
+import { sr, en } from "../../dict";
 
 const User = () => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
 
 	const { user } = globalState.state;
+	let { lang } = globalState.state;
 
 	if (
 		!globalState.state.isAuthenticated ||
@@ -42,14 +44,14 @@ const User = () => {
 								<Link to="/profil">
 									<li>
 										<img src={userIcon} className="menuIcon" />
-										Moj nalog
+										{lang == "sr" ? sr.user.title : en.user.title}
 									</li>
 								</Link>
 
 								<Link to="/profil/podesavanja">
 									<li>
 										<img src={settingsIcon} className="menuIcon" />
-										Podešavanja
+										{lang == "sr" ? sr.user.settings : en.user.settings}
 									</li>
 								</Link>
 								<li
@@ -62,7 +64,7 @@ const User = () => {
 									}}
 								>
 									<img src={logoutIcon} className="menuIcon" />
-									Odjava
+									{lang == "sr" ? sr.user.logout : en.user.logout}
 								</li>
 							</ul>
 						</li>

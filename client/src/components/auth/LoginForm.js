@@ -5,19 +5,51 @@ import FormError from "./../layout/Forms/FormError";
 import { store } from "../context/Store";
 import axios from "axios";
 import close from "./../../assets/svg/close.svg";
-
-const validationSchema = Yup.object().shape({
-	email: Yup.string()
-		.email("Nevalidan mejl")
-		.min(3, "Prekratak mejl")
-		.max(50, "Predugačak mejl")
-		.required("Mejl je obavezan"),
-	password: Yup.string().min(6, "Prekratka šifra").required("Šifra je obavezna")
-});
+import { sr, en } from "./../../dict";
 
 const LoginForm = () => {
 	const globalState = useContext(store);
+
+	let { lang } = globalState.state;
 	const { dispatch } = globalState;
+
+	const validationSchema = Yup.object().shape({
+		email: Yup.string()
+			.email(
+				lang == "sr"
+					? sr.validationSchemaLogin.invalidMail
+					: en.validationSchemaLogin.invalidMail
+			)
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaLogin.minMail
+					: en.validationSchemaLogin.minMail
+			)
+			.max(
+				50,
+				lang == "sr"
+					? sr.validationSchemaLogin.maxMail
+					: en.validationSchemaLogin.maxMail
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaLogin.requiredMail
+					: en.validationSchemaLogin.requiredMail
+			),
+		password: Yup.string()
+			.min(
+				6,
+				lang == "sr"
+					? sr.validationSchemaLogin.minPass
+					: en.validationSchemaLogin.minPass
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaLogin.requiredPass
+					: en.validationSchemaLogin.requiredPass
+			)
+	});
 
 	return (
 		<Fragment>
@@ -27,7 +59,7 @@ const LoginForm = () => {
 				id="loginButton"
 				className="ml-4 loginText"
 			>
-				Prijavi se
+				{lang == "sr" ? sr.loginForm.buttonText : en.loginForm.buttonText}
 			</span>
 
 			<div className="modal fade" tabIndex="-1" id="loginModal" role="dialog">
@@ -114,7 +146,11 @@ const LoginForm = () => {
 							>
 								<div className="modal-content">
 									<div className="row modalHead formRow justify-content-between">
-										<span>PRIJAVA</span>
+										<span>
+											{lang == "sr"
+												? sr.loginForm.loginTitle
+												: en.loginForm.loginTitle}
+										</span>
 										<img
 											src={close}
 											className="closeButton"
@@ -152,7 +188,11 @@ const LoginForm = () => {
 
 										<div className="form-row formRow">
 											<div className="form-group col">
-												<label htmlFor="password">Lozinka</label>
+												<label htmlFor="password">
+													{lang == "sr"
+														? sr.loginForm.password
+														: en.loginForm.password}
+												</label>
 												<div className="invalid-group">
 													<input
 														type="password"
@@ -186,7 +226,9 @@ const LoginForm = () => {
 											className="modalButton text-right"
 											disabled={isSubmitting}
 										>
-											Prijava
+											{lang == "sr"
+												? sr.loginForm.submitButton
+												: en.loginForm.submitButton}
 										</button>
 									</div>
 								</div>

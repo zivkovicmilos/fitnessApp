@@ -1,11 +1,16 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import ServicesForm from "./ServicesForm";
 import dumbell from "./../../assets/svg/services/dumbell.svg";
 import clockOrange from "./../../assets/svg/services/clockOrange.svg";
 import nutritionist from "./../../assets/svg/services/nutritionist.svg";
 import massage from "./../../assets/svg/services/massage.svg";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const InfoSectionContent = (props) => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	if (props.section == "infoTreninzi") {
 		return (
 			<Fragment>
@@ -13,31 +18,34 @@ const InfoSectionContent = (props) => {
 					<h2 className="col-md-10 col-10">
 						<div className="container centerY">
 							<img src={dumbell} className="servicesIcon" />
-							<span className="ml-2">Zašto trenirati?</span>
+							<span className="ml-2">
+								{lang == "sr"
+									? sr.infoSectionContent.trainingTitle1
+									: en.infoSectionContent.trainingTitle1}
+							</span>
 						</div>
 					</h2>
 					<span className="sectionText col-md-10 col-10">
-						Čovekovo telo dizajnirano je da izdrži sve što majka priroda može da
-						baci na njega. U današnjem vremenu uticaj prirode je slabiji nego
-						ikada pa moderni čovek nema potrebe da koristi ni polovinu svojih
-						fizičkih mogućnosti. Ovo dovodi do brojnih fizičkih i psihičkih
-						problema kod čoveka. Jedino treningom čovek može da stimuliše svoje
-						telo tako da se oseća najbolje moguće u svojoj koži.
+						{lang == "sr"
+							? sr.infoSectionContent.trainingText1
+							: en.infoSectionContent.trainingText1}
 					</span>
 				</div>
 				<div className="row centerRow mt-5">
 					<h2 className="col-md-10 col-10">
 						<div className="container centerY text-right">
 							<img src={clockOrange} className="servicesIcon iconSmaller" />
-							<span className="ml-2">Zdrave navike</span>
+							<span className="ml-2">
+								{lang == "sr"
+									? sr.infoSectionContent.trainingTitle2
+									: en.infoSectionContent.trainingTitle2}
+							</span>
 						</div>
 					</h2>
 					<span className="sectionText col-md-10 col-10">
-						Većini ljudi je trening najčešće u suprotnosti sa njihovim trenutnim
-						životnim navikama. Kao i sa ostalim navikama, promene mogu biti
-						veoma teške, ali se uvek rešavaju na isti način, odlučnošću i
-						istrajnošću. Put od hiljadu koraka poćinje jednim korakom, napravite
-						ga zajedno sa nama.
+						{lang == "sr"
+							? sr.infoSectionContent.trainingText2
+							: en.infoSectionContent.trainingText2}
 					</span>
 				</div>
 			</Fragment>
@@ -49,16 +57,17 @@ const InfoSectionContent = (props) => {
 					<h2 className="col-md-10 col-10">
 						<div className="container centerY">
 							<img src={nutritionist} className="servicesIcon" />
-							<span className="ml-2">Ishrana</span>
+							<span className="ml-2">
+								{lang == "sr"
+									? sr.infoSectionContent.nutritionTitle
+									: en.infoSectionContent.nutritionTitle}
+							</span>
 						</div>
 					</h2>
 					<span className="sectionText col-md-10 col-10">
-						Iako deluje veoma jednostavno , većina ljudi nema pravu predstavu
-						kada je hrana u pitanju. Jedna od čestih zabluda koja se javlja je
-						"Živim da bih jeo" način života. U svetu marketinga i fensi
-						restorana lako je izgubiti pravi put i voditi se svojim čulima a ne
-						zdravljem. Naš nutricionista pruža vam odgovore na vaša glavna
-						pitanja - šta, kako i kada jesti?
+						{lang == "sr"
+							? sr.infoSectionContent.nutritionText
+							: en.infoSectionContent.nutritionText}
 					</span>
 				</div>
 				<div className="row centerRow">
@@ -73,18 +82,17 @@ const InfoSectionContent = (props) => {
 					<h2 className="col-md-10 col-10">
 						<div className="container centerY">
 							<img src={massage} className="servicesIcon" />
-							<span className="ml-2">Masaža</span>
+							<span className="ml-2">
+								{lang == "sr"
+									? sr.infoSectionContent.massageTitle
+									: en.infoSectionContent.massageTitle}
+							</span>
 						</div>
 					</h2>
 					<span className="sectionText col-md-10 col-10">
-						Smatra se da je masaža jedna od najpoznatijih metoda za lečenje i
-						opuštanje organizma. Ona igra glavnu ulogu kada je u pitanju naše
-						zdravlje. Masaža otklanja napetost koja je stvorena u nervima
-						ljudskog organizma. Nakon tretmana nervni sistem se oslobađa tenzije
-						i vraća se u normalno stanje. Osim na nerve, masaža utiče pozitivno
-						i na mišiće, poboljšava cirkulaciju, razmenu hranljivih materija,
-						sprečava pojavu bora i strija, povećava elastičnost, a odlična je i
-						kod gubitka kilograma i pri eliminaciji tečnosti i toksina iz tela.
+						{lang == "sr"
+							? sr.infoSectionContent.massageText
+							: en.infoSectionContent.massageText}
 					</span>
 				</div>
 				<div className="row centerRow">

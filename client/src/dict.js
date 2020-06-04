@@ -1,561 +1,588 @@
 const en = {
-validationSchemaLogin: {
-	invalidMail: "Invalid mail",
-	minMail: "Mail address too short",
-	maxMail: "Mail address too long",
-	requiredMail: "Mail required",
-	minPass: "Password too short",
-	requiredPass: "Password required"
-},
-validationSchemaRegister: {
-	minFirstName: "First name too short",
-	maxFirstName: "First name too long",
-	firstNameRequired: "First name required",
-	minLastName: "Last name too short",
-	maxLastName: "Last name too long",
-	lastNameRequired: "Last name required",
-	invalidMail: "Invalid mail",
-	minMail: "E-mail too short",
-	maxMail: "E-mail too long",
-	requiredMail: "E-mail required",
-	minPass: "Password too short",
-	requiredPass: "Password required",
-	requiredPassConfirm: "Password confirm required",
-	passConfirmWrong: "Passwords do not match"
-},
-loginForm: {
-	buttonText: "Log in",
-	loginTitle: "LOGIN FORM",
-	email: "E-mail",
-	password: "Password",
-	submitButton: "Log in"
-},
-registerForm: {
-	loginTitle: "REGISTRATION",
-	firstName: "First name",
-	lastName: "Last name ",
-	email: "E-mail",
-	password: "Password",
-	passwordConfirm: "Confirm password",
-	submitButton: "Registration"
-},
-reservation: {
-	thanksMessage: "Thank you for your reservation!",
-	infoMessage: "Bellow you can see the data that you entered."
-},
-success: {
-	successMessage: "Successfully sent!",
-	pdfMessage: "PDF file with the data you entered can be found bellow:"
-},
-registerField: {
-	registerButton: "Join us"
-},
-comment: {
-	fetchingText: "Fetching...",
-	fetchingComment: "Fetching comment..."
-},
-comments: {
-	noComments: "No comments yet :("
-},
-validationSchemaMark:{
-	minMark: "You cannot leave a mark lower than 1",
-	maxMark: "You cannot leave a mark greater than 5",
-	requiredMark: "You need to choose a mark",
-	minComment: "Comment is too short",
-	maxComment: "Comment is too big"
-},
-reviewButton: {
-	reviewButton: "Leave a mark",
-	reviewTitle: "LEAVE A MARK",
-	reviewText: "Mark:",
-	reviewComment: "Comment:",
-	reviewSubmit: "Submit"
-},
-workoutGallery: {
-    previous: "Previous",
-    next: "Next"
-},
-workoutInfo: {
-    level: "Level"
-},
-table: {
-    participantData: {
-        yoga1: "Applied: 0",
-        yoga2: "Applied: 0",
-        yoga3: "Applied: 0",
-        pilates1: "Applied: 0",
-        pilates2: "Applied: 0",
-        pilates3: "Applied: 0",
-        core1: "Applied: 0",
-        core2: "Applied: 0",
-        core3: "Applied: 0",
-        cardio1: "Applied: 0",
-        cardio2: "Applied: 0",
-        cardio3: "Applied: 0"
-        },
-    reservationTitle: "RESERVATION",
-    submitButton: "Confirm",
-    time: "Time",
-    days: {
-        monday: "Monday",
-        tuesday: "Tuesday",
-        wednesday: "Wednesday",
-        thursday: "Thursday",
-        friday: "Friday",
-        saturday: "Saturday",
-        sunday: "Sunday"
-    },
-    trainings:{
-        0: "Advanced level",
-        1: "Anatomical and orthopedic exercises",
-        2: "Meet yoga",
-        3: "Cardio for weight loss",
-        4: "Core - What? Why? How?",
-        5: "The road to fun cardio training",
-        6: "HardCore",
-        7: "Yoga for Homo foteljus",
-        8: "Tighten the core, save the back",
-        9: "Exercises on a mat",
-        10: "Yoga for powerlifters",
-        11: "Circuit cardio training",
-    }
-},
-contact: {
-    contactTitle: "CONTACT US,"
-},
-contactMail: {
-    contactName: "First and last name",
-    contactMail: "E-mail",
-    contactProblemDesc: "Problem description", 
-    contactButton: "Send"
-},
-footer: {
-    authors: "Martin Mitrovic, Milos Živkovic",
-    school: "School of Electrical Engineering, <br /> University of Belgrade"
-},
-trophies: {
-    trophiesTitle: "WE WON,",
-    trophies: {
-        0:{
-            title: "Newcomer of the Year - 2017",
-            text: "In the opening year, back in 2017, thanks to its rapid growth and development, the 4ricepsFitness fitness center won the honorary Newcomer of the Year award as the best newly opened fitness center."
-        },
-        1:{
-            title: "Gym team of the year",
-            text: "A carefully selected staff gave all out to help our clients in order to effectively achieve their goals. Thaks to their hard work, our fitness center received the award for the best team in gyms and fitness centers in 2018."
-        },
-        2:{
-            title: "Member Achievement Award",
-            text: "During 2018, 4ricepsFitness recorded its record 10,000th member."
-        },
-        3:{
-            title: "FitPass Awards Night 2019 - Fitness Center of the Year",
-            text: "At the FitPass Awards Night 2019, 4ricepsFitness won the honorary Fitness Center of the Year award."
-        },
-        4:{
-            title: "Innovation in Fitness Nutrition", 
-            text: "We are the honorary holders of this award for 2019, which we received by adequately combining our services in order to achieve results in the most efficient way possible."
-        },
-        5:{
-            title: "Best Charitable Initiative",
-            text: "At the moment, e are nominated for The Charity Awards 2020 award program for participating in the fight against the COVID-19 virus. During the state of emergency, our workers voluntarily disinfected cities, supplied the elderly and distributed protective equipment."
-        }
-    }
-},
-user:{
-    title: "My account",
-    settings: "Settings",
-    logout: "Log out"
-},
-navbar:{
-    services: "Services",
-    about: "ABOUT",
-    booking: "BOOKINGS"
-},
-services:{
-    jumboText: "Our services",
-    desc: "Our members have exclusive acces to all our gyms, group trainings, nutrition consulting and our spa center."
-},
-oNama:{
-    jumboText: "Our team",
-    desc: "Here you can find out about us, our team and out accomplishments."
-},
-sectionList:{
-    name: "Ime",
-    length: "Trajanje",
-    level: "Nivo"
-},
-sectionList:{
-    name: "Name",
-    length: "Length",
-    level: "Level"
-},
-infoSectionContent:{
-    trainingTitle1: "Why train?",
-    trainintText1:  "Humans body is designed to withstand the impact of the nature. Today, that impact has never been ligther so modern human doesn't have the need to use even half of his physical capabilities. This leads to numerous physical and mental ilnesses. Training is the only right way in which humans can stimulate their bodies to feel well.",
-    trainingTitle2: "Healthy habits",
-    trainintText1: "For most people, training is in totally opposite direction with their life habits. Just like every habit, changing it can be very difficult, but it can always be done in the same way, by determination and endurance. A journey of thousand steps begins with one step. Make it together with us.",
-    nutritionTitle: "Nutrition",
-    nutritionText: "Although pretty simple, many people don't have the right idea about nutrition. One of most common missunderstandings is \"I live to eat\" way of living. In the world of marketing and fancy restaurants it is easy to lose the right path and foloow your senses instead of health. Our nutritionists will provide you all the answers on your questions - what, when and how you should eat?",
-    massageTitle: "Massage",
-    massageText: "Massage is considered to be one of the most well-known methods for healing and relaxing the body. It plays a major role when it comes to our health. Massage removes the tension that is created in the nerves of the human body. After the treatment, the nervous system is released from tension and returns to normal. In addition to the nerves, massage also has a positive effect on muscles, improves circulation, metabolism, prevents the appearance of wrinkles and stretch marks, increases elasticity, and is excellent for losing weight and eliminating fluids and toxins from the body."
-},
-testComp:{
-    account: "My account",
-    settings: "Settings",
-    logout: "Log out"
-},
-terminList: {
-    noTerminText: "You don't have any training booked"
-},
-servicesSelector: {
-    trainings: "Trainings",
-    nutrition: "Nutrition",
-    massage: "Massage"
-},
-home: {
-    jumboText:  "Train with the best.",
-    trainingText: "TRENDING",
-    trainingDesc: "Check out our most popular trainings",
-    subscription: "MEMBERSHIP FEES"
-},
-workoutContent: {
-    comments: "COMMENTS",
-    info: "INFORMATION",
-    unsupportedMsg: "Your browser does not support the video tag."
-},
-termini: {
-    pageTitle: "My trainings,"
-},
-validationSchemaSettingsField: {
-    minFirstName: "First name too short",
-	maxFirstName: "First name too long",
-	firstNameRequired: "First name required",
-	minLastName: "Last name too short",
-	maxLastName: "Last name too long",
-    lastNameRequired: "Last name required",
-    minPass: "Password too short",
-    passConfirmWrong: "Passwords do not match"
-},
-settingsFields: {
-    userFrom: "User from:",
-    firstName: "First name",
-    lastName: "Last name",
-    mail: "E-mail",
-    password: "Password (min.6 characters)",
-    passwordConfirm: "Confirm password",
-    closeAcc: "Close account",
-    save: "Save"
-},
-zakazivanje: {
-    desc: "Book your training and secure your spot. See you soon!",
-    jumboText="Book your training",
-    title: "WEEKLY CALENDAR",
-    filters: "FILTERS"
-},
-validationSchemaServiceForm: {
-    minFirstName: "First name too short",
-	maxFirstName: "First name too long",
-	firstNameRequired: "First name required",
-	minLastName: "Last name too short",
-	maxLastName: "Last name too long",
-    lastNameRequired: "Last name required",
-    minPhone: "Invalid phone",
-	maxPhone: "Invalid phone",
-    requiredPhone: "Phone is required",
-    requiredDate: "Date is required",
-    minDesc: "Description too short",
-	maxDesc: "Description too long",
-	requiredDesc: "Description required"
-},
-serviceForm: {
-    firstName: "FirstName",
-    lastName: "LastName",
-    phone: "Phone",
-    date: "Date",
-    desc: "Problem description",
-    send: "Send"
-}
-}
-
-
-
+	validationSchemaLogin: {
+		invalidMail: "Invalid mail",
+		minMail: "Mail address too short",
+		maxMail: "Mail address too long",
+		requiredMail: "Mail required",
+		minPass: "Password too short",
+		requiredPass: "Password required"
+	},
+	validationSchemaRegister: {
+		minFirstName: "First name too short",
+		maxFirstName: "First name too long",
+		firstNameRequired: "First name required",
+		minLastName: "Last name too short",
+		maxLastName: "Last name too long",
+		lastNameRequired: "Last name required",
+		invalidMail: "Invalid mail",
+		minMail: "E-mail too short",
+		maxMail: "E-mail too long",
+		requiredMail: "E-mail required",
+		minPass: "Password too short",
+		requiredPass: "Password required",
+		requiredPassConfirm: "Password confirm required",
+		passConfirmWrong: "Passwords do not match"
+	},
+	loginForm: {
+		buttonText: "Log in",
+		loginTitle: "LOGIN",
+		email: "E-mail",
+		password: "Password",
+		submitButton: "Log in"
+	},
+	registerForm: {
+		loginTitle: "REGISTRATION",
+		firstName: "First name",
+		lastName: "Last name ",
+		email: "E-mail",
+		password: "Password",
+		passwordMin: "(min. 6 characters)",
+		passwordConfirm: "Confirm password",
+		submitButton: "Registration"
+	},
+	reservation: {
+		thanksMessage: "Thank you for your reservation!",
+		infoMessage: "Bellow you can see the data that you entered."
+	},
+	success: {
+		successMessage: "Successfully sent!",
+		pdfMessage: "PDF file with the data you entered can be found bellow:"
+	},
+	registerField: {
+		registerButton: "Join us"
+	},
+	comment: {
+		fetchingText: "Fetching...",
+		fetchingComment: "Fetching comment..."
+	},
+	comments: {
+		noComments: "No comments yet :("
+	},
+	validationSchemaMark: {
+		minMark: "You cannot leave a mark lower than 1",
+		maxMark: "You cannot leave a mark greater than 5",
+		requiredMark: "You need to choose a mark",
+		minComment: "Comment is too short",
+		maxComment: "Comment is too big"
+	},
+	reviewButton: {
+		reviewButton: "Review workout",
+		reviewTitle: "REVIEW WORKOUT",
+		reviewText: "Grade:",
+		reviewComment: "Comment:",
+		reviewSubmit: "Submit"
+	},
+	workoutGallery: {
+		previous: "Previous",
+		next: "Next"
+	},
+	workoutInfo: {
+		level: "Level"
+	},
+	table: {
+		participantData: {
+			yoga1: "Applied: 0",
+			yoga2: "Applied: 0",
+			yoga3: "Applied: 0",
+			pilates1: "Applied: 0",
+			pilates2: "Applied: 0",
+			pilates3: "Applied: 0",
+			core1: "Applied: 0",
+			core2: "Applied: 0",
+			core3: "Applied: 0",
+			cardio1: "Applied: 0",
+			cardio2: "Applied: 0",
+			cardio3: "Applied: 0"
+		},
+		reservationTitle: "RESERVATION",
+		submitButton: "Confirm",
+		time: "Time",
+		days: {
+			monday: "Monday",
+			tuesday: "Tuesday",
+			wednesday: "Wednesday",
+			thursday: "Thursday",
+			friday: "Friday",
+			saturday: "Saturday",
+			sunday: "Sunday"
+		},
+		applied: "Applied: ",
+		trainings: {
+			0: "Advanced level",
+			1: "Anatomical and orthopedic exercises",
+			2: "Meet yoga",
+			3: "Cardio for weight loss",
+			4: "Core - What? Why? How?",
+			5: "The road to a fun cardio workout",
+			6: "HardCore",
+			7: "Yoga for Homo foteljus",
+			8: "Tighten the core, save the back",
+			9: "Exercises on a mat",
+			10: "Yoga for powerlifters",
+			11: "Circuit cardio workout"
+		}
+	},
+	contact: {
+		contactTitle: "GET IN TOUCH,"
+	},
+	contactMail: {
+		contactName: "Name",
+		contactMail: "E-mail",
+		contactMsg: "Message",
+		contactButton: "Send"
+	},
+	footer: {
+		authors: "Martin Mitrovic, Milos Živkovic",
+		school: "University of Belgrade,",
+		uni: "Faculty of Electrical Engineering"
+	},
+	trophies: {
+		trophiesTitle: "WE'VE WON,",
+		trophies: {
+			0: {
+				title: "Newcomer of the Year - 2017",
+				text:
+					"In the opening year, back in 2017, thanks to its rapid growth and development, the 4ricepsFitness fitness center won the honorary Newcomer of the Year award as the best newly opened fitness center."
+			},
+			1: {
+				title: "Gym team of the year",
+				text:
+					"A carefully selected staff gave all out to help our clients in order to effectively achieve their goals. Thaks to their hard work, our fitness center received the award for the best team in gyms and fitness centers in 2018."
+			},
+			2: {
+				title: "Member Achievement Award",
+				text: "During 2018, 4ricepsFitness recorded its record 10,000th member."
+			},
+			3: {
+				title: "FitPass Awards Night 2019 - Fitness Center of the Year",
+				text:
+					"At the FitPass Awards Night 2019, 4ricepsFitness won the honorary Fitness Center of the Year award."
+			},
+			4: {
+				title: "Innovation in Fitness Nutrition",
+				text:
+					"We are the honorary holders of this award for 2019, which we received by adequately combining our services in order to achieve results in the most efficient way possible."
+			},
+			5: {
+				title: "Best Charitable Initiative",
+				text:
+					"At the moment, e are nominated for The Charity Awards 2020 award program for participating in the fight against the COVID-19 virus. During the state of emergency, our workers voluntarily disinfected cities, supplied the elderly and distributed protective equipment."
+			}
+		}
+	},
+	user: {
+		title: "My account",
+		settings: "Settings",
+		logout: "Log out"
+	},
+	navbar: {
+		services: "SERVICES",
+		about: "ABOUT",
+		booking: "BOOKINGS"
+	},
+	services: {
+		jumboText: "Our services",
+		desc:
+			"Our members have exclusive access to all our gyms, group workouts, nutrition consulting and our spa center."
+	},
+	oNama: {
+		jumboText: "Our team",
+		desc: "Here you can find out about us, our team and out accomplishments."
+	},
+	sectionList: {
+		name: "NAME",
+		length: "LENGTH",
+		level: "LEVEL"
+	},
+	infoSectionContent: {
+		trainingTitle1: "Why train?",
+		trainingText1:
+			"Humans body is designed to withstand the impact of the nature. Today, that impact has never been ligther so modern human doesn't have the need to use even half of his physical capabilities. This leads to numerous physical and mental ilnesses. Training is the only right way in which humans can stimulate their bodies to feel well.",
+		trainingTitle2: "Healthy habits",
+		trainingText2:
+			"For most people, training is in a totally opposite direction with their life habits. Just like every habit, changing it can be very difficult, but it can always be done in the same way, by determination and endurance. A journey of thousand steps begins with one step. Make it together with us.",
+		nutritionTitle: "Diet",
+		nutritionText:
+			'Although pretty simple, many people don\'t have the right idea about nutrition. One of most common missunderstandings is "I live to eat" way of living. In the world of marketing and fancy restaurants it is easy to lose the right path and foloow your senses instead of health. Our nutritionists will provide you all the answers on your questions - what, when and how you should eat?',
+		massageTitle: "Massage",
+		massageText:
+			"Massage is considered to be one of the most well-known methods for healing and relaxing the body. It plays a major role when it comes to our health. Massage removes the tension that is created in the nerves of the human body. After the treatment, the nervous system is released from tension and returns to normal. In addition to the nerves, massage also has a positive effect on muscles, improves circulation, metabolism, prevents the appearance of wrinkles and stretch marks, increases elasticity, and is excellent for losing weight and eliminating fluids and toxins from the body."
+	},
+	testComp: {
+		account: "My account",
+		settings: "Settings",
+		logout: "Log out"
+	},
+	terminList: {
+		noTerminText: "You don't have any workouts booked"
+	},
+	servicesSelector: {
+		trainings: "Workouts",
+		nutrition: "Nutritionist",
+		massage: "Massages"
+	},
+	home: {
+		jumboText: "Train with the best.",
+		trainingText: "TRENDING",
+		trainingDesc: "Check out our most popular workouts",
+		subscription: "MEMBERSHIP FEES"
+	},
+	workoutContent: {
+		comments: "COMMENTS",
+		info: "INFORMATION",
+		unsupportedMsg: "Your browser does not support the video tag."
+	},
+	termini: {
+		pageTitle: "My workouts,"
+	},
+	validationSchemaSettingsField: {
+		minFirstName: "First name too short",
+		maxFirstName: "First name too long",
+		firstNameRequired: "First name required",
+		minLastName: "Last name too short",
+		maxLastName: "Last name too long",
+		lastNameRequired: "Last name required",
+		minPass: "Password too short",
+		passConfirmWrong: "Passwords do not match"
+	},
+	settingsFields: {
+		userFrom: "User since:",
+		firstName: "First name",
+		lastName: "Last name",
+		mail: "E-mail",
+		password: "Password",
+		passwordMin: "min. 6 characters",
+		passwordConfirm: "Confirm password",
+		closeAcc: "Close account",
+		save: "Save"
+	},
+	zakazivanje: {
+		desc: "Book your workout and secure your spot. See you soon!",
+		jumboText: "Book your workout",
+		title: "WEEKLY CALENDAR",
+		filters: "FILTERS"
+	},
+	validationSchemaServiceForm: {
+		minFirstName: "First name too short",
+		maxFirstName: "First name too long",
+		firstNameRequired: "First name required",
+		minLastName: "Last name too short",
+		maxLastName: "Last name too long",
+		lastNameRequired: "Last name required",
+		minPhone: "Invalid phone",
+		maxPhone: "Invalid phone",
+		requiredPhone: "Phone is required",
+		requiredDate: "Date is required",
+		minDesc: "Description too short",
+		maxDesc: "Description too long",
+		requiredDesc: "Description required"
+	},
+	serviceForm: {
+		firstName: "First name",
+		lastName: "Last name",
+		phone: "Phone",
+		date: "Date",
+		desc: "Brief description",
+		send: "Send"
+	}
+};
 
 const sr = {
-validationSchemaLogin: {
-	invalidMail: "Nevalidan mejl",
-	minMail: "Prekratak mejl",
-	maxMail: "Predugačak mejl",
-	requiredMail: "Mejl je obavezan",
-	minPass: "Prekratka šifra",
-	requiredPass: "Šifra je obavezna"
-},
-validationSchemaRegister: {
-	minFirstName: "Prekratko ime",
-	maxFirstName: "Ime predugačko",
-	firstNameRequired: "Ime je obavezno",
-	minLastName: "Prekratko prezime",
-	maxLastName: "Predugačko prezime",
-	lastNameRequired: "Prezime je obavezno",
-	invalidMail: "Nevalidan mejl",
-	minMail: "Prekratak mejl",
-	maxMail: "Predugačak mejl",
-	requiredMail: "Mejl je obavezan",
-	minPass: "Lozinka je prekratka",
-	requiredPass: "Lozinka je neophodna",
-	requiredPassConfirm: "Šifra je obavezna",
-	passConfirmWrong: "Šifre se moraju poklapati"
-},
-loginForm: {
-	buttonText: "Prijavi se",
-	loginTitle: "PRIJAVA",
-	email: "E-mail",
-	password: "Lozinka",
-	submitButton: "Prijavi se"
-},
-registerForm: {
-	loginTitle: "REGISTRACIJA",
-	firstName: "Ime",
-	lastName: "Prezime",
-	email: "E-mail",
-	password: "Lozinka",
-	passwordConfirm: "Potvrda lozinke",
-	submitButton: "Registracija"
-},
-reservation: {
-	thanksMessage: "Hvala na rezervaciji!",
-	infoMessage: "Ispod se nalaze podaci koje ste uneli."
-},
-success: {
-	successMessage: "Uspešno poslato!",
-	pdfMessage: "PDF sa podacima možete preuzeti ovde:"
-},
-registerField: {
-	registerButton: "Pridruži se"
-},
-comment: {
-	fetchingText: "Dohvatam...",
-	fetchingDataText: "Dohvatam komentare..."
-},
-comments: {
-	noComments: "Trenutno nema komentara :("
-},
-validationSchemaMark:{
-	minMark: "Ocena ne može biti manja od 1",
-	maxMark: "Ocena ne može biti veća od 5",
-	requiredMark: "Ocena je obavezna",
-	minComment: "Komentar je prekratak",
-	maxComment: "Komentar je predugačak"
-},
-reviewButton: {
-	reviewButton: "Ostavi ocenu",
-	reviewTitle: "OSTAVI OCENU",
-	reviewText: "Ocena:",
-	reviewComment: "Komentar:",
-	reviewSubmit: "Oceni"
-},
-workoutGallery: {
-    previous: "Prethodna",
-    next: "Sledeća"
-},
-workoutInfo: {
-    level: "Nivo"
-},
-table: {
-    participantData: {
-        yoga1: "Prijavljeno: 0",
-        yoga2: "Prijavljeno: 0",
-        yoga3: "Prijavljeno: 0",
-        pilates1: "Prijavljeno: 0",
-        pilates2: "Prijavljeno: 0",
-        pilates3: "Prijavljeno: 0",
-        core1: "Prijavljeno: 0",
-        core2: "Prijavljeno: 0",
-        core3: "Prijavljeno: 0",
-        cardio1: "Prijavljeno: 0",
-        cardio2: "Prijavljeno: 0",
-        cardio3: "Prijavljeno: 0"
-    },
-    reservationTitle: "REZERVACIJA",
-    submitButton: "Potvrdi",
-    time: "Vreme",
-    days: {
-        monday: "Ponedeljak",
-        tuesday: "Utorak",
-        wednesday: "Sreda",
-        thursday: "Četvrtak",
-        friday: "Petak",
-        saturday: "Subota",
-        sunday: "Nedelja"
-    },
-    trainings:{
-        0: "Napredni nivo",
-        1: "Anatomske i ortopedske vežbe",
-        2: "Upoznajte yogu",
-        3: "Kardio za mršavljenje",
-        4: "Core - Šta? Zašto? Kako?",
-        5: "Put do zabavnog kardio treninga",
-        6: "HardCore",
-        7: "Yoga za homofoteljuse",
-        8: "Učvrstite core, sačuvajte leđa",
-        9: "Vežbe na strunjači",
-        10: "Yoga za powerliftere",
-        11: "Kružni kardio trening",
-    }
-},
-contact: {
-    contactTitle: "STUPI U KONTAKT,",
-},
-contactMail: {
-    contactName: "Ime i prezime", 
-    contactMail: "E-mail",
-    contactProblemDesc: "Opis problema", 
-    contactButton: "Pošalji"
-},
-footer: {
-    authors: "Martin Mitrović, Miloš Živković",
-    school: "Univerzitet u Beogradu, <br /> Elektrotehnički fakultet"
-},
-trophies: {
-    trophiesTitle: "OSVOJILI SMO,",
-    trophies: {
-        0:{
-            title: "Newcomer of the Year - 2017",
-            text: "U godini otvaranja, sada vec davne 2017. godine, zahvaljujuci svom brzom rastu i razvoju, fitnes centar 4ricepsFitness osvojio je pocasnu nagradu Newcomer of the Year kao najbolji novootvoreni fitnes centar."
-        },
-        1:{
-            title: "Gym team of the year",
-            text: "Uz pazljivo odabran kadar ljudi koji svojim trudom i radom pomazu klijentima da efikasno dostignu svoje ciljeve, naš fitnes centar dobio je 2018. godine nagradu za najbolji kolektiv u teretanama i fitnes centrima."
-        },
-        2:{
-            title: "Member Achievement Award",
-            text: "Tokom 2018. godine 4ricepsFitness je zabelezio svog rekordnog 10.000-og clana."
-        },
-        3:{
-            title: "FitPass Awards Night 2019 - Fitnes centar godine",
-            text: "Na FitPass Awards Night 2019 dodeli nagrada 4ricepsFitness osvojio je pocasnu nagradu Fitnes centra godine."
-        },
-        4:{
-            title: "Innovation in Fitness Nutrition", 
-            text: "Pocasni smo nosioci ove nagrade za 2019. godinu koju smo dobili adekvatnim kombinovanjem nasih usluga radi postizanja rezultata na najefikasniji moguci nacin."
-        },
-        5:{
-            title: "Best Charitable Initiative",
-            text: "Trenutno smo nominovani na The Charity Awards 2020 nagradnom programu zbog ucestvovanja u borbi protiv COVID-19 virusa. U periodu vanrednog stanja, nasi radnici su dobrovoljno vrsili dezinfekciju gradova, snabdevanje starijih lica i distribucija zastitne opreme."
-        }
-    }
-},
-user:{
-    title: "Moj nalog",
-    settings: "Podešavanja",
-    logout: "Odjava"
-},
-navbar:{
-    services: "Usluge",
-    about: "O NAMA",
-    booking: "ZAKAZIVANJE"
-},
-services:{
-    jumboText: "Naše usluge",
-    desc: "Članovima se daje ekskluzivni pristup teretanama, vođenim treninzima, konsultacijama sa nutricionistima kao i spa centru."
-},
-oNama:{
-    jumboText: "Naš tim",
-    desc: "Ovde možete naučiti nešto više o nama, našem timu i dostignućima."
-},
-infoSectionContent:{
-    trainingTitle1: "Zašto trenirati?",
-    trainintText1: "Čovekovo telo dizajnirano je da izdrži sve što majka priroda može da baci na njega. U današnjem vremenu uticaj prirode je slabiji nego ikada pa moderni čovek nema potrebe da koristi ni polovinu svojih fizičkih mogućnosti. Ovo dovodi do brojnih fizičkih i psihičkih problema kod čoveka. Jedino treningom čovek može da stimuliše svoje telo tako da se oseća najbolje moguće u svojoj koži.",
-    trainingTitle2: "Zdrave navike",
-    trainintText1: "Većini ljudi je trening najčešće u suprotnosti sa njihovim trenutnim životnim navikama. Kao i sa ostalim navikama, promene mogu biti veoma teške, ali se uvek rešavaju na isti način, odlučnošću i istrajnošću. Put od hiljadu koraka poćinje jednim korakom. Napravite ga zajedno sa nama.",
-    nutritionTitle: "Nutricionista",
-    nutritionText: "Iako deluje veoma jednostavno , većina ljudi nema pravu predstavu kada je hrana u pitanju. Jedna od čestih zabluda koja se javlja je 'Živim da bih jeo' način života. U svetu marketinga i fensi restorana lako je izgubiti pravi put i voditi se svojim čulima a ne zdravljem. Naš nutricionista pruža vam odgovore na vaša glavna pitanja - šta, kako i kada jesti?",
-    massageTitle: "Masaža",
-    massageText: "Smatra se da je masaža jedna od najpoznatijih metoda za lečenje i opuštanje organizma. Ona igra glavnu ulogu kada je u pitanju naše zdravlje. Masaža otklanja napetost koja je stvorena u nervima ljudskog organizma. Nakon tretmana nervni sistem se oslobađa tenzije i vraća se u normalno stanje. Osim na nerve, masaža utiče pozitivno i na mišiće, poboljšava cirkulaciju, razmenu hranljivih materija, sprečava pojavu bora i strija, povećava elastičnost, a odlična je i kod gubitka kilograma i pri eliminaciji tečnosti i toksina iz tela."
-},
-testComp:{
-    account: "Moj nalog",
-    settings: "Podešavanja",
-    logout: "Odjava"
-},
-terminList: {
-    noTerminText: "Nemate zakazane termine"
-},
-servicesSelector: {
-    trainings: "Treninzi",
-    nutrition: "Nutricionista",
-    massage: "Masaže"
-},
-home:{
-    jumboText: "Počnite da trenirate sa najboljima.",
-    trainingText: "NAJBOLJI TRENINZI",
-    trainingDesc: "Pogledajte najpopularnije treninge do sada",
-    subscription: "ČLANARINE"
-},
-workoutContent: {
-    comments: "KOMENTARI",
-    info: "INFORMACIJE",
-    unsupportedMsg: "Vaš pregledač ne podržava reprodukciju videa."
-},
-termini: {
-    pageTitle: "Moji termini,"
-},
-validationSchemaSettingsField: {
-    minFirstName: "Prekratko ime",
-	maxFirstName: "Ime predugačko",
-	firstNameRequired: "Ime je obavezno",
-	minLastName: "Prekratko prezime",
-	maxLastName: "Predugačko prezime",
-    lastNameRequired: "Prezime je obavezno",
-    minPass: "Lozinka je prekratka",
-    passConfirmWrong: "Šifre se moraju poklapati"
-},
-settingsFields: {
-    userFrom: "Korisnik od:",
-    firstName: "Ime",
-    lastName: "Prezime",
-    mail: "E-mail",
-    password: "Lozinka (min.6 karaktera)",
-    passwordConfirm: "Potvrda lozinke",
-    closeAcc: "Ugasi nalog",
-    save: "Sačuvaj"
-},
-zakazivanje: {
-    desc: "Zakažite termin i osigurajte svoje mesto na grupnim treninzima. Čekamo vas!",
-    jumboText="Zakažite Vaš termin",
-    title: "NEDELJNI KALENDAR",
-    filters: "FILTERI"
-},
-validationSchemaServiceForm: {
-    minFirstName: "Prekratko ime",
-	maxFirstName: "Ime predugačko",
-	firstNameRequired: "Ime je obavezno",
-	minLastName: "Prekratko prezime",
-	maxLastName: "Predugačko prezime",
-    lastNameRequired: "Prezime je obavezno",
-    minPhone: "Nevalidan broj",
-	maxPhone: "Nevalidan broj",
-    requiredPhone: "Telefon je obavezan",
-    requiredDate: "Datum je obavezan",
-    minDesc: "Opis je prekratak",
-	maxDesc: "Opis je predugačak",
-	requiredDesc: "Opis je obavezan"
-},
-serviceForm: {
-    firstName: "Ime",
-    lastName: "Prezime",
-    phone: "Telefon",
-    date: "Datum",
-    desc: "Opis problema",
-    send: "Pošalji"
-}
-}
+	validationSchemaLogin: {
+		invalidMail: "Nevalidan mejl",
+		minMail: "Prekratak mejl",
+		maxMail: "Predugačak mejl",
+		requiredMail: "Mejl je obavezan",
+		minPass: "Prekratka šifra",
+		requiredPass: "Šifra je obavezna"
+	},
+	validationSchemaRegister: {
+		minFirstName: "Prekratko ime",
+		maxFirstName: "Ime predugačko",
+		firstNameRequired: "Ime je obavezno",
+		minLastName: "Prekratko prezime",
+		maxLastName: "Predugačko prezime",
+		lastNameRequired: "Prezime je obavezno",
+		invalidMail: "Nevalidan mejl",
+		minMail: "Prekratak mejl",
+		maxMail: "Predugačak mejl",
+		requiredMail: "Mejl je obavezan",
+		minPass: "Lozinka je prekratka",
+		requiredPass: "Lozinka je neophodna",
+		requiredPassConfirm: "Šifra je obavezna",
+		passConfirmWrong: "Šifre se moraju poklapati"
+	},
+	loginForm: {
+		buttonText: "Prijavi se",
+		loginTitle: "PRIJAVA",
+		email: "E-mail",
+		password: "Lozinka",
+		submitButton: "Prijava"
+	},
+	registerForm: {
+		loginTitle: "REGISTRACIJA",
+		firstName: "Ime",
+		lastName: "Prezime",
+		email: "E-mail",
+		password: "Lozinka",
+		passwordMin: "(min. 6 karaktera)",
+		passwordConfirm: "Potvrda lozinke",
+		submitButton: "Registracija"
+	},
+	reservation: {
+		thanksMessage: "Hvala na rezervaciji!",
+		infoMessage: "Ispod se nalaze podaci koje ste uneli."
+	},
+	success: {
+		successMessage: "Uspešno poslato!",
+		pdfMessage: "PDF sa podacima možete preuzeti ovde:"
+	},
+	registerField: {
+		registerButton: "Pridruži se"
+	},
+	comment: {
+		fetchingText: "Dohvatam...",
+		fetchingDataText: "Dohvatam komentare..."
+	},
+	comments: {
+		noComments: "Trenutno nema komentara :("
+	},
+	validationSchemaMark: {
+		minMark: "Ocena ne može biti manja od 1",
+		maxMark: "Ocena ne može biti veća od 5",
+		requiredMark: "Ocena je obavezna",
+		minComment: "Komentar je prekratak",
+		maxComment: "Komentar je predugačak"
+	},
+	reviewButton: {
+		reviewButton: "Ostavi ocenu",
+		reviewTitle: "OSTAVI OCENU",
+		reviewText: "Ocena:",
+		reviewComment: "Komentar:",
+		reviewSubmit: "Oceni"
+	},
+	workoutGallery: {
+		previous: "Prethodna",
+		next: "Sledeća"
+	},
+	workoutInfo: {
+		level: "Nivo"
+	},
+	table: {
+		participantData: {
+			yoga1: "Prijavljeno: 0",
+			yoga2: "Prijavljeno: 0",
+			yoga3: "Prijavljeno: 0",
+			pilates1: "Prijavljeno: 0",
+			pilates2: "Prijavljeno: 0",
+			pilates3: "Prijavljeno: 0",
+			core1: "Prijavljeno: 0",
+			core2: "Prijavljeno: 0",
+			core3: "Prijavljeno: 0",
+			cardio1: "Prijavljeno: 0",
+			cardio2: "Prijavljeno: 0",
+			cardio3: "Prijavljeno: 0"
+		},
+		applied: "Prijavljeno: ",
+		reservationTitle: "REZERVACIJA",
+		submitButton: "Potvrdi",
+		time: "Vreme",
+		days: {
+			monday: "Ponedeljak",
+			tuesday: "Utorak",
+			wednesday: "Sreda",
+			thursday: "Četvrtak",
+			friday: "Petak",
+			saturday: "Subota",
+			sunday: "Nedelja"
+		},
+		trainings: {
+			0: "Napredni nivo",
+			1: "Anatomske i ortopedske vežbe",
+			2: "Upoznajte yogu",
+			3: "Kardio za mršavljenje",
+			4: "Core - Šta? Zašto? Kako?",
+			5: "Put do zabavnog kardio treninga",
+			6: "HardCore",
+			7: "Yoga za homofoteljuse",
+			8: "Učvrstite core, sačuvajte leđa",
+			9: "Vežbe na strunjači",
+			10: "Yoga za powerliftere",
+			11: "Kružni kardio trening"
+		}
+	},
+	contact: {
+		contactTitle: "STUPI U KONTAKT,"
+	},
+	contactMail: {
+		contactName: "Ime i prezime",
+		contactMail: "E-mail",
+		contactMsg: "Poruka",
+		contactButton: "Pošalji"
+	},
+	footer: {
+		authors: "Martin Mitrović, Miloš Živković",
+		school: "Univerzitet u Beogradu,",
+		uni: "Elektrotehnički fakultet"
+	},
+	trophies: {
+		trophiesTitle: "OSVOJILI SMO,",
+		trophies: {
+			0: {
+				title: "Newcomer of the Year - 2017",
+				text:
+					"U godini otvaranja, sada vec davne 2017. godine, zahvaljujuci svom brzom rastu i razvoju, fitnes centar 4ricepsFitness osvojio je pocasnu nagradu Newcomer of the Year kao najbolji novootvoreni fitnes centar."
+			},
+			1: {
+				title: "Gym team of the year",
+				text:
+					"Uz pazljivo odabran kadar ljudi koji svojim trudom i radom pomazu klijentima da efikasno dostignu svoje ciljeve, naš fitnes centar dobio je 2018. godine nagradu za najbolji kolektiv u teretanama i fitnes centrima."
+			},
+			2: {
+				title: "Member Achievement Award",
+				text:
+					"Tokom 2018. godine 4ricepsFitness je zabelezio svog rekordnog 10.000-og clana."
+			},
+			3: {
+				title: "FitPass Awards Night 2019 - Fitnes centar godine",
+				text:
+					"Na FitPass Awards Night 2019 dodeli nagrada 4ricepsFitness osvojio je pocasnu nagradu Fitnes centra godine."
+			},
+			4: {
+				title: "Innovation in Fitness Nutrition",
+				text:
+					"Pocasni smo nosioci ove nagrade za 2019. godinu koju smo dobili adekvatnim kombinovanjem nasih usluga radi postizanja rezultata na najefikasniji moguci nacin."
+			},
+			5: {
+				title: "Best Charitable Initiative",
+				text:
+					"Trenutno smo nominovani na The Charity Awards 2020 nagradnom programu zbog ucestvovanja u borbi protiv COVID-19 virusa. U periodu vanrednog stanja, nasi radnici su dobrovoljno vrsili dezinfekciju gradova, snabdevanje starijih lica i distribucija zastitne opreme."
+			}
+		}
+	},
+	user: {
+		title: "Moj nalog",
+		settings: "Podešavanja",
+		logout: "Odjava"
+	},
+	navbar: {
+		services: "USLUGE",
+		about: "O NAMA",
+		booking: "ZAKAZIVANJE"
+	},
+	services: {
+		jumboText: "Naše usluge",
+		desc:
+			"Članovima se daje ekskluzivni pristup teretanama, vođenim treninzima, konsultacijama sa nutricionistima kao i spa centru."
+	},
+	oNama: {
+		jumboText: "Naš tim",
+		desc: "Ovde možete naučiti nešto više o nama, našem timu i dostignućima."
+	},
+	sectionList: {
+		name: "IME",
+		length: "TRAJANJE",
+		level: "NIVO"
+	},
+	infoSectionContent: {
+		trainingTitle1: "Zašto trenirati?",
+		trainingText1:
+			"Čovekovo telo dizajnirano je da izdrži sve što majka priroda može da baci na njega. U današnjem vremenu uticaj prirode je slabiji nego ikada pa moderni čovek nema potrebe da koristi ni polovinu svojih fizičkih mogućnosti. Ovo dovodi do brojnih fizičkih i psihičkih problema kod čoveka. Jedino treningom čovek može da stimuliše svoje telo tako da se oseća najbolje moguće u svojoj koži.",
+		trainingTitle2: "Zdrave navike",
+		trainingText2:
+			"Većini ljudi je trening najčešće u suprotnosti sa njihovim trenutnim životnim navikama. Kao i sa ostalim navikama, promene mogu biti veoma teške, ali se uvek rešavaju na isti način, odlučnošću i istrajnošću. Put od hiljadu koraka poćinje jednim korakom. Napravite ga zajedno sa nama.",
+		nutritionTitle: "Ishrana",
+		nutritionText:
+			"Iako deluje veoma jednostavno, većina ljudi nema pravu predstavu kada je hrana u pitanju. Jedna od čestih zabluda koja se javlja je 'Živim da bih jeo' način života. U svetu marketinga i fensi restorana lako je izgubiti pravi put i voditi se svojim čulima a ne zdravljem. Naš nutricionista pruža vam odgovore na vaša glavna pitanja - šta, kako i kada jesti?",
+		massageTitle: "Masaža",
+		massageText:
+			"Smatra se da je masaža jedna od najpoznatijih metoda za lečenje i opuštanje organizma. Ona igra glavnu ulogu kada je u pitanju naše zdravlje. Masaža otklanja napetost koja je stvorena u nervima ljudskog organizma. Nakon tretmana nervni sistem se oslobađa tenzije i vraća se u normalno stanje. Osim na nerve, masaža utiče pozitivno i na mišiće, poboljšava cirkulaciju, razmenu hranljivih materija, sprečava pojavu bora i strija, povećava elastičnost, a odlična je i kod gubitka kilograma i pri eliminaciji tečnosti i toksina iz tela."
+	},
+	testComp: {
+		account: "Moj nalog",
+		settings: "Podešavanja",
+		logout: "Odjava"
+	},
+	terminList: {
+		noTerminText: "Nemate zakazane termine"
+	},
+	servicesSelector: {
+		trainings: "Treninzi",
+		nutrition: "Nutricionista",
+		massage: "Masaže"
+	},
+	home: {
+		jumboText: "Počnite da trenirate sa najboljima.",
+		trainingText: "NAJBOLJI TRENINZI",
+		trainingDesc: "Pogledajte najpopularnije treninge do sada",
+		subscription: "ČLANARINE"
+	},
+	workoutContent: {
+		comments: "KOMENTARI",
+		info: "INFORMACIJE",
+		unsupportedMsg: "Vaš pregledač ne podržava reprodukciju videa."
+	},
+	termini: {
+		pageTitle: "Moji termini,"
+	},
+	validationSchemaSettingsField: {
+		minFirstName: "Prekratko ime",
+		maxFirstName: "Ime predugačko",
+		firstNameRequired: "Ime je obavezno",
+		minLastName: "Prekratko prezime",
+		maxLastName: "Predugačko prezime",
+		lastNameRequired: "Prezime je obavezno",
+		minPass: "Lozinka je prekratka",
+		passConfirmWrong: "Šifre se moraju poklapati"
+	},
+	settingsFields: {
+		userFrom: "Korisnik od:",
+		firstName: "Ime",
+		lastName: "Prezime",
+		mail: "E-mail",
+		password: "Lozinka",
+		passwordMin: "min. 6 karaktera",
+		passwordConfirm: "Potvrda lozinke",
+		closeAcc: "Ugasi nalog",
+		save: "Sačuvaj"
+	},
+	zakazivanje: {
+		desc:
+			"Zakažite termin i osigurajte svoje mesto na grupnim treninzima. Čekamo vas!",
+		jumboText: "Zakažite Vaš termin",
+		title: "NEDELJNI KALENDAR",
+		filters: "FILTERI"
+	},
+	validationSchemaServiceForm: {
+		minFirstName: "Prekratko ime",
+		maxFirstName: "Ime predugačko",
+		firstNameRequired: "Ime je obavezno",
+		minLastName: "Prekratko prezime",
+		maxLastName: "Predugačko prezime",
+		lastNameRequired: "Prezime je obavezno",
+		minPhone: "Nevalidan broj",
+		maxPhone: "Nevalidan broj",
+		requiredPhone: "Telefon je obavezan",
+		requiredDate: "Datum je obavezan",
+		minDesc: "Opis je prekratak",
+		maxDesc: "Opis je predugačak",
+		requiredDesc: "Opis je obavezan"
+	},
+	serviceForm: {
+		firstName: "Ime",
+		lastName: "Prezime",
+		phone: "Telefon",
+		date: "Datum",
+		desc: "Opis problema",
+		send: "Pošalji"
+	}
+};
 
 /*
 "Bronza", "Bronze"
 "Pristup teretani od 08-18h radnim danima", "Gym access 08-18h on weekdays"
-"Vodjeni grupni treninzi", "Group trainings"
-"Savetovanje sa nutricionistom", "Nutrition consulting"
+"Vodjeni grupni treninzi", "Group workouts"
+"Savetovanje sa nutricionistom", "Diet consulting"
 "Srebro", "Silver"
 "3.500rsd", "3.500rsd"
 "Individualni treninzi pod nadzorom trenera", "Personal trainings"
@@ -626,3 +653,5 @@ Da se ne lažemo, svi radimo kardio iz samo jednog razloga - da sagorimo masne n
 "Cardio for weight loss
 Let's face it, we all do cardio for one reason only - to burn fat. We run, jump, swim, use different machines, and rarely does anyone actually know what he is doing there. If the diet does not comply with the training plan, disappointment can often occur due to lack of results. Let us change your mind and show you how to do cardio that will actually have results."
 */
+
+export { en, sr };

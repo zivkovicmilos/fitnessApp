@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SectionListItem from "./SectionListItem";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const SectionList = (props) => {
 	const [loading, setLoading] = useState(false);
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
 
 	const [sortBy, setSort] = useState("name");
 	const [selected, setSelected] = useState(`${props.type}SortName`);
@@ -55,7 +59,7 @@ const SectionList = (props) => {
 							changeSort("name", `${props.type}SortName`);
 						}}
 					>
-						IME
+						{lang == "sr" ? sr.sectionList.name : en.sectionList.name}
 					</span>
 					<span className="sortSeparator">|</span>
 					<span
@@ -64,7 +68,7 @@ const SectionList = (props) => {
 							changeSort("duration", `${props.type}SortDuration`);
 						}}
 					>
-						TRAJANJE
+						{lang == "sr" ? sr.sectionList.length : en.sectionList.length}
 					</span>
 					<span className="sortSeparator">|</span>
 					<span
@@ -73,7 +77,7 @@ const SectionList = (props) => {
 							changeSort("level", `${props.type}SortLevel`);
 						}}
 					>
-						NIVO
+						{lang == "sr" ? sr.sectionList.level : en.sectionList.level}
 					</span>
 				</div>
 			</div>
@@ -84,7 +88,7 @@ const SectionList = (props) => {
 						image={workout.picture}
 						title={workout.name}
 						duration={`${workout.duration * 30} min.`}
-						level={`Nivo ${workout.level}`}
+						level={`${lang == "sr" ? "Nivo" : "Level"} ${workout.level}`}
 						description={workout.descriptionSR}
 					/>
 				</Link>

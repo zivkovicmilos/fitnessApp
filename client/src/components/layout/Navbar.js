@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import LoginForm from "../auth/LoginForm";
 import RegisterForm from "../auth/RegisterForm";
 import Language from "./Language";
 import User from "./User";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const Navbar = () => {
+	const globalState = useContext(store);
+
+	let { lang } = globalState.state;
 	return (
 		<nav className="navbar navbar-expand-md navbar-dark nav-wrapper">
 			<Link className="navbar-brand" to="/">
@@ -27,17 +32,21 @@ const Navbar = () => {
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
 						<Link className="nav-link" to="/usluge/treninzi">
-							<span>USLUGE</span>
+							<span>
+								{lang == "sr" ? sr.navbar.services : en.navbar.services}
+							</span>
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link className="nav-link" to="/oNama">
-							<span>O NAMA</span>
+							<span>{lang == "sr" ? sr.navbar.about : en.navbar.about}</span>
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link className="nav-link" to="/zakazivanje">
-							<span>ZAKAZIVANJE</span>
+							<span>
+								{lang == "sr" ? sr.navbar.booking : en.navbar.booking}
+							</span>
 						</Link>
 					</li>
 				</ul>

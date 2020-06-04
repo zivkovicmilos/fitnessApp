@@ -60,8 +60,6 @@ router.post(
 				return res.status(400).json({ errors: [{ msg: "Neispravni podaci" }] });
 			}
 
-			console.log("Authenticating...");
-
 			jwt.sign(
 				payLoad,
 				config.get("jwtSecret"),

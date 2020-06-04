@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import starFull from "../../assets/svg/starFull.svg";
 import starEmpty from "../../assets/svg/starEmpty.svg";
+import { store } from "./../context/Store";
 
 const ShowcaseItem = (props) => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	let { name, picture, descriptionSR, descriptionEN, averageGrade } = props;
 
 	let stars = [];
@@ -34,7 +38,10 @@ const ShowcaseItem = (props) => {
 						<h2 className="showcaseNum mb-0">{averageGrade}</h2>
 					</div>
 					<p className="showcaseDesc">
-						{`${descriptionSR.replace(/^(.{160}[^\s]*).*/, "$1")}...`}
+						{`${(lang == "sr" ? descriptionSR : descriptionEN).replace(
+							/^(.{160}[^\s]*).*/,
+							"$1"
+						)}...`}
 					</p>
 				</div>
 			</div>

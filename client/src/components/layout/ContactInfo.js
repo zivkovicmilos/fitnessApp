@@ -11,9 +11,7 @@ const ContactInfo = () => {
 					<div class="contactIcon d-flex justify-content-center">
 						<img src={location} />
 					</div>
-					<span className="pl-3">
-						Bulevar Kralja Aleksandra 73, Beograd
-					</span>
+					<span className="pl-3">Bulevar Kralja Aleksandra 73, Beograd</span>
 				</div>
 			</div>
 			<div class="form-row">

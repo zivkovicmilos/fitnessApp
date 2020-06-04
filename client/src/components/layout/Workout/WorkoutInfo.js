@@ -1,8 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import clock from "./../../../assets/svg/clockBlack.svg";
 import levelIcon from "./../../../assets/svg/level.svg";
+import { store } from "./../../context/Store";
 
 const WorkoutInfo = (props) => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const { level, duration } = props;
 	return (
 		<Fragment>
@@ -12,7 +16,9 @@ const WorkoutInfo = (props) => {
 			</div>
 			<div>
 				<img src={levelIcon} className="workoutIcon mr-2" />
-				<span className="workoutLevel">Nivo {level}</span>
+				<span className="workoutLevel">
+					{`${lang == "sr" ? "Nivo" : "Level"} ${level}`}{" "}
+				</span>
 			</div>
 		</Fragment>
 	);

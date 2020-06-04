@@ -1,33 +1,70 @@
 import React, { useContext, useEffect } from "react";
 import blackClock from "../../assets/svg/clockBlack.svg";
 import { store } from "../context/Store";
+import { sr, en } from "./../../dict";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import FormError from "./Forms/FormError";
 import axios from "axios";
 import Loading from "./Loading";
 
-const validationSchema = Yup.object().shape({
-	firstName: Yup.string()
-		.min(3, "Prekratko ime")
-		.max(255, "Ime predugačko")
-		.required("Ime je obavezno"),
-	lastName: Yup.string()
-		.min(3, "Prekratko prezime")
-		.max(255, "Prezime predugačko")
-		.required("Prezime je obavezno"),
-	password: Yup.string().min(6, "Prekratka šifra"),
-	passwordConfirm: Yup.string().oneOf(
-		[Yup.ref("password"), null],
-		"Šifre se moraju poklapati"
-	)
-});
-
 const SettingsFields = () => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
 
 	const { user } = globalState.state;
+	let { lang } = globalState.state;
+
+	const validationSchema = Yup.object().shape({
+		firstName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaSettingsField.minFirstName
+					: en.validationSchemaSettingsField.minFirstName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaSettingsField.maxFirstName
+					: en.validationSchemaSettingsField.maxFirstName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaSettingsField.firstNameRequired
+					: en.validationSchemaSettingsField.firstNameRequired
+			),
+		lastName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaSettingsField.minLastName
+					: en.validationSchemaSettingsField.minLastName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaSettingsField.maxLastName
+					: en.validationSchemaSettingsField.maxLastName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaSettingsField.lastNameRequired
+					: en.validationSchemaSettingsField.lastNameRequired
+			),
+		password: Yup.string().min(
+			6,
+			lang == "sr"
+				? sr.validationSchemaSettingsField.minPass
+				: en.validationSchemaSettingsField.minPass
+		),
+		passwordConfirm: Yup.string().oneOf(
+			[Yup.ref("password"), null],
+			lang == "sr"
+				? sr.validationSchemaSettingsField.passConfirmWrong
+				: en.validationSchemaSettingsField.passConfirmWrong
+		)
+	});
 
 	let year = "";
 	let month = "";
@@ -72,7 +109,9 @@ const SettingsFields = () => {
 								/>
 
 								<span>
-									Korisnik od:{" "}
+									{lang == "sr"
+										? sr.settingsFields.userFrom
+										: en.settingsFields.userFrom}{" "}
 									{`${user ? day + "." + month + "." + year + "." : ""}`}
 								</span>
 							</div>
@@ -174,7 +213,11 @@ const SettingsFields = () => {
 									<div className="row mb-2">
 										<div className="col-xs-12 col-sm-5 col-lg-3">
 											<div className="form-group mb-0">
-												<label htmlFor="firstName">Ime</label>
+												<label htmlFor="firstName">
+													{lang == "sr"
+														? sr.settingsFields.firstName
+														: en.settingsFields.firstName}
+												</label>
 												<div className="invalid-group">
 													<input
 														type="text"
@@ -202,7 +245,11 @@ const SettingsFields = () => {
 										</div>
 										<div className="col-xs-12 col-sm-6 col-lg-3">
 											<div className="form-group mb-0">
-												<label htmlFor="lastName">Prezime</label>
+												<label htmlFor="lastName">
+													{lang == "sr"
+														? sr.settingsFields.lastName
+														: en.settingsFields.lastName}
+												</label>
 												<div className="invalid-group">
 													<input
 														type="text"
@@ -245,7 +292,14 @@ const SettingsFields = () => {
 										<div className="col-xs-12 col-sm-5 col-lg-4">
 											<div className="form-group mb-0">
 												<label htmlFor="password">
-													Lozinka (min.6 karaktera)
+													{lang == "sr"
+														? sr.settingsFields.password
+														: en.settingsFields.password}{" "}
+													<span className="labelMin">
+														{lang == "sr"
+															? sr.settingsFields.passwordMin
+															: en.settingsFields.passwordMin}
+													</span>
 												</label>
 												<div className="invalid-group">
 													<input
@@ -274,7 +328,11 @@ const SettingsFields = () => {
 										</div>
 										<div className="col-xs-12 col-sm-6 col-lg-4">
 											<div className="form-group mb-0">
-												<label htmlFor="passwordConfirm">Potvrda lozinke</label>
+												<label htmlFor="passwordConfirm">
+													{lang == "sr"
+														? sr.settingsFields.passwordConfirm
+														: en.settingsFields.passwordConfirm}
+												</label>
 												<div className="invalid-group">
 													<input
 														type="password"
@@ -351,7 +409,9 @@ const SettingsFields = () => {
 													});
 												}}
 											>
-												Ugasi nalog
+												{lang == "sr"
+													? sr.settingsFields.closeAcc
+													: en.settingsFields.closeAcc}
 											</button>
 										</div>
 										<div className="centerRow">
@@ -361,7 +421,9 @@ const SettingsFields = () => {
 												disabled={isSubmitting}
 												id="saveButton"
 											>
-												Sačuvaj
+												{lang == "sr"
+													? sr.settingsFields.save
+													: en.settingsFields.save}
 											</button>
 										</div>
 									</div>

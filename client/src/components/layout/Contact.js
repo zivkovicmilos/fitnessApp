@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import ContactInfo from "./ContactInfo";
 import ContactMail from "./ContactMail";
 import ContactMap from "./ContactMap";
 import ContactSocial from "./ContactSocial";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const Contact = () => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	return (
 		<div class="container-fluid contactContainer">
 			<div class="row">
 				<div class="col">
-					<h1 className="pageTitle">STUPI U KONTAKT,</h1>
+					<h1 className="pageTitle">
+						{lang == "sr" ? sr.contact.contactTitle : en.contact.contactTitle}
+					</h1>
 				</div>
 			</div>
 			<div class="row">

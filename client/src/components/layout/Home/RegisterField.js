@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import RegisterForm from "./../../auth/RegisterForm";
+import { store } from "./../../context/Store";
+import { sr, en } from "./../../../dict";
 
 const RegisterField = () => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const [emailField, setEmailField] = useState("");
 
 	return (
@@ -26,7 +31,9 @@ const RegisterField = () => {
 						document.getElementById("emailRegField").value = "";
 					}}
 				>
-					Pridruži se
+					{lang == "sr"
+						? sr.registerField.registerButton
+						: en.registerField.registerButton}
 				</button>
 
 				<RegisterForm email={emailField} />

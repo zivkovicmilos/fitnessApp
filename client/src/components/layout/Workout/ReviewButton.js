@@ -7,6 +7,7 @@ import { store } from "../../context/Store";
 import axios from "axios";
 import close from "./../../../assets/svg/close.svg";
 import { useLocation } from "react-router-dom";
+import { sr, en } from "./../../../dict";
 
 const validationSchema = Yup.object().shape({
 	rating: Yup.number()
@@ -21,6 +22,7 @@ const validationSchema = Yup.object().shape({
 const ReviewButton = (props) => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
+	let { lang } = globalState.state;
 	const { dispatch } = globalState;
 
 	let { reviews } = props;
@@ -48,7 +50,6 @@ const ReviewButton = (props) => {
 			let found = false;
 
 			for (let i = 0; i < reviews.length; i++) {
-				console.log(`REVIEW[${i}] user is ${reviews[i].user}`);
 				if (reviews[i].user == user._id) {
 					found = true;
 					break;
@@ -66,7 +67,9 @@ const ReviewButton = (props) => {
 				data-target="#reviewModal"
 				id="reviewButton"
 			>
-				Ostavi ocenu
+				{lang == "sr"
+					? sr.reviewButton.reviewButton
+					: en.reviewButton.reviewButton}
 				<img src={pencil} className="icon" />
 			</button>
 
@@ -129,7 +132,11 @@ const ReviewButton = (props) => {
 							>
 								<div className="modal-content">
 									<div className="row modalHead formRow justify-content-between">
-										<span>OSTAVI OCENU</span>
+										<span>
+											{lang == "sr"
+												? sr.reviewButton.reviewTitle
+												: en.reviewButton.reviewTitle}
+										</span>
 										<img
 											src={close}
 											className="closeButton"
@@ -140,7 +147,9 @@ const ReviewButton = (props) => {
 									<div className="modalBody">
 										<div className="form-row formRow">
 											<label htmlFor="rating" className="mb-0 mr-2">
-												Ocena:
+												{lang == "sr"
+													? sr.reviewButton.reviewText
+													: en.reviewButton.reviewText}
 											</label>
 											<div className="form-check form-check-inline">
 												<div className="custom-control custom-radio row">
@@ -240,7 +249,9 @@ const ReviewButton = (props) => {
 										</div>
 										<div className="form-group">
 											<label htmlFor="comment" className="ml-0 mt-2">
-												Komentar
+												{lang == "sr"
+													? sr.reviewButton.reviewComment
+													: en.reviewButton.reviewComment}
 											</label>
 											<div className="invalid-group textAreaInvalid">
 												<textarea
@@ -272,7 +283,9 @@ const ReviewButton = (props) => {
 											className="modalButton"
 											disabled={isSubmitting}
 										>
-											Oceni
+											{lang == "sr"
+												? sr.reviewButton.reviewSubmit
+												: en.reviewButton.reviewSubmit}
 										</button>
 									</div>
 								</div>

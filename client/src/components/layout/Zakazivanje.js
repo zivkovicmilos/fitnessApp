@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Table from "./Zakazivanje/Table";
 import Navbar from "./Navbar";
 import Jumbo from "./Jumbo";
 import Footer from "./Footer";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const Zakazivanje = () => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const [yoga, setYoga] = useState(true);
 	const [yogaEls, setYogaEls] = useState([]);
 
@@ -18,10 +23,7 @@ const Zakazivanje = () => {
 	const [cardioEls, setCardioEls] = useState([]);
 
 	const insertAfter = (referenceNode, newNode) => {
-		referenceNode.parentNode.insertBefore(
-			newNode,
-			referenceNode.nextSibling
-		);
+		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 	};
 
 	const getNext = (time) => {
@@ -50,7 +52,6 @@ const Zakazivanje = () => {
 	};
 
 	const wipeElements = (workouts, type) => {
-		//els.splice(0, els.length);
 		switch (type) {
 			case "yoga":
 				setYogaEls([]);
@@ -72,16 +73,13 @@ const Zakazivanje = () => {
 				let parent = workout.parentNode;
 				let refTime = parent.id;
 
-				let index = [].indexOf.call(
-					workout.parentNode.children,
-					workout
-				);
+				let index = [].indexOf.call(workout.parentNode.children, workout);
 
 				let arrElement = {
 					parent: workout.parentNode,
 					element: workout,
 					index: index,
-					added: [],
+					added: []
 				};
 
 				let newTd = document.createElement("td");
@@ -90,9 +88,7 @@ const Zakazivanje = () => {
 
 				if (workout.rowSpan > 1) {
 					for (let i = 1; i < workout.rowSpan; i++) {
-						let reference = document.getElementById(
-							getNext(refTime)
-						);
+						let reference = document.getElementById(getNext(refTime));
 						refTime = getNext(refTime);
 
 						let td = document.createElement("td");
@@ -108,10 +104,7 @@ const Zakazivanje = () => {
 						setYogaEls((yogaEls) => [...yogaEls, arrElement]);
 						break;
 					case "pilates":
-						setPilatesEls((pilatesEls) => [
-							...pilatesEls,
-							arrElement,
-						]);
+						setPilatesEls((pilatesEls) => [...pilatesEls, arrElement]);
 						break;
 					case "core":
 						setCoreEls((coreEls) => [...coreEls, arrElement]);
@@ -221,8 +214,10 @@ const Zakazivanje = () => {
 			<Navbar />
 			<Jumbo
 				type="reservation"
-				desc="Zakažite termin i osigurajte svoje mesto na grupnim treninzima. Čekamo vas!"
-				jumboText="Zakažite Vaš termin"
+				desc={lang == "sr" ? sr.zakazivanje.desc : en.zakazivanje.desc}
+				jumboText={
+					lang == "sr" ? sr.zakazivanje.jumboText : en.zakazivanje.jumboText
+				}
 				image="jumboZakazivanje"
 			/>
 			<div className="row centerRow">
@@ -230,13 +225,15 @@ const Zakazivanje = () => {
 					className="pageTitle col offset-1 
 				"
 				>
-					NEDELJNI KALENDAR
+					{lang == "sr" ? sr.zakazivanje.title : en.zakazivanje.title}
 				</h1>
 			</div>
 			<div className="row centerRowX">
 				<div className="col-xs-3">
 					<div className="filtersNew mb-3">
-						<h3 className="mb-0 mr-3">FILTERI</h3>
+						<h3 className="mb-0 mr-3">
+							{lang == "sr" ? sr.zakazivanje.filters : en.zakazivanje.filters}
+						</h3>
 						<form>
 							<div className="custom-control custom-checkbox">
 								<input
@@ -248,10 +245,7 @@ const Zakazivanje = () => {
 										setYoga(!yoga);
 									}}
 								/>
-								<label
-									className="custom-control-label"
-									htmlFor="yogaCheck"
-								>
+								<label className="custom-control-label" htmlFor="yogaCheck">
 									Yoga
 								</label>
 							</div>
@@ -265,10 +259,7 @@ const Zakazivanje = () => {
 										setPilates(!pilates);
 									}}
 								/>
-								<label
-									className="custom-control-label"
-									htmlFor="pilatesCheck"
-								>
+								<label className="custom-control-label" htmlFor="pilatesCheck">
 									Pilates
 								</label>
 							</div>
@@ -282,10 +273,7 @@ const Zakazivanje = () => {
 										setCore(!core);
 									}}
 								/>
-								<label
-									className="custom-control-label"
-									htmlFor="coreCheck"
-								>
+								<label className="custom-control-label" htmlFor="coreCheck">
 									Core
 								</label>
 							</div>
@@ -299,10 +287,7 @@ const Zakazivanje = () => {
 										setCardio(!cardio);
 									}}
 								/>
-								<label
-									className="custom-control-label"
-									htmlFor="cardioCheck"
-								>
+								<label className="custom-control-label" htmlFor="cardioCheck">
 									Cardio
 								</label>
 							</div>

@@ -5,32 +5,98 @@ import FormError from "./../layout/Forms/FormError";
 import { store } from "../context/Store";
 import axios from "axios";
 import close from "./../../assets/svg/close.svg";
-
-const validationSchema = Yup.object().shape({
-	firstName: Yup.string()
-		.min(3, "Prekratko ime")
-		.max(255, "Ime predugačko")
-		.required("Ime je obavezno"),
-	lastName: Yup.string()
-		.min(3, "Prekratko prezime")
-		.max(255, "Prezime predugačko")
-		.required("Prezime je obavezno"),
-	email: Yup.string()
-		.email("Nevalidan mejl")
-		.min(3, "Prekratak mejl")
-		.max(50, "Predugačak mejl")
-		.required("Mejl je obavezan"),
-	password: Yup.string()
-		.min(6, "Prekratka šifra")
-		.required("Šifra je obavezna"),
-	passwordConfirm: Yup.string()
-		.oneOf([Yup.ref("password"), null], "Šifre se moraju poklapati")
-		.required("Šifra je obavezna")
-});
+import { sr, en } from "./../../dict";
 
 const RegisterForm = (props) => {
 	const globalState = useContext(store);
 	const { dispatch } = globalState;
+	let { lang } = globalState.state;
+
+	const validationSchema = Yup.object().shape({
+		firstName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaRegister.minFirstName
+					: en.validationSchemaRegister.minFirstName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaRegister.maxFirstName
+					: en.validationSchemaRegister.maxFirstName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaRegister.firstNameRequired
+					: en.validationSchemaRegister.firstNameRequired
+			),
+		lastName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaRegister.minLastName
+					: en.validationSchemaRegister.minLastName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaRegister.minLastName
+					: en.validationSchemaRegister.minLastName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaRegister.lastNameRequired
+					: en.validationSchemaRegister.lastNameRequired
+			),
+		email: Yup.string()
+			.email(
+				lang == "sr"
+					? sr.validationSchemaRegister.invalidMail
+					: en.validationSchemaRegister.invalidMail
+			)
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaRegister.minMail
+					: en.validationSchemaRegister.minMail
+			)
+			.max(
+				50,
+				lang == "sr"
+					? sr.validationSchemaRegister.maxMail
+					: en.validationSchemaRegister.maxMail
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaRegister.requiredMail
+					: en.validationSchemaRegister.requiredMail
+			),
+		password: Yup.string()
+			.min(
+				6,
+				lang == "sr"
+					? sr.validationSchemaRegister.minPass
+					: en.validationSchemaRegister.minPass
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaRegister.requiredPass
+					: en.validationSchemaRegister.requiredPass
+			),
+		passwordConfirm: Yup.string()
+			.oneOf(
+				[Yup.ref("password"), null],
+				lang == "sr"
+					? sr.validationSchemaRegister.passConfirmWrong
+					: en.validationSchemaRegister.passConfirmWrong
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaRegister.requiredPass
+					: en.validationSchemaRegister.requiredPass
+			)
+	});
 
 	let userEmail = props.email;
 
@@ -139,7 +205,11 @@ const RegisterForm = (props) => {
 							>
 								<div className="modal-content">
 									<div className="row modalHead formRow justify-content-between">
-										<span>REGISTRACIJA</span>
+										<span>
+											{lang == "sr"
+												? sr.registerForm.loginTitle
+												: en.registerForm.loginTitle}
+										</span>
 										<img
 											src={close}
 											className="closeButton"
@@ -151,7 +221,11 @@ const RegisterForm = (props) => {
 										<div className="form-row formRow">
 											<div className="col-sm-12 col-lg-6 mb-2">
 												<div className="form-group">
-													<label htmlFor="firstName">Ime</label>
+													<label htmlFor="firstName">
+														{lang == "sr"
+															? sr.registerForm.firstName
+															: en.registerForm.firstName}
+													</label>
 													<div className="invalid-group">
 														<input
 															type="text"
@@ -179,7 +253,11 @@ const RegisterForm = (props) => {
 											</div>
 											<div className="col-sm-12 col-lg-6">
 												<div className="form-group">
-													<label htmlFor="lastName">Prezime</label>
+													<label htmlFor="lastName">
+														{lang == "sr"
+															? sr.registerForm.lastName
+															: en.registerForm.lastName}
+													</label>
 													<div className="invalid-group">
 														<input
 															type="text"
@@ -236,8 +314,14 @@ const RegisterForm = (props) => {
 										<div className="form-row formRow">
 											<div className="form-group col">
 												<label htmlFor="password mt-5">
-													Lozinka{" "}
-													<span className="labelMin">(min. 6 karaktera)</span>
+													{lang == "sr"
+														? sr.registerForm.password
+														: en.registerForm.password}
+													<span className=" ml-2 labelMin">
+														{lang == "sr"
+															? sr.registerForm.passwordMin
+															: en.registerForm.passwordMin}
+													</span>
 												</label>
 												<div className="invalid-group">
 													<input
@@ -267,7 +351,9 @@ const RegisterForm = (props) => {
 										<div className="form-row formRow">
 											<div className="form-group col">
 												<label htmlFor="passwordConfirm mt-5">
-													Potvrda lozinke
+													{lang == "sr"
+														? sr.registerForm.passwordConfirm
+														: en.registerForm.passwordConfirm}
 												</label>
 												<div className="invalid-group">
 													<input
@@ -302,7 +388,9 @@ const RegisterForm = (props) => {
 											className="modalButton modalButtonFix"
 											disabled={isSubmitting}
 										>
-											Registracija
+											{lang == "sr"
+												? sr.registerForm.submitButton
+												: en.registerForm.submitButton}
 										</button>
 									</div>
 								</div>

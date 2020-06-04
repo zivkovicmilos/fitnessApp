@@ -1,31 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import FormError from "./Forms/FormError";
 import Success from "./Forms/Success";
 import send from "../../assets/svg/send.svg";
-
-const validationSchema = Yup.object().shape({
-	firstName: Yup.string()
-		.min(3, "Prekratko ime")
-		.max(255, "Ime predugačko")
-		.required("Ime je obavezno"),
-	lastName: Yup.string()
-		.min(3, "Prekratko prezime")
-		.max(255, "Prezime predugačko")
-		.required("Prezime je obavezno"),
-	phone: Yup.string()
-		.min(3, "Nevalidan broj")
-		.max(255, "Nevalidan broj")
-		.required("Telefon je obavezan"),
-	date: Yup.date().required("Datum je obavezan"),
-	description: Yup.string()
-		.min(10, "Opis je prekratak")
-		.max(255, "Opis je predugačak")
-		.required("Opis je obavezan")
-});
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const ServicesForm = (props) => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const [submitted, setSubmitted] = useState(false);
 	const [formData, setFormData] = useState({
 		firstName: "",
@@ -33,6 +18,86 @@ const ServicesForm = (props) => {
 		phone: "",
 		date: "",
 		description: ""
+	});
+
+	const validationSchema = Yup.object().shape({
+		firstName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.minFirstName
+					: en.validationSchemaServiceForm.minFirstName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.maxFirstName
+					: en.validationSchemaServiceForm.maxFirstName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaServiceForm.firstNameRequired
+					: en.validationSchemaServiceForm.firstNameRequired
+			),
+		lastName: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.minLastName
+					: en.validationSchemaServiceForm.minLastName
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.maxLastName
+					: en.validationSchemaServiceForm.maxLastName
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaServiceForm.lastNameRequired
+					: en.validationSchemaServiceForm.lastNameRequired
+			),
+		phone: Yup.string()
+			.min(
+				3,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.minPhone
+					: en.validationSchemaServiceForm.minPhone
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.maxPhone
+					: en.validationSchemaServiceForm.maxPhone
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaServiceForm.requiredPhone
+					: en.validationSchemaServiceForm.requiredPhone
+			),
+		date: Yup.date().required(
+			lang == "sr"
+				? sr.validationSchemaServiceForm.requiredDate
+				: en.validationSchemaServiceForm.requiredDate
+		),
+		description: Yup.string()
+			.min(
+				10,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.minDesc
+					: en.validationSchemaServiceForm.minDesc
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaServiceForm.maxDesc
+					: en.validationSchemaServiceForm.maxDesc
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaServiceForm.requiredDesc
+					: en.validationSchemaServiceForm.requiredDesc
+			)
 	});
 
 	if (!submitted) {
@@ -48,7 +113,6 @@ const ServicesForm = (props) => {
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting, resetForm }) => {
 					setSubmitting(true);
-					// axios post
 
 					setFormData({
 						...formData,
@@ -76,7 +140,11 @@ const ServicesForm = (props) => {
 					<form className="servicesForm" onSubmit={handleSubmit}>
 						<div className="form-row">
 							<div className="form-group mr-3">
-								<label htmlFor="firstName">Ime</label>
+								<label htmlFor="firstName">
+									{lang == "sr"
+										? sr.serviceForm.firstName
+										: en.serviceForm.firstName}
+								</label>
 								<div className="invalid-group">
 									<input
 										type="text"
@@ -100,7 +168,11 @@ const ServicesForm = (props) => {
 								</div>
 							</div>
 							<div className="form-group mr-3">
-								<label htmlFor="lastName">Prezime</label>
+								<label htmlFor="lastName">
+									{lang == "sr"
+										? sr.serviceForm.lastName
+										: en.serviceForm.lastName}
+								</label>
 								<div className="invalid-group">
 									<input
 										type="text"
@@ -124,7 +196,9 @@ const ServicesForm = (props) => {
 						</div>
 						<div className="form-row">
 							<div className="form-group mr-3">
-								<label htmlFor="phone">Telefon</label>
+								<label htmlFor="phone">
+									{lang == "sr" ? sr.serviceForm.phone : en.serviceForm.phone}
+								</label>
 								<div className="invalid-group">
 									<input
 										type="text"
@@ -141,7 +215,9 @@ const ServicesForm = (props) => {
 								</div>
 							</div>
 							<div className="form-group">
-								<label htmlFor="date">Datum</label>
+								<label htmlFor="date">
+									{lang == "sr" ? sr.serviceForm.date : en.serviceForm.date}
+								</label>
 								<div className="invalid-group">
 									<input
 										type="date"
@@ -159,7 +235,9 @@ const ServicesForm = (props) => {
 							</div>
 						</div>
 						<div className="form-group">
-							<label htmlFor="description">Opis problema</label>
+							<label htmlFor="description">
+								{lang == "sr" ? sr.serviceForm.desc : en.serviceForm.desc}
+							</label>
 							<div className="invalid-group textAreaInvalid">
 								<textarea
 									className={`form-control ${
@@ -185,7 +263,7 @@ const ServicesForm = (props) => {
 						</div>
 						<div className="text-right">
 							<button className="button" type="submit" disabled={isSubmitting}>
-								Pošalji
+								{lang == "sr" ? sr.serviceForm.send : en.serviceForm.send}
 								<img src={send} className="icon" />
 							</button>
 						</div>

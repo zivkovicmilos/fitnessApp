@@ -2,29 +2,31 @@ import React, { useState, useEffect, useContext, Fragment } from "react";
 import TerminListItem from "./TerminListItem";
 import Sad from "../../assets/svg/sad.svg";
 import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 import axios from "axios";
 
 const TerminList = (props) => {
 	const globalState = useContext(store);
 	const [workouts, setWorkouts] = useState([]);
 	let { user } = globalState.state;
+	let { lang } = globalState.state;
 
 	const getDayName = (day) => {
 		switch (day) {
 			case 1:
-				return "Ponedeljak";
+				return lang == "sr" ? sr.table.days.monday : en.table.days.monday;
 			case 2:
-				return "Utorak";
+				return lang == "sr" ? sr.table.days.tuesday : en.table.days.tuesday;
 			case 3:
-				return "Sreda";
+				return lang == "sr" ? sr.table.days.wednesday : en.table.days.wednesday;
 			case 4:
-				return "Četvrtak";
+				return lang == "sr" ? sr.table.days.thursday : en.table.days.thursday;
 			case 5:
-				return "Petak";
+				return lang == "sr" ? sr.table.days.friday : en.table.days.friday;
 			case 6:
-				return "Subota";
+				return lang == "sr" ? sr.table.days.saturday : en.table.days.saturday;
 			case 0:
-				return "Nedelja";
+				return lang == "sr" ? sr.table.days.sunday : en.table.days.sunday;
 			default:
 				return "error";
 		}
@@ -80,7 +82,11 @@ const TerminList = (props) => {
 						<img src={Sad}></img>
 					</div>
 					<div className="col-12 sad">
-						<h2 className="text-center">Nemate zakazane termine</h2>
+						<h2 className="text-center">
+							{lang == "sr"
+								? sr.terminList.noTerminText
+								: en.terminList.noTerminText}
+						</h2>
 					</div>
 				</Fragment>
 			)}

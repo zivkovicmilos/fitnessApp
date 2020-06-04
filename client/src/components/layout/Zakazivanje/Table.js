@@ -2,11 +2,13 @@ import React, { Fragment, useEffect, useState, useContext } from "react";
 import close from "./../../../assets/svg/close.svg";
 import axios from "axios";
 import { store } from "./../../context/Store";
+import { sr, en } from "./../../../dict";
 
 const Table = () => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
 	let { reload } = globalState.state;
+	let { lang } = globalState.state;
 	const { dispatch } = globalState;
 
 	const [participantData, setParticipantData] = useState({
@@ -64,19 +66,19 @@ const Table = () => {
 	const getDayName = (day) => {
 		switch (day) {
 			case 1:
-				return "Ponedeljak";
+				return lang == "sr" ? sr.table.days.monday : en.table.days.monday;
 			case 2:
-				return "Utorak";
+				return lang == "sr" ? sr.table.days.tuesday : en.table.days.tuesday;
 			case 3:
-				return "Sreda";
+				return lang == "sr" ? sr.table.days.wednesday : en.table.days.wednesday;
 			case 4:
-				return "Četvrtak";
+				return lang == "sr" ? sr.table.days.thursday : en.table.days.thursday;
 			case 5:
-				return "Petak";
+				return lang == "sr" ? sr.table.days.friday : en.table.days.friday;
 			case 6:
-				return "Subota";
+				return lang == "sr" ? sr.table.days.saturday : en.table.days.saturday;
 			case 0:
-				return "Nedelja";
+				return lang == "sr" ? sr.table.days.sunday : en.table.days.sunday;
 			default:
 				return "error";
 		}
@@ -119,7 +121,11 @@ const Table = () => {
 					<div className="modal-content">
 						<div className="container-fluid">
 							<div className="row modalHead centerRow justify-content-between">
-								<span>REZERVACIJA</span>
+								<span>
+									{lang == "sr"
+										? sr.table.reservationTitle
+										: en.table.reservationTitle}
+								</span>
 								<img
 									src={close}
 									className="closeButton"
@@ -185,7 +191,7 @@ const Table = () => {
 										}, 3000);
 									}}
 								>
-									Potvrdi
+									{lang == "sr" ? sr.table.submitButton : en.table.submitButton}
 								</button>
 							</div>
 						</div>
@@ -197,14 +203,32 @@ const Table = () => {
 				<table className="table table-bordered">
 					<thead className="thead-dark">
 						<tr>
-							<th scope="col">Vreme</th>
-							<th scope="col">Ponedeljak</th>
-							<th scope="col">Utorak</th>
-							<th scope="col">Sreda</th>
-							<th scope="col">Četvrtak</th>
-							<th scope="col">Petak</th>
-							<th scope="col">Subota</th>
-							<th scope="col">Nedelja</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.time : en.table.time}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.monday : en.table.days.monday}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.tuesday : en.table.days.tuesday}
+							</th>
+							<th scope="col">
+								{lang == "sr"
+									? sr.table.days.wednesday
+									: en.table.days.wednesday}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.thursday : en.table.days.thursday}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.friday : en.table.days.friday}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.saturday : en.table.days.saturday}
+							</th>
+							<th scope="col">
+								{lang == "sr" ? sr.table.days.sunday : en.table.days.sunday}
+							</th>
 						</tr>
 					</thead>
 					<tbody className="thead-dark">

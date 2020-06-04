@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import pdf from "../../../assets/svg/pdf.svg";
 
 import Reservation from "./PDF/Reservation";
+import ReservationEN from "./PDF/ReservationEN";
 import { PDFDownloadLink, Document, Page } from "@react-pdf/renderer";
+
+import { store } from "./../../context/Store";
+import { sr, en } from "./../../../dict";
 
 const Success = (props) => {
 	const green = "#34e83b";
 
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const { firstName, lastName } = props.formData;
 
 	const section = props.section.substring(4);
+	const sectionEN = section == "Nutricionista" ? "Nutritionist" : "Massage";
 
 	return (
 		<div className="col-md-7 col-10 successBox mt-4">
@@ -68,13 +76,23 @@ const Success = (props) => {
 					/>
 				</svg>
 			</div>
-			<p className="success">Uspešno poslato!</p>
+			<p className="success">
+				{lang == "sr" ? sr.success.successMessage : en.success.successMessage}
+			</p>
 
 			<p className="successBelow">
-				PDF sa podacima možete preuzeti ovde:{" "}
+				{lang == "sr" ? sr.success.pdfMessage : en.success.pdfMessage}
 				<PDFDownloadLink
-					document={<Reservation formData={props.formData} section={section} />}
-					fileName={`${lastName}, ${firstName} - ${section}`}
+					document={
+						lang == "sr" ? (
+							<Reservation formData={props.formData} section={section} />
+						) : (
+							<ReservationEN formData={props.formData} section={sectionEN} />
+						)
+					}
+					fileName={`${lastName}, ${firstName} - ${
+						lang == "sr" ? section : sectionEN
+					}`}
 				>
 					{({ blob, url, loading, error }) =>
 						loading ? (

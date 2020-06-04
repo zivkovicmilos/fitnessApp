@@ -7,16 +7,12 @@ import UslugeTreninzi from "./UslugeTreninzi";
 import UslugeNutricionista from "./UslugeNutricionista";
 import UslugeMasaze from "./UslugeMasaze";
 import { store } from "../context/Store";
+import { sr, en } from "../../dict";
 
 const Services = () => {
 	const globalState = useContext(store);
 
-	/*
-	Using dispatch:
-	const { dispatch } = globalState;
-
-  dispatch({ type: 'action description' })
-	*/
+	let { lang } = globalState.state;
 
 	let renderedSection = <UslugeTreninzi />;
 	switch (globalState.state.section) {
@@ -36,8 +32,8 @@ const Services = () => {
 			<Navbar />
 			<Jumbo
 				type="services"
-				desc="Članovima se daje ekskluzivni pristup teretanama, vođenim treninzima, konsultacijama sa nutricionistima kao i spa centru."
-				jumboText="Naše usluge"
+				desc={lang == "sr" ? sr.services.desc : en.services.desc}
+				jumboText={lang == "sr" ? sr.services.jumboText : en.services.jumboText}
 				image="jumboUsluge"
 			/>
 

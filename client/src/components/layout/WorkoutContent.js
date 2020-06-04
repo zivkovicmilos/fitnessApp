@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Stars from "./Workout/Stars";
 import WorkoutInfo from "./Workout/WorkoutInfo";
 import WorkoutGallery from "./Workout/WorkoutGallery";
 import ReviewButton from "./Workout/ReviewButton";
 import Comments from "./Workout/Comments";
 import DoubleGallery from "./DoubleGallery";
+import { store } from "./../context/Store";
+import { sr, en } from "./../../dict";
 
 const WorkoutContent = (props) => {
+	const globalState = useContext(store);
+	let { lang } = globalState.state;
+
 	const { workoutData } = props;
 
 	return (
@@ -21,19 +26,23 @@ const WorkoutContent = (props) => {
 			</div>
 			<div className="row">
 				<div className="col-lg-7 ml-4 workoutDesc">
-					{workoutData.descriptionSR}
+					{lang == "sr" ? workoutData.descriptionSR : workoutData.descriptionEN}
 					<h1
 						className="workoutInfoTitle col mb-4 mt-5
 				"
 					>
-						KOMENTARI
+						{lang == "sr"
+							? sr.workoutContent.comments
+							: en.workoutContent.comments}
 					</h1>
 					<div className="col-md-12">
 						<Comments reviews={workoutData.reviews} />
 					</div>
 				</div>
 				<div className="col-lg-4">
-					<div className="row centerRow workoutInfoTitle mb-3">INFORMACIJE</div>
+					<div className="row centerRow workoutInfoTitle mb-3">
+						{lang == "sr" ? sr.workoutContent.info : en.workoutContent.info}
+					</div>
 					<div className="row centerRow mb-3">
 						<Stars score={workoutData.averageGrade} />
 					</div>
