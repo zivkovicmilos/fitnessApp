@@ -1764,7 +1764,7 @@ nav {
 	background-color: var(--ultraLightGrey);
 	visibility: hidden;
 	opacity: 0;
-	min-width: 10em;
+	min-width: 10.5em;
 	position: absolute;
 	transition: 5s background-color ease-in-out;
 	margin-top: 0;

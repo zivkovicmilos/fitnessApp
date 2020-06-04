@@ -43,14 +43,14 @@ const User = () => {
 							<ul className="dropdown ml-2">
 								<Link to="/profil">
 									<li>
-										<img src={userIcon} className="menuIcon" />
+										<img src={userIcon} className="mr-2 menuIcon" />
 										{lang == "sr" ? sr.user.title : en.user.title}
 									</li>
 								</Link>
 
 								<Link to="/profil/podesavanja">
 									<li>
-										<img src={settingsIcon} className="menuIcon" />
+										<img src={settingsIcon} className="mr-2 menuIcon" />
 										{lang == "sr" ? sr.user.settings : en.user.settings}
 									</li>
 								</Link>
@@ -63,7 +63,7 @@ const User = () => {
 										});
 									}}
 								>
-									<img src={logoutIcon} className="menuIcon" />
+									<img src={logoutIcon} className="mr-2 menuIcon" />
 									{lang == "sr" ? sr.user.logout : en.user.logout}
 								</li>
 							</ul>
