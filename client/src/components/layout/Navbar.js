@@ -6,6 +6,7 @@ import Language from "./Language";
 import User from "./User";
 import { store } from "./../context/Store";
 import { sr, en } from "./../../dict";
+import logo from "./../../assets/svg/logoWhite.svg";
 
 const Navbar = () => {
 	const globalState = useContext(store);
@@ -14,7 +15,7 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-md navbar-dark nav-wrapper">
 			<Link className="navbar-brand" to="/">
-				LOGO
+				<img src={logo} className="logo" />
 			</Link>
 			<button
 				className="navbar-toggler"

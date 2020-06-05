@@ -1836,3 +1836,7 @@ nav {
 	border: 10px solid;
 	border-color: transparent transparent #fff transparent;
 }
+
+.logo {
+	width: 3.5em;
+}
