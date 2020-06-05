@@ -8,7 +8,7 @@ const ContactSocial = () => {
 	return (
 		<div class="row centerRowX">
 			<div class=" col-1 social">
-				<a href="mailto:milos@zmilos.com">
+				<a href="mailto:4ricepsfitness@gmail.com">
 					<img src={mail} />
 				</a>
 			</div>
