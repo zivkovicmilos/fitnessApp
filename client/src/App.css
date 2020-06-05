@@ -526,6 +526,14 @@
 		min-height: 60px !important;
 	}
 
+	.contactForm .invalid-group {
+		min-height: 60px !important;
+	}
+
+	.contactForm .msgArea {
+		min-height: 102px !important;
+	}
+
 	.loginForm .invalid-group {
 		min-height: 70px !important;
 	}
@@ -1096,7 +1104,7 @@ table {
 	margin-bottom: 8px;
 }
 
-.minRow {
+.minContactFormRow {
 	min-width: 250px;
 }
 
@@ -1152,6 +1160,10 @@ table {
 	text-align: center;
 	animation: text ease-in-out 0.4s;
 	-webkit-animation: text ease-in-out 0.4s;
+}
+
+.black {
+	color: black;
 }
 
 .successBox {
@@ -1308,6 +1320,18 @@ video {
 
 .registrationForm .invalid-group {
 	min-height: 65px !important;
+}
+
+.contactForm .invalid-group {
+	min-height: 65px !important;
+}
+
+.contactForm .msgArea {
+	min-height: 102px !important;
+}
+
+.contactForm .form-control {
+	border: 1px solid var(--lightIndigo);
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {

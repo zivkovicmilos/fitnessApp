@@ -79,6 +79,18 @@ const en = {
 	workoutInfo: {
 		level: "Level"
 	},
+	validationSchemaContactForm: {
+		minName: "Name is too short",
+		maxName: "Name is too long",
+		minMail: "Email is too short",
+		maxMail: "Email is too long",
+		requiredMail: "Email is required",
+		invalidMail: "Email is invalid",
+		nameRequired: "Name is required",
+		minMsg: "Message is too short",
+		maxMsg: "Message is too long",
+		requiredDesc: "Message is required"
+	},
 	table: {
 		participantData: {
 			yoga1: "Applied: 0",
@@ -567,6 +579,18 @@ const sr = {
 		minDesc: "Opis je prekratak",
 		maxDesc: "Opis je predugačak",
 		requiredDesc: "Opis je obavezan"
+	},
+	validationSchemaContactForm: {
+		minName: "Prekratko ime i prezime",
+		maxName: "Ime i prezime su predugački",
+		nameRequired: "Ime i prezime su obavezni",
+		minMail: "Mejl je prekratak",
+		maxMail: "Mejl je predugačak",
+		requiredMail: "Mejl je obavezan",
+		invalidMail: "Mejl je nevalidan",
+		minMsg: "Poruka je prekratka",
+		maxMsg: "Poruka je predugačka",
+		requiredDesc: "Poruka je obavezna"
 	},
 	serviceForm: {
 		firstName: "Ime",
