@@ -122,7 +122,6 @@ const Zakazivanje = () => {
 	};
 
 	useEffect(() => {
-		console.log(yogaEls);
 		if (!yoga) {
 			let workouts = document.getElementsByClassName("yoga");
 
@@ -144,7 +143,6 @@ const Zakazivanje = () => {
 	}, [yoga]);
 
 	useEffect(() => {
-		console.log(pilatesEls);
 		if (!pilates) {
 			let workouts = document.getElementsByClassName("pilates");
 
@@ -166,7 +164,6 @@ const Zakazivanje = () => {
 	}, [pilates]);
 
 	useEffect(() => {
-		console.log(coreEls);
 		if (!core) {
 			let workouts = document.getElementsByClassName("core");
 
@@ -188,7 +185,6 @@ const Zakazivanje = () => {
 	}, [core]);
 
 	useEffect(() => {
-		console.log(cardioEls);
 		if (!cardio) {
 			let workouts = document.getElementsByClassName("cardio");
 

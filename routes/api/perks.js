@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 		const perks = await Perk.find();
 
 		if (!perks || !perks.length) {
-			return res.status(400).json({ msg: "Ne postoje pogodnosti!" });
+			return res.status(400).json({ msg: "No perks exist!" });
 		}
 
 		res.json(perks);

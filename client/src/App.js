@@ -52,6 +52,7 @@ const App = () => {
 				<Route exact path="/" component={Home} />
 				<Switch>
 					<Route exact path="/usluge/profil" component={Profile} />
+					<Route exact path="/usluge/" component={Usluge} />
 					<Route exact path="/usluge/treninzi" component={Usluge} />
 					<Route exact path="/usluge/nutricionista" component={Usluge} />
 					<Route exact path="/usluge/masaze" component={Usluge} />

@@ -53,14 +53,16 @@ const WorkoutContent = (props) => {
 						/>
 					</div>
 					<div className="centerRow workoutGallery w-50 gallery mb-3">
-						<WorkoutGallery />
-						<video loop controls="controls" width="200" height="150">
-							<source
-								src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
-								type="video/mp4"
-							/>
-							Your browser does not support the video tag.
-						</video>
+						<WorkoutGallery gallery={workoutData.gallery} />
+						<iframe
+							width="240"
+							height="180"
+							src={workoutData.gallery ? workoutData.gallery[2] : ""}
+							frameBorder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowFullScreen
+							className="mt-2"
+						></iframe>
 					</div>
 					<div className="row centerRow workoutReviewButton">
 						<ReviewButton reviews={workoutData.reviews} />

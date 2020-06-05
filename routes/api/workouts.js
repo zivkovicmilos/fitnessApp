@@ -16,7 +16,7 @@ router.get("/type/:type", async (req, res) => {
 		});
 
 		if (!workouts || !workouts.length) {
-			return res.status(400).json({ msg: "Ne postoje treninzi ovog tipa!" });
+			return res.status(400).json({ msg: "No workouts of this type exist" });
 		}
 
 		res.json(workouts);
@@ -46,7 +46,7 @@ router.get("/participants/:name", async (req, res) => {
 			.select("-maxSlots");
 
 		if (!workout) {
-			return res.status(400).json({ msg: "Trening ne postoji" });
+			return res.status(400).json({ msg: "Workout doesn't exist" });
 		}
 
 		res.json(workout);
@@ -65,7 +65,7 @@ router.get("/id/:id", async (req, res) => {
 		const workout = await Workout.findById(searchID);
 
 		if (!workout) {
-			return res.status(400).json({ msg: "Ne postoji ovaj trening!" });
+			return res.status(400).json({ msg: "Workout doesn't exist" });
 		}
 
 		res.json(workout);

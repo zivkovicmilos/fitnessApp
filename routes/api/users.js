@@ -17,10 +17,10 @@ router.post(
 	"/",
 	[
 		// Check user input
-		check("firstName", "Ime je obavezno").not().isEmpty(),
-		check("lastName", "Prezime je obavezno").not().isEmpty(),
-		check("email", "Mejl adresa je obavezna").isEmail(),
-		check("password", "Šifra mora sadržati 6 ili više znakova").isLength({
+		check("firstName", "First name is required").not().isEmpty(),
+		check("lastName", "Last name is required").not().isEmpty(),
+		check("email", "Email is required").isEmail(),
+		check("password", "Password has to be a min. of 6 chars").isLength({
 			min: 6
 		})
 	],
@@ -39,7 +39,7 @@ router.post(
 			if (user) {
 				return res
 					.status(400)
-					.json({ errors: [{ msg: "Korisnik već postoji" }] });
+					.json({ errors: [{ msg: "User already exists" }] });
 			}
 
 			// Get the Gravatar
@@ -105,9 +105,7 @@ router.get("/:id", async (req, res) => {
 			.select("-date");
 
 		if (!user) {
-			return res
-				.status(400)
-				.json({ msg: "Ne postoji profil za ovog korisnika" });
+			return res.status(400).json({ msg: "User does not exist" });
 		}
 
 		res.json(user);
@@ -127,7 +125,7 @@ router.post("/newWorkout", auth, async (req, res) => {
 		let workoutRes = await Workout.findOne({ name: title });
 
 		if (!workoutRes) {
-			return res.status(400).json({ msg: "Ne postoji ovaj trening" });
+			return res.status(400).json({ msg: "Workout doesn't exist" });
 		}
 
 		let workout = {
@@ -231,7 +229,7 @@ router.post("/update", auth, async (req, res) => {
 		let user = await User.findOne({ email: email });
 
 		if (!user) {
-			return res.status(400).json({ msg: "Korisnik ne postoji" });
+			return res.status(400).json({ msg: "User does not exist" });
 		}
 
 		if (password != "") {
@@ -295,7 +293,7 @@ router.post("/delete/:email/:workoutID", auth, async (req, res) => {
 		let user = await User.findOne({ email: email });
 
 		if (!user) {
-			return res.status(400).json({ msg: "Korisnik ne postoji" });
+			return res.status(400).json({ msg: "User does not exist" });
 		}
 
 		let updatedModel = await User.findByIdAndUpdate(

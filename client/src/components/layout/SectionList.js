@@ -25,13 +25,11 @@ const SectionList = (props) => {
 	}, []);
 
 	const changeSort = (type, newId) => {
-		//console.log(`Old sort was ${sortBy}`);
 		document.getElementById(selected).classList.remove("typeSortActive");
 		document.getElementById(newId).classList.add("typeSortActive");
 		setSelected(newId);
 
 		setSort(type);
-		//console.log(`New sort is ${type}`);
 	};
 
 	workouts.sort((a, b) => {

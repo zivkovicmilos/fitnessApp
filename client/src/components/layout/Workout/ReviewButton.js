@@ -9,21 +9,45 @@ import close from "./../../../assets/svg/close.svg";
 import { useLocation } from "react-router-dom";
 import { sr, en } from "./../../../dict";
 
-const validationSchema = Yup.object().shape({
-	rating: Yup.number()
-		.min(1, "Ocena je obavezna")
-		.max(5, "Ocena je obavezna")
-		.required("Ocena je obavezna"),
-	comment: Yup.string()
-		.min(10, "Komentar je prekratak")
-		.max(255, "Komentar je predugačak")
-});
-
 const ReviewButton = (props) => {
 	const globalState = useContext(store);
 	let { user } = globalState.state;
 	let { lang } = globalState.state;
 	const { dispatch } = globalState;
+
+	const validationSchema = Yup.object().shape({
+		rating: Yup.number()
+			.min(
+				1,
+				lang == "sr"
+					? sr.validationSchemaMark.minMark
+					: en.validationSchemaMark.minMark
+			)
+			.max(
+				5,
+				lang == "sr"
+					? sr.validationSchemaMark.maxMark
+					: en.validationSchemaMark.maxMark
+			)
+			.required(
+				lang == "sr"
+					? sr.validationSchemaMark.requiredMark
+					: en.validationSchemaMark.requiredMark
+			),
+		comment: Yup.string()
+			.min(
+				10,
+				lang == "sr"
+					? sr.validationSchemaMark.minComment
+					: en.validationSchemaMark.minComment
+			)
+			.max(
+				255,
+				lang == "sr"
+					? sr.validationSchemaMark.maxComment
+					: en.validationSchemaMark.maxComment
+			)
+	});
 
 	let { reviews } = props;
 	let location = useLocation();
@@ -123,7 +147,6 @@ const ReviewButton = (props) => {
 									type: "RELOAD",
 									payload: ""
 								});
-								console.log("Review submitted");
 							}}
 						>
 							<div

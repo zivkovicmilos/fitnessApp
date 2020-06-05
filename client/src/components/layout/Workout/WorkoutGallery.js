@@ -3,7 +3,8 @@ import left from "../../../assets/svg/about/arrowLeft.svg";
 import right from "../../../assets/svg/about/arrowRight.svg";
 import SingleGallery from "./../SingleGallery";
 
-const WorkoutGallery = () => {
+const WorkoutGallery = (props) => {
+	let { gallery } = props;
 	return (
 		<Fragment>
 			<div id="workoutGallery" className="carousel slide" data-ride="carousel">
@@ -14,28 +15,20 @@ const WorkoutGallery = () => {
 						className="active"
 					></li>
 					<li data-target="#workoutGallery" data-slide-to="1"></li>
-					<li data-target="#workoutGallery" data-slide-to="2"></li>
 				</ol>
 				<div className="carousel-inner">
 					<div className="carousel-item active">
 						<img
 							className="d-block w-100"
-							src="https://via.placeholder.com/200x150"
+							src={gallery ? gallery[0] : ""}
 							alt="First slide"
 						/>
 					</div>
 					<div className="carousel-item">
 						<img
 							className="d-block w-100"
-							src="https://via.placeholder.com/200x150"
+							src={gallery ? gallery[1] : ""}
 							alt="Second slide"
-						/>
-					</div>
-					<div className="carousel-item">
-						<img
-							className="d-block w-100"
-							src="https://via.placeholder.com/200x150"
-							alt="Third slide"
 						/>
 					</div>
 				</div>

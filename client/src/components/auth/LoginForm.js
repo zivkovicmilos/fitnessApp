@@ -126,8 +126,25 @@ const LoginForm = () => {
 
 									document.getElementById("loginButton").click();
 								} catch (err) {
-									document.getElementById("loginError").innerHTML =
-										err.response.data.errors[0].msg;
+									let el = document.getElementById("loginError");
+									let errMsg = "";
+									switch (err.response.data.errors[0].msg) {
+										case "User does not exist":
+											errMsg =
+												lang == "sr"
+													? "Korisnik ne postoji"
+													: "User does not exist";
+											break;
+										case "Invalid credentials":
+											errMsg =
+												lang == "sr"
+													? "Nevalidni podaci"
+													: "Invalid credentials";
+											break;
+										default:
+											errMsg = err.response.data.errors[0].msg;
+									}
+									el.innerHTML = errMsg;
 									dispatch({
 										type: "LOGOUT",
 										payload: {}

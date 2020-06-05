@@ -185,8 +185,23 @@ const RegisterForm = (props) => {
 									});
 									document.getElementById("registerButton").click();
 								} catch (err) {
+									let el = document.getElementById("registerError");
+									let errMsg = "";
+									switch (err.response.data.errors[0].msg) {
+										case "User already exists":
+											errMsg =
+												lang == "sr"
+													? "Korisnik već postoji"
+													: "User already exists";
+											break;
+										default:
+											errMsg = err.response.data.errors[0].msg;
+									}
+									el.innerHTML = errMsg;
+									/*
 									document.getElementById("registerError").innerHTML =
 										err.response.data.errors[0].msg;
+										*/
 									dispatch({
 										type: "LOGOUT",
 										payload: {}

@@ -32,7 +32,7 @@ const Navbar = () => {
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
-						<Link className="nav-link" to="/usluge/treninzi">
+						<Link className="nav-link" to="/usluge/">
 							<span>
 								{lang == "sr" ? sr.navbar.services : en.navbar.services}
 							</span>

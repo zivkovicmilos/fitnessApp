@@ -1341,7 +1341,7 @@ video {
 }
 
 .textAreaInvalid {
-	min-height: 102px;
+	min-height: 102px !important;
 }
 
 .servicesForm .form-group {
@@ -1839,4 +1839,8 @@ nav {
 
 .logo {
 	width: 3.5em;
+}
+
+a {
+	outline: none;
 }

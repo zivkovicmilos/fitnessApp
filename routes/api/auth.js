@@ -27,8 +27,8 @@ router.post(
 	"/",
 	[
 		// Check user input
-		check("email", "Mejl adresa je obavezna").isEmail(),
-		check("password", "Šifra je obavezna znakova").exists()
+		check("email", "Email is required").isEmail(),
+		check("password", "Password is required").exists()
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
@@ -45,7 +45,7 @@ router.post(
 			if (!user) {
 				return res
 					.status(400)
-					.json({ errors: [{ msg: "Korisnik ne postoji" }] });
+					.json({ errors: [{ msg: "User does not exist" }] });
 			}
 
 			const payLoad = {
@@ -57,7 +57,9 @@ router.post(
 			const isMatch = await bcrypt.compare(password, user.password);
 
 			if (!isMatch) {
-				return res.status(400).json({ errors: [{ msg: "Neispravni podaci" }] });
+				return res
+					.status(400)
+					.json({ errors: [{ msg: "Invalid credentials" }] });
 			}
 
 			jwt.sign(

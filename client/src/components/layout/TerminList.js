@@ -32,10 +32,6 @@ const TerminList = (props) => {
 		}
 	};
 
-	const myLittleFunc = () => {
-		console.log(user.workouts);
-	};
-
 	useEffect(() => {
 		user = globalState.state.user;
 		if (!user) return;
