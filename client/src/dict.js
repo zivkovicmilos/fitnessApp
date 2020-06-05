@@ -42,11 +42,11 @@ const en = {
 	},
 	reservation: {
 		thanksMessage: "Thank you for your reservation!",
-		infoMessage: "Bellow you can see the data that you entered."
+		infoMessage: "Below you can see the data that you entered."
 	},
 	success: {
 		successMessage: "Successfully sent!",
-		pdfMessage: "PDF file with the data you entered can be found bellow:"
+		pdfMessage: "PDF file with the reservation info:"
 	},
 	registerField: {
 		registerButton: "Join us"
@@ -225,7 +225,7 @@ const en = {
 		jumboText: "Train with the best.",
 		trainingText: "TRENDING",
 		trainingDesc: "Check out our most popular workouts",
-		subscription: "MEMBERSHIP FEES"
+		subscription: "MEMBERSHIPS"
 	},
 	workoutContent: {
 		comments: "COMMENTS",
@@ -596,37 +596,37 @@ const sr = {
 "Upoznajte yogu
  Ovaj trening objasniće vam šta je yoga i kratko će preći kroz najpopularnije vrste yoge, što ce vam omogućiti da izaberete pravu yogu za vas. Reč "Yoga" ima značenje "zajednica" na Sanskritu, drevnom jeziku iz Indije, odakle yoga zapravo potiče. Ova zajednica se može tumaćiti kao zajednica tela, duha i uma. Yoga podrazumeva vežbanje fizičkih pozi koje se nazivaju "asane". Asana je pak, samo jedna vrsta joge. Svaka pozicija ima poseban fizički benefit.",
 "Meet yoga
-This training will teach you what yoga is and will briefly go through the most popular types of yoga, which will allow you to choose the right yoga for you. The word “Yoga” means “community” in Sanskrit, an ancient language from India, where yoga actually comes from. This community can be interpreted as a community of body, spirit and mind. Yoga involves practicing physical poses called "asanas". Asana, on the other hand, is just one type of yoga. Each position has a special physical benefit."
+This workout will teach you what yoga is and will briefly go through the most popular types of yoga, which will allow you to choose the right yoga for you. The word “Yoga” means “community” in Sanskrit, an ancient language from India, where yoga actually comes from. This community can be interpreted as a community of body, spirit and mind. Yoga involves practicing physical poses called "asanas". Asana, on the other hand, is just one type of yoga. Each position has a special physical benefit."
 
 "Yoga za Homo foteljuse
 Posvećeni ste profesionalnom ostvarenju? Radite puno? Imate posao koji zahteva sedenje za radnim stolom? Čestitamo, postali ste Homo foteljus. Šta time dobijate pitate se? Dobijate VIP ulaznicu za višak kilograma, razne bolesti kičme, bolove u vratu i povećanu šansu za razvoj dijabetesa. Ako želite da odustanete od ulaznice, pridružite nam se. Yoga predstavlja idealan način za neutralisanje efekata dugog sedenja. Vraća snagu i mobilnost čitavom telu i ne dozvoljava mu da propada.",
 "Yoga for Homo foteljus
-Do you strive for professional development? You work a lot? Do you have a job that requires sitting at a desk? Congratulations, you have become a Homo foteljus. What are the benefits you wonder? You get a VIP ticket for excess weight, various spinal diseases, neck pain and an increased chance of developing diabetes. If you want to cancel your subscription, join us. Yoga is an ideal way to neutralize the effects of long sitting. It restores strength and mobility to the whole body and does not allow it to fail."
+Do you strive for professional development? Do you work a lot? Do you have a job that requires sitting at a desk? Congratulations, you have become a Homo foteljus. What are the benefits, you wonder? You get a VIP ticket for excess weight, various spinal diseases, neck pain and an increased chance of developing diabetes. If you want to cancel your subscription, join us. Yoga is an ideal way to neutralize the effects of long sitting. It restores strength and mobility to the whole body and does it not allow it to fail."
 
 "Yoga za powerliftere
 Powerlifting je sport u kome se takmičari trude da podignu što veću kilažu u bench pressu, čučnju i deadliftu. Ove tri vežbe uključuju veliki broj mišića i vrše ogroman pritisak na telo, posebno kada se izvode sa veoma velikim težinama, zbog čega su povrede veoma česta stvar u ovom sportu.", 
 "Yoga for powerlifters
-Powerlifting is a sport in which competitors try to lift as much weight as possible in bench press, guarding and deadlifting. These three exercices require lot of muscles to work together and put enormous pressure on the body, especially when performed with very heavy weights. This is why injuries are very common in this sport."
+Powerlifting is a sport in which competitors try to lift as much weight as possible in bench presses, guarding and deadlifting. These three exercices require a lot of muscles to work together and put enormous pressure on the body, especially when performed with very heavy weights. This is why injuries are very common in this sport."
 
 "Anatomske i ortopedske vežbe
 Ovaj trening namenjen je osobama sa nekim hroničnim povredama ili specifičnim bolestima da im omogući da rade vežbe prilagodjene njima. Posledice kifoze, skolioze, protruzije diskusa, povreda ekstremiteta i slične povrede mogu se drastično smanjiti ili u potpunosti iskoreniti izvođenjem adekvatnih vežbi na pravi način. Naš tim fizioterapeuta i sportskih terapeuta pristupa svakom klijentu posebno i trudi se da mu maksimalno olakša izvodjenje vežbi.",
 "Anatomical and orthopedic exercises
-This training is intended for people with some chronic injuries or specific diseases to enable them to do exercises adapted to them. The consequences of kyphosis, scoliosis, disc protrusion, limb injuries and similar injuries can be drastically reduced or completely eradicated by performing adequate exercises in the right way. Our team of physiotherapists and sports therapists approaches each client individually and strives to make it as easy as possible for them to perform the exercises."
+This workout is intended for people with some chronic injuries or specific diseases to enable them to do exercises adapted to them. The consequences of kyphosis, scoliosis, disc protrusion, limb injuries and similar injuries can be drastically reduced or completely eradicated by performing adequate exercises in the right way. Our team of physiotherapists and sports therapists approach each client individually and strive to make it as easy as possible for them to perform the exercises."
 
 "Napredni nivo
 Mislite da ste u formi? Savladali ste sve vežbe? Strunjača je previše lak izazov za vas? Onda vas izazivamo na sat vremena ekstremnog pilates treninga sa našim trenerima Milošem i Martinom. Sve što ste do sada znali o vežbama na strunjači odlazi u zaborav. Ko izdrži, pričaće.",
 "Advanced level
-You're in shape? You mastered all the exercises? Mat exercices are too easy for you? Then we challenge you to an hour of extreme Pilates training with our trainers Milos and Martin. Everything you knew so far about mat exercises goes into oblivion. Whoever endures will talk."
+Think you're in shape? You've mastered all the exercises? Mat exercices are too easy for you? Then we challenge you to an hour of extreme Pilates workout with our trainers Milos and Martin. Everything you knew so far about mat exercises goes into oblivion. Whoever endures will talk."
 
 "Vežbe na strunjači
 Upoznajte svog novog najboljeg prijatelja, strunjaču. Strunjača je sve što vam je potrebno za pilates trening. Zvuči prosto, zar ne? Ipak, ni jedan drugi trening vas ne može toliko opteretiti bez tegova, guma za trening i ostalih sličnih rekvizita. Još jedna predost ovog treninga je ta što ga možete raditi gde god ima mesta da postavite strunjaču. Hoćete da smršate, zategnete se, izgradite lepu i zdravu figuru? Nikakav problem, uzmite strunjaču i krenite, a mi ćemo vam pokazati i kako.",
 "Exercises on a mat
-Meet your new best friend, the mat. A mat is all you need for Pilates training. Sounds simple, doesn't it? However, no other training can stress you so much without weights, training tires and other similar equipment. Another advantage of this training is that you can do it wherever there is room to place a mat. Do you want to lose weight, tighten up, build a beautiful and healthy figure? No problem, get a mat and go. We'll show you how."
+Meet your new best friend, the mat. A mat is all you need for Pilates workout. Sounds simple, doesn't it? However, no other workout can stress you so much without weights, workout tires and other similar equipment. Another advantage of this workout is that you can do it wherever there is room to place a mat. Do you want to lose weight, tighten up, build a beautiful and healthy figure? No problem, get a mat and go. We'll show you how."
 
 "Core - Šta? Zašto? Kako?
 Hoćete Windows logo na stomaku kada šetate plažom? Morate ga napraviti. Nazad u školske klupe! Na ovom treningu učimo vas šta čini core, kako ti mišići funcionišu, kada se aktiviraju, kako bi trebalo da izgledaju i naravno, kako da ih trenirate. Uz neophodno znanje o mišićima dobijate i spisak vežbi koje smo smatrali da su najbolje, kao i listu najčešćih grešaka koje ljudi prave, a sa kojima se susrećemo svakog dana. Beleške su dozvoljene :)",
 "Core - What? Why? How?
-Want a Windows logo on your stomach when you walk the beach? Well, you have to make it. Back to school! In this training, we teach you what the core is, how these muscles function, when they are activated, what they should look like and, of course, how to train them. With the necessary knowledge about muscles, you also get a list of exercises that we think are the best, as well as a list of the most common mistakes that people make, and with which we encounter every day. Notes are allowed :)"
+Want a Windows logo on your stomach when you walk shirtless? Well, you have to work for it. Back to school! In this workout, we teach you what core is, how these muscles function, when they are activated, what they should look like and, of course, how to train them. With the necessary knowledge about muscles, you also get a list of exercises that we think are the best, as well as a list of the most common mistakes that people make, and with which we encounter every day. Notes are allowed :)"
 
 "HardCore
 Znate onaj video u kojem jedan vežbač visi sa šipke u sedećem stavu, a ovaj drugi ga udara u core? Ne radimo mi to ovde. Ipak, kada budemo završili sa vama, boleće vas i mišići za koje niste ni znali da postoje. So, how core are you?",
@@ -636,22 +636,22 @@ You know that video where one guy hangs from a barbell in a sitting position and
 "Učvrstite core, sačuvajte leđa
 Malo je poznata činjenica da 2/3 čovečanstva oseća bol u donjem delu leđa. Izvori bola su razni, rešenje je samo jedno, budite spremni. Kada se pomene kičma, možete čuti o brojnim vežbama za leđa. Ono što se retko čuje, a trebalo bi, je da su za pravilno držanje kičme zaduženi i trbušnjaci. Naravno, komplikacije ovde ne prestaju. Primećen je dosta veliki broj ljudi koji su se povredili zbog nepravilnog izvodjenja vežbi za trbušnjake. Dođite da zajedno to ispravimo.",
 "Tighten the core, save the back
-It is a little known fact that 2/3 of humanity feels pain in the lower back. The sources of pain are various, but there is only one solution, be prepared. When we talk about spine, numerous back exercises are mentioned. What is rarely heard, but should be, is the fact that the abs are also responsible for the proper posture of the spine. Of course, the complications do not stop here. A fairly large number of people injure themselves due to improper abdominal exercises. Let's fix it together."
+It is a little known fact that 2/3 of humanity feels pain in the lower back. The sources of pain are various, but there is only one solution, be prepared. When we talk about the spine, numerous back exercises are mentioned. What is rarely heard, but should be, is the fact that the abs are also responsible for the proper posture of the spine. Of course, the complications do not stop here. A fairly large number of people injure themselves due to improper abdominal exercises. Let's fix it together."
 
 "Kružni kardio trening
 Ovaj trening predstavlja sam vrhunac jednog treninga. Zapravo ne uvodi nove vežbe več menja način na koji izvodite postojeće. Grudi, leđa, ruke, ramena... Šta god radili, nije važno. Važno je izgurati maksimum i opteretiti se što više. Trening je dosta visokog intenziteta jer zahteva da se veoma naporne vežbe izvode vrlo brzo uz dosta ponavljanja, bez prevelikog smanjivanja tezina i sa što manje pauza. Ne pokušavati kod kuće.",
 "Circuit cardio training
-This training is the culmination of a training session. It doesn't introduce any new exercises. Instead it changes the way you perform existing ones. Chest, back, arms, shoulders ... Whatever you do, it doesn't matter. It is important to push the maximum and load yourself as much as possible. Training is quite high intensity because you have to perform very difficult exercices as fast as you can, with a lot of repetitions, without weight reduction and with as few breaks as possible. Don't try at home."
+This workout is the culmination of a workout session. It doesn't introduce any new exercises. Instead it changes the way you perform existing ones. Chest, back, arms, shoulders ... Whatever you do, it doesn't matter. It is important to push the maximum and load yourself as much as possible. This workout is intense because you have to perform very difficult exercices as fast as you can, with a lot of repetitions, without weight reduction and with as few breaks as possible. Don't try this at home."
 
 "Put do zabavnog kardio treninga
 Iako je kardio zapravo ponavljanje jedne iste aktivnosti u odredjenom periodu u vremenu, kao i većina ostalih treninga, ne može se preskakati pod izgovorom da je dosadan. Zapamtite, trening je zabavan onoliko koliko ste vi sami kreativni. Uz višegodišnje iskustvo u radu sa vama, smislili smo idealan način za izvođenje kardia. Posle ovog treninga, kardio trening će vam biti jedan od omiljenih, garantujemo.",
 "The road to fun cardio training
-Although cardio is actually a repetition of one and the same activity over a period of time, like most other workouts, it cannot be skipped saying that it is boring as an excuse. Remember, training is as much fun as you are creative yourself. After many years of working with you, we have come up with an ideal way to perform cardio. After this training, cardio training will be one of your favorites, we guarantee."
+Although cardio is actually a repetition of one and the same activity over a period of time, like most other workouts, it cannot be skipped saying that it is boring as an excuse. Remember, working out is as much fun as you are creative yourself. After many years of working with you, we have come up with an ideal way to perform cardio. After this workout, cardio training will be one of your favorites, we guarantee."
 
 "Kardio za mršavljenje
 Da se ne lažemo, svi radimo kardio iz samo jednog razloga - da sagorimo masne naslage. Trčimo, skačemo, plivamo, koristimo različite mašine, a retko ko zapravo zna šta tu radi. Ako se i ishrana ne usaglasi sa planom treninga vrlo često može doći do razočarenja zbog manjka rezultata. Dopustite da vam promenimo pogled i pokažemo kako odraditi kardio od koga ćete zapravo imati rezultate.",
 "Cardio for weight loss
-Let's face it, we all do cardio for one reason only - to burn fat. We run, jump, swim, use different machines, and rarely does anyone actually know what he is doing there. If the diet does not comply with the training plan, disappointment can often occur due to lack of results. Let us change your mind and show you how to do cardio that will actually have results."
+Let's face it, we all do cardio for one reason only - to burn fat. We run, jump, swim, use different machines, and rarely does anyone actually know what they are doing there. If the diet does not comply with the training plan, disappointment can often occur due to lack of results. Let us change your mind and show you how to do cardio that will actually have results."
 */
 
 export { en, sr };

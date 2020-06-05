@@ -3,12 +3,15 @@ import { store } from "../context/Store";
 
 const Language = () => {
 	const globalState = useContext(store);
+
+	let { lang } = globalState.state;
 	const { dispatch } = globalState;
 
 	return (
 		<div className="languages">
 			<span
 				id="en"
+				className={`${lang == "en" ? "languageActive" : ""}`}
 				onClick={(e) => {
 					dispatch({
 						type: "CHANGE_LANGUAGE",
@@ -21,7 +24,7 @@ const Language = () => {
 			<span className="langSeparator">|</span>
 			<span
 				id="sr"
-				className="languageActive"
+				className={`${lang == "sr" ? "languageActive" : ""}`}
 				onClick={(e) => {
 					dispatch({
 						type: "CHANGE_LANGUAGE",

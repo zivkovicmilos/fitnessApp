@@ -12,18 +12,18 @@ const Table = () => {
 	const { dispatch } = globalState;
 
 	const [participantData, setParticipantData] = useState({
-		yoga1: "Prijavljeno: 0",
-		yoga2: "Prijavljeno: 0",
-		yoga3: "Prijavljeno: 0",
-		pilates1: "Prijavljeno: 0",
-		pilates2: "Prijavljeno: 0",
-		pilates3: "Prijavljeno: 0",
-		core1: "Prijavljeno: 0",
-		core2: "Prijavljeno: 0",
-		core3: "Prijavljeno: 0",
-		cardio1: "Prijavljeno: 0",
-		cardio2: "Prijavljeno: 0",
-		cardio3: "Prijavljeno: 0"
+		yoga1: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		yoga2: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		yoga3: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		pilates1: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		pilates2: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		pilates3: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		core1: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		core2: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		core3: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		cardio1: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		cardio2: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`,
+		cardio3: `${lang == "sr" ? "Prijavljeno" : "Applied"}: 0`
 	});
 
 	const [reserveInfo, setReserveInfo] = useState({
@@ -49,7 +49,9 @@ const Table = () => {
 			types.forEach(async (type, index, types) => {
 				for (let i = 0; i < 3; i++) {
 					res = await axios.get(`/api/workouts/participants/${type}${i + 1}`);
-					myMap[`${type}${i + 1}`] = `Prijavljeno: ${res.data[0].participants}`;
+					myMap[`${type}${i + 1}`] = `${
+						lang == "sr" ? "Prijavljeno" : "Applied"
+					}: ${res.data[0].participants}`;
 				}
 				processed++;
 

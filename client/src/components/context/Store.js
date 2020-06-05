@@ -69,8 +69,8 @@ const StateProvider = ({ children }) => {
 					token: null
 				};
 			case "CHANGE_LANGUAGE":
-				document.getElementById(state.lang).classList.remove("languageActive");
-				document.getElementById(action.payload).classList.add("languageActive");
+				//document.getElementById(state.lang).classList.remove("languageActive");
+				//document.getElementById(action.payload).classList.add("languageActive");
 				return {
 					...state,
 					lang: action.payload

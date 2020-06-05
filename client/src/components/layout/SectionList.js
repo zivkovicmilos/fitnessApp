@@ -89,7 +89,9 @@ const SectionList = (props) => {
 						title={workout.name}
 						duration={`${workout.duration * 30} min.`}
 						level={`${lang == "sr" ? "Nivo" : "Level"} ${workout.level}`}
-						description={workout.descriptionSR}
+						description={
+							lang == "sr" ? workout.descriptionSR : workout.descriptionEN
+						}
 					/>
 				</Link>
 			))}
