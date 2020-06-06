@@ -41,7 +41,7 @@ const Jumbo = (props) => {
 				)}
 				{aboutRegister && (
 					<React.Fragment>
-						<div className="row">
+						<div className="row triggerAbout">
 							<div className="col-md-6 rowsDown mb-4">
 								<div className="container-flex align-items-end">
 									<div className="row">
