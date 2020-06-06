@@ -19,7 +19,7 @@ Font.register({
 	family: "Montserrat",
 	weight: 500,
 	src:
-		"http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf"
+		"https://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf"
 });
 
 Font.register({
