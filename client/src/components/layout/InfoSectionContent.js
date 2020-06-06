@@ -53,24 +53,27 @@ const InfoSectionContent = (props) => {
 	} else if (props.section == "infoNutricionista") {
 		return (
 			<Fragment>
-				<div className="row centerRow">
-					<h2 className="col-md-10 col-10">
-						<div className="container centerY">
+				<div className="centerRow pr-4 pl-4">
+					<div className="centerY">
+						<h2>
 							<img src={nutritionist} className="servicesIcon" />
 							<span className="ml-2">
 								{lang == "sr"
 									? sr.infoSectionContent.nutritionTitle
 									: en.infoSectionContent.nutritionTitle}
 							</span>
-						</div>
-					</h2>
-					<span className="sectionText col-md-10 col-10">
-						{lang == "sr"
-							? sr.infoSectionContent.nutritionText
-							: en.infoSectionContent.nutritionText}
-					</span>
+						</h2>
+					</div>
+
+					<div className="text-justify">
+						<span className="sectionText">
+							{lang == "sr"
+								? sr.infoSectionContent.nutritionText
+								: en.infoSectionContent.nutritionText}
+						</span>
+					</div>
 				</div>
-				<div className="row centerRow">
+				<div className="d-flex centerRow">
 					<ServicesForm section={props.section} />
 				</div>
 			</Fragment>
@@ -78,24 +81,27 @@ const InfoSectionContent = (props) => {
 	} else {
 		return (
 			<Fragment>
-				<div className="row centerRow">
-					<h2 className="col-md-10 col-10">
-						<div className="container centerY">
+				<div className="centerRow pr-4 pl-4">
+					<div className="centerY">
+						<h2>
 							<img src={massage} className="servicesIcon" />
 							<span className="ml-2">
 								{lang == "sr"
 									? sr.infoSectionContent.massageTitle
 									: en.infoSectionContent.massageTitle}
 							</span>
-						</div>
-					</h2>
-					<span className="sectionText col-md-10 col-10">
-						{lang == "sr"
-							? sr.infoSectionContent.massageText
-							: en.infoSectionContent.massageText}
-					</span>
+						</h2>
+					</div>
+
+					<div className="text-justify">
+						<span className="sectionText">
+							{lang == "sr"
+								? sr.infoSectionContent.massageText
+								: en.infoSectionContent.massageText}
+						</span>
+					</div>
 				</div>
-				<div className="row centerRow">
+				<div className="d-flex centerRow">
 					<ServicesForm section={props.section} />
 				</div>
 			</Fragment>

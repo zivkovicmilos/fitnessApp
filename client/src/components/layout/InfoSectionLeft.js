@@ -18,7 +18,7 @@ const InfoSectionLeft = (props) => {
 			onExited={() => setSectionLoaded(false)}
 		>
 			<div className="row centerRow">
-				<div className="infoContentWrapper col-lg-9 col-md-10 col-10">
+				<div className="infoContentWrapper col-lg-9 col-md-10 col-11">
 					<div
 						className={`infoPictureLeft ${props.section} col-lg-4 col-md-12`}
 					></div>

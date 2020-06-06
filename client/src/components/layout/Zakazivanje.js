@@ -225,75 +225,72 @@ const Zakazivanje = () => {
 				</h1>
 			</div>
 			<div className="row centerRowX">
-				<div className="col-xs-3">
-					<div className="filtersNew mb-3">
-						<h3 className="mb-0 mr-3">
-							{lang == "sr" ? sr.zakazivanje.filters : en.zakazivanje.filters}
-						</h3>
-						<form>
-							<div className="custom-control custom-checkbox">
-								<input
-									type="checkbox"
-									className="custom-control-input"
-									id="yogaCheck"
-									checked={yoga}
-									onChange={() => {
-										setYoga(!yoga);
-									}}
-								/>
-								<label className="custom-control-label" htmlFor="yogaCheck">
-									Yoga
-								</label>
-							</div>
-							<div className="custom-control custom-checkbox">
-								<input
-									type="checkbox"
-									className="custom-control-input"
-									id="pilatesCheck"
-									checked={pilates}
-									onChange={() => {
-										setPilates(!pilates);
-									}}
-								/>
-								<label className="custom-control-label" htmlFor="pilatesCheck">
-									Pilates
-								</label>
-							</div>
-							<div className="custom-control custom-checkbox">
-								<input
-									type="checkbox"
-									className="custom-control-input"
-									id="coreCheck"
-									checked={core}
-									onChange={() => {
-										setCore(!core);
-									}}
-								/>
-								<label className="custom-control-label" htmlFor="coreCheck">
-									Core
-								</label>
-							</div>
-							<div className="custom-control custom-checkbox">
-								<input
-									type="checkbox"
-									className="custom-control-input"
-									id="cardioCheck"
-									checked={cardio}
-									onChange={() => {
-										setCardio(!cardio);
-									}}
-								/>
-								<label className="custom-control-label" htmlFor="cardioCheck">
-									Cardio
-								</label>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div className="col-md-auto col-xs-12">
-					<Table />
+				<div className="filtersNew mb-3">
+					<h3 className="mb-0 mr-3">
+						{lang == "sr" ? sr.zakazivanje.filters : en.zakazivanje.filters}
+					</h3>
+					<form>
+						<div className="custom-control custom-checkbox">
+							<input
+								type="checkbox"
+								className="custom-control-input"
+								id="yogaCheck"
+								checked={yoga}
+								onChange={() => {
+									setYoga(!yoga);
+								}}
+							/>
+							<label className="custom-control-label" htmlFor="yogaCheck">
+								Yoga
+							</label>
+						</div>
+						<div className="custom-control custom-checkbox">
+							<input
+								type="checkbox"
+								className="custom-control-input"
+								id="pilatesCheck"
+								checked={pilates}
+								onChange={() => {
+									setPilates(!pilates);
+								}}
+							/>
+							<label className="custom-control-label" htmlFor="pilatesCheck">
+								Pilates
+							</label>
+						</div>
+						<div className="custom-control custom-checkbox">
+							<input
+								type="checkbox"
+								className="custom-control-input"
+								id="coreCheck"
+								checked={core}
+								onChange={() => {
+									setCore(!core);
+								}}
+							/>
+							<label className="custom-control-label" htmlFor="coreCheck">
+								Core
+							</label>
+						</div>
+						<div className="custom-control custom-checkbox">
+							<input
+								type="checkbox"
+								className="custom-control-input"
+								id="cardioCheck"
+								checked={cardio}
+								onChange={() => {
+									setCardio(!cardio);
+								}}
+							/>
+							<label className="custom-control-label" htmlFor="cardioCheck">
+								Cardio
+							</label>
+						</div>
+					</form>
 				</div>
 			</div>
+			<Table />
+
 			<Footer />
 		</div>
 	);

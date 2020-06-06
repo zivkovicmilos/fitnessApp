@@ -137,7 +137,7 @@ const ServicesForm = (props) => {
 					handleSubmit,
 					isSubmitting
 				}) => (
-					<form className="servicesForm" onSubmit={handleSubmit}>
+					<form className="servicesForm pr-3 pl-3" onSubmit={handleSubmit}>
 						<div className="form-row">
 							<div className="form-group mr-3">
 								<label htmlFor="firstName">
@@ -261,8 +261,12 @@ const ServicesForm = (props) => {
 								/>
 							</div>
 						</div>
-						<div className="text-right">
-							<button className="button" type="submit" disabled={isSubmitting}>
+						<div className="form-row text-right">
+							<button
+								className="button servicesBtn"
+								type="submit"
+								disabled={isSubmitting}
+							>
 								{lang == "sr" ? sr.serviceForm.send : en.serviceForm.send}
 								<img src={send} className="icon" />
 							</button>

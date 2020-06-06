@@ -98,7 +98,7 @@ const Success = (props) => {
 						loading ? (
 							"Loading..."
 						) : (
-							<img src={pdf} className="pdfIcon" alt="pdf" />
+							<img src={pdf} className="pdfIcon ml-2" alt="pdf" />
 						)
 					}
 				</PDFDownloadLink>

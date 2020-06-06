@@ -17,11 +17,11 @@ const InfoSectionLeft = (props) => {
 			onExited={() => setSectionLoaded(false)}
 		>
 			<div className="row centerRow">
-				<div className="infoContentWrapper col-lg-9 col-md-10 col-10">
+				<div className="infoContentWrapper col-lg-9 col-md-10 col-11">
 					<div
 						className={`infoPictureRight ${props.section} col-lg-4 col-md-12 hiddenNutrition`}
 					></div>
-					<div className="infoContent col">
+					<div className="infoContent">
 						<InfoSectionContent section={props.section} />
 					</div>
 					<div
