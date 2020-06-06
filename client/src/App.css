@@ -115,6 +115,7 @@
 .showcaseRow {
 	padding-bottom: 4em;
 	margin-top: -1px;
+	overflow: hidden;
 }
 
 .membershipBox {
@@ -208,6 +209,7 @@
 .membershipRow {
 	background-color: var(--gray);
 	padding-bottom: 4em;
+	overflow: hidden;
 }
 
 .navbar-nav a {
