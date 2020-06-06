@@ -555,6 +555,7 @@
 
 	.filtersNew {
 		flex-direction: column;
+		padding: 0.6em 0.2em !important;
 	}
 }
 
