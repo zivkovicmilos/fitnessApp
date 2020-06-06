@@ -1,8 +1,0 @@
--O nama
--Moj profil (+ podesavanja)
--login
--registration
-
-vidi galeriju sa bootstrap
-
-Izmeni class sa className
