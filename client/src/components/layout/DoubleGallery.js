@@ -7,10 +7,10 @@ const DoubleGallery = () => {
 	return (
 		<div className="container-flex">
 			<div className="row hPerc80">
-				<div className="col-xs-12 col-sm-6">
+				<div className="col-xs-12 col-6">
 					<SingleGallery id="gallery1" active1="active" active2="" />
 				</div>
-				<div className="col-xs-12 col-sm-6">
+				<div className="col-xs-12 col-6">
 					<SingleGallery id="gallery2" active1="" active2="active" />
 				</div>
 			</div>

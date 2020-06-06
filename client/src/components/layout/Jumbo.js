@@ -41,7 +41,6 @@ const Jumbo = (props) => {
 				)}
 				{aboutRegister && (
 					<React.Fragment>
-						<div className="row fillRow"></div>
 						<div className="row">
 							<div className="col-md-6 rowsDown mb-4">
 								<div className="container-flex align-items-end">
@@ -67,9 +66,7 @@ const Jumbo = (props) => {
 				)}
 				{serviceSelector && <ServicesSelector />}
 
-				<div className="row mt-3">
-					{homeRegister && <RegisterField />}
-				</div>
+				<div className="row mt-3">{homeRegister && <RegisterField />}</div>
 			</div>
 			<img src={topPartWhite} className="topPartWhite" />
 		</div>
