@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { store } from "./../context/Store";
 import { sr, en } from "./../../dict";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const SectionList = (props) => {
 	const [loading, setLoading] = useState(false);
@@ -79,20 +80,25 @@ const SectionList = (props) => {
 					</span>
 				</div>
 			</div>
-			{workouts.map((workout) => (
-				<Link to={`treninzi/${workout._id}`} key={`linkKey${workout._id}`}>
-					<SectionListItem
-						key={workout._id}
-						image={workout.picture}
-						title={workout.name}
-						duration={`${workout.duration * 30} min.`}
-						level={`${lang == "sr" ? "Nivo" : "Level"} ${workout.level}`}
-						description={
-							lang == "sr" ? workout.descriptionSR : workout.descriptionEN
-						}
-					/>
-				</Link>
-			))}
+			<TransitionGroup>
+				{workouts.map((workout) => (
+					<CSSTransition key={workout._id} timeout={500} classNames="slide">
+						<Link to={`treninzi/${workout._id}`} key={`linkKey${workout._id}`}>
+							<SectionListItem
+								key={workout._id}
+								image={workout.picture}
+								title={workout.name}
+								duration={`${workout.duration * 30} min.`}
+								level={`${lang == "sr" ? "Nivo" : "Level"} ${workout.level}`}
+								description={
+									lang == "sr" ? workout.descriptionSR : workout.descriptionEN
+								}
+								transKey={workout._id}
+							/>
+						</Link>
+					</CSSTransition>
+				))}
+			</TransitionGroup>
 		</div>
 	);
 };

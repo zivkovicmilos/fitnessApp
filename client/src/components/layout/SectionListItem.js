@@ -1,7 +1,5 @@
 import React from "react";
 
-//require(image)
-
 const SectionListItem = (props) => {
 	let { image, title, duration, level, description } = props;
 	return (

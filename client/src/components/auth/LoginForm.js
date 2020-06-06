@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import FormError from "./../layout/Forms/FormError";
@@ -9,6 +9,8 @@ import { sr, en } from "./../../dict";
 
 const LoginForm = () => {
 	const globalState = useContext(store);
+
+	const [showLogin, setShowLogin] = useState(false);
 
 	let { lang } = globalState.state;
 	const { dispatch } = globalState;

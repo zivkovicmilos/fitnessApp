@@ -1,2 +1,3 @@
 node_modules/
 atlasPass.txt
+config/default.json

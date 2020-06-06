@@ -13,6 +13,7 @@ import { store } from "./components/context/Store";
 import axios from "axios";
 import Loading from "./components/layout/Loading";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const App = () => {
 	const globalState = useContext(store);

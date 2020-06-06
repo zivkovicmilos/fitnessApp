@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import pdf from "../../../assets/svg/pdf.svg";
 
 import Reservation from "./PDF/Reservation";

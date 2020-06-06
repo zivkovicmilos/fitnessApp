@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Comment from "./Comment";
 
 import left from "../../../assets/svg/about/arrowLeft.svg";
@@ -47,13 +48,17 @@ const Comments = (props) => {
 		fillCurrent();
 		return (
 			<Fragment>
-				{currentlyShowing.map((comment) => (
-					<Comment
-						key={comment.user}
-						authorId={comment.user}
-						text={comment.comment}
-					/>
-				))}
+				<TransitionGroup>
+					{currentlyShowing.map((comment) => (
+						<CSSTransition key={comment.user} timeout={500} classNames="slide">
+							<Comment
+								key={comment.user}
+								authorId={comment.user}
+								text={comment.comment}
+							/>
+						</CSSTransition>
+					))}
+				</TransitionGroup>
 				{slider && (
 					<div className="row">
 						<div className="mr-3">

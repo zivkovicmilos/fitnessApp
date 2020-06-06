@@ -4,10 +4,12 @@ import Sad from "../../assets/svg/sad.svg";
 import { store } from "./../context/Store";
 import { sr, en } from "./../../dict";
 import axios from "axios";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const TerminList = (props) => {
 	const globalState = useContext(store);
 	const [workouts, setWorkouts] = useState([]);
+
 	let { user } = globalState.state;
 	let { lang } = globalState.state;
 
@@ -38,14 +40,13 @@ const TerminList = (props) => {
 
 		setWorkouts([]);
 		const func = async () => {
-			user.workouts.map(async (workout) => {
+			user.workouts.map(async (workout, indx, arr) => {
 				let res = await axios.get(`/api/workouts/id/${workout.workoutID}`);
 
 				let workoutInfo = {
 					axiosRes: res.data,
 					workoutData: workout
 				};
-
 				setWorkouts((workouts) => [...workouts, workoutInfo]);
 			});
 		};
@@ -56,20 +57,28 @@ const TerminList = (props) => {
 	return (
 		<Fragment>
 			<div className="container-fluid">
-				{workouts.map((resWorkout) => (
-					<TerminListItem
-						key={resWorkout.axiosRes._id}
-						title={resWorkout.axiosRes.name}
-						subtitle={`${getDayName(resWorkout.workoutData.day)} ${
-							resWorkout.workoutData.date
-						} ${resWorkout.workoutData.time}`}
-						text={resWorkout.axiosRes.descriptionSR}
-						image={resWorkout.axiosRes.picture}
-						workoutID={resWorkout.axiosRes._id}
-						workoutDate={resWorkout.workoutData.date}
-						workoutTime={resWorkout.workoutData.time}
-					/>
-				))}
+				<TransitionGroup>
+					{workouts.map((resWorkout) => (
+						<CSSTransition
+							key={resWorkout.axiosRes._id}
+							timeout={500}
+							classNames="slide"
+						>
+							<TerminListItem
+								key={resWorkout.axiosRes._id}
+								title={resWorkout.axiosRes.name}
+								subtitle={`${getDayName(resWorkout.workoutData.day)} ${
+									resWorkout.workoutData.date
+								} ${resWorkout.workoutData.time}`}
+								text={resWorkout.axiosRes.descriptionSR}
+								image={resWorkout.axiosRes.picture}
+								workoutID={resWorkout.axiosRes._id}
+								workoutDate={resWorkout.workoutData.date}
+								workoutTime={resWorkout.workoutData.time}
+							/>
+						</CSSTransition>
+					))}
+				</TransitionGroup>
 			</div>
 
 			{workouts.length < 1 && (

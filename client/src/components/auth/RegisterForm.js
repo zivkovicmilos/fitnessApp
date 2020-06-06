@@ -198,10 +198,6 @@ const RegisterForm = (props) => {
 											errMsg = err.response.data.errors[0].msg;
 									}
 									el.innerHTML = errMsg;
-									/*
-									document.getElementById("registerError").innerHTML =
-										err.response.data.errors[0].msg;
-										*/
 									dispatch({
 										type: "LOGOUT",
 										payload: {}
