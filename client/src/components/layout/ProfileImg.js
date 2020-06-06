@@ -1,5 +1,4 @@
 import React from "react";
-import profile from "../../assets/img/profile.jpeg";
 
 const ProfileImg = (props) => {
 	return (
