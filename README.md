@@ -24,6 +24,8 @@ All user information is encrypted while being kept in the database.
 
 We use JWT (JSON Web Tokens) for user authentication and auth management.
 
+One of the goals of the project was to implement React Hooks + the new React Context API for state management.
+
 # Authors :construction_worker:
 
 - Miloš Živković ([Github](https://github.com/zivkovicmilos))
