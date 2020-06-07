@@ -1,5 +1,5 @@
 {
-	"name": "unnamed",
+	"name": "fitnessapp",
 	"version": "1.0.0",
 	"description": "A fitness web app",
 	"main": "server.js",

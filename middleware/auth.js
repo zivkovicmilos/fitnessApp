@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
 
 	// Check for the token
 	if (!token) {
-		return res.status(401).json({ msg: "Nepostojeći token!" });
+		return res.status(401).json({ msg: "Invalid token!" });
 	}
 
 	try {
@@ -16,6 +16,6 @@ module.exports = function (req, res, next) {
 		req.user = decoded.user; // User is attached to the payload
 		next();
 	} catch (err) {
-		res.status(401).json({ msg: "Nevalidan token!" });
+		res.status(401).json({ msg: "Invalid token!" });
 	}
 };
