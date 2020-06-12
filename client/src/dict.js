@@ -209,16 +209,16 @@ const en = {
 	infoSectionContent: {
 		trainingTitle1: "Why train?",
 		trainingText1:
-			"Humans body is designed to withstand the impact of the nature. Today, that impact has never been ligther so modern human doesn't have the need to use even half of his physical capabilities. This leads to numerous physical and mental ilnesses. Training is the only right way in which humans can stimulate their bodies to feel well.",
+			"A human's body is designed to withstand the impact of nature. Today, that impact has never been ligther, so modern humans don't have to use even half of their physical capabilities. This leads to numerous physical and mental illnesses. Training is the only right way in which humans can stimulate their bodies to feel well.",
 		trainingTitle2: "Healthy habits",
 		trainingText2:
-			"For most people, training is in a totally opposite direction with their life habits. Just like every habit, changing it can be very difficult, but it can always be done in the same way, by determination and endurance. A journey of thousand steps begins with one step. Make it together with us.",
+			"For most people, training is in a totally opposite direction with their life habits. Just like with every habit, changing it can be very difficult, but it can always be done in the same way, with determination and endurance. A journey of a thousand steps begins with one step. Make it together with us.",
 		nutritionTitle: "Diet",
 		nutritionText:
-			'Although pretty simple, many people don\'t have the right idea about nutrition. One of most common missunderstandings is "I live to eat" way of living. In the world of marketing and fancy restaurants it is easy to lose the right path and foloow your senses instead of health. Our nutritionists will provide you all the answers on your questions - what, when and how you should eat?',
+			'Although pretty simple, many people don\'t have the right idea about nutrition. One of most common misunderstandings is the "I live to eat" way of living. In the world of marketing and fancy restaurants it is easy to lose sight and follow your senses instead of your health needs. Our nutritionists will provide you with all the answers to your questions - what, when and how should I eat?',
 		massageTitle: "Massage",
 		massageText:
-			"Massage is considered to be one of the most well-known methods for healing and relaxing the body. It plays a major role when it comes to our health. Massage removes the tension that is created in the nerves of the human body. After the treatment, the nervous system is released from tension and returns to normal. In addition to the nerves, massage also has a positive effect on muscles, improves circulation, metabolism, prevents the appearance of wrinkles and stretch marks, increases elasticity, and is excellent for losing weight and eliminating fluids and toxins from the body."
+			"A massage is considered to be one of the most well-known methods for healing and relaxing the body. It plays a major role when it comes to our health. Massages remove the tension that is created in the nerves of the human body. After the treatment, the nervous system is released from tension and returns to normal. In addition to the nerves, massages also have a positive effect on muscles, improve circulation, metabolism, prevent the appearance of wrinkles and stretch marks, increase elasticity, and are excellent for losing weight and eliminating fluids and toxins from the body."
 	},
 	testComp: {
 		account: "My account",
