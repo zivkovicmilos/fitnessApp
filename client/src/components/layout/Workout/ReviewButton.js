@@ -66,9 +66,6 @@ const ReviewButton = (props) => {
 					break;
 				}
 			}
-			if (user.workouts.length < 1) {
-				reserved = true;
-			}
 
 			// Check if the user has already been to this workout
 			let found = false;
