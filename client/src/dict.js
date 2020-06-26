@@ -416,7 +416,7 @@ const sr = {
 			4: "Core - Šta? Zašto? Kako?",
 			5: "Put do zabavnog kardio treninga",
 			6: "HardCore",
-			7: "Yoga za homofoteljuse",
+			7: "Yoga za Homo foteljuse",
 			8: "Učvrstite core, sačuvajte leđa",
 			9: "Vežbe na strunjači",
 			10: "Yoga za powerliftere",

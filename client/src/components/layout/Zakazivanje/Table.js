@@ -440,14 +440,14 @@ const Table = () => {
 
 									let newDate = getNewDate(myDay);
 									setReserveInfo({
-										title: "Yoga za homofoteljuse",
+										title: "Yoga za Homo foteljuse",
 										date: stringifyDate(newDate),
 										day: newDate.getDay(),
 										time: "20:00 - 20:30"
 									});
 								}}
 							>
-								<span className="workoutTableName">Yoga za homofoteljuse</span>{" "}
+								<span className="workoutTableName">Yoga za Homo foteljuse</span>{" "}
 								<br />
 								{participantData.yoga2}
 							</td>
